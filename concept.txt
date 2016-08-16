@@ -1,0 +1,12 @@
+Splash page, contains...
+Familiar languages / systems
+Projects in brief
+|
+---> View: Expanded details for each project, screenshots to page through
+Work experience in brief
+|
+---> View: Expanded details for work experience, links to websites
+Other experience, including RAC, education, DMFG
+
+Styling:
+Large text, wide white space, horizontally centered, no/subtle background
