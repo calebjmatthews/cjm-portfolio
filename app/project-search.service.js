@@ -9,20 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-require('./rxjs-extensions');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = 'Caleb Matthews';
+var http_1 = require('@angular/http');
+var ProjectSearchService = (function () {
+    function ProjectSearchService(http) {
+        this.http = http;
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'my-app',
-            templateUrl: './app/app.component.html',
-            styleUrls: ['./app/app.component.css']
-        }), 
-        __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ProjectSearchService.prototype.search = function (term) {
+        return this.http
+            .get("app/projects/?name=" + term)
+            .map(function (r) { return r.json().data; });
+    };
+    ProjectSearchService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [http_1.Http])
+    ], ProjectSearchService);
+    return ProjectSearchService;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.ProjectSearchService = ProjectSearchService;
+//# sourceMappingURL=project-search.service.js.map

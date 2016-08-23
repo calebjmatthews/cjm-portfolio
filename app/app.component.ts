@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
+import './rxjs-extensions';
+
 @Component({
   selector: 'my-app',
-  template: '<h1>Caleb Matthews</h1>'
+  templateUrl: './app/app.component.html',
+  styleUrls: ['./app/app.component.css']
 })
 
-export class AppComponent { 
-	title = 'Mammal Browsing Simulation';
-	employer = 'Kruger Lab';
+export class AppComponent {
+  title = 'Caleb Matthews';
 }
