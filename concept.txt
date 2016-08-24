@@ -1,11 +1,20 @@
 Splash page, contains...
+
+Name, email, phone number on top
+Search bar below, returns:
+|
+---> Mini description of pertinent entries
+
 Familiar languages / systems
-Projects in brief
+
+Projects in brief, github page
 |
 ---> View: Expanded details for each project, screenshots to page through
+
 Work experience in brief
 |
 ---> View: Expanded details for work experience, links to websites
+
 Other experience, including RAC, education, DMFG
 
 Styling:

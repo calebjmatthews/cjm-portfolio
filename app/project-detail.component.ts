@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output }       from '@angular/core';
 
-import { ActivatedRoute, Params } from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import { Project }        from './project';
 import { ProjectService } from './project.service';
@@ -19,6 +19,7 @@ export class ProjectDetailComponent implements OnInit {
 
 	constructor(
 		private projectService: ProjectService,
+		private router: Router,
 		private route: ActivatedRoute) { }
 
 	ngOnInit(): void {
@@ -35,6 +36,7 @@ export class ProjectDetailComponent implements OnInit {
 		});
 	}
 
+	// Not used in this implementation
 	save(): void {
 		this.projectService
 		    .save(this.project)
@@ -43,6 +45,11 @@ export class ProjectDetailComponent implements OnInit {
 		    	this.goBack(project);
 		    })
 		    .catch(error => this.error = error);
+	}
+
+	gotoIdDetail(id) {
+		let link = ['/detail', id];
+		this.router.navigate(link);
 	}
 
 	goBack(savedProject: Project = null): void {

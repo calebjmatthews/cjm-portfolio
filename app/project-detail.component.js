@@ -13,8 +13,9 @@ var router_1 = require('@angular/router');
 var project_1 = require('./project');
 var project_service_1 = require('./project.service');
 var ProjectDetailComponent = (function () {
-    function ProjectDetailComponent(projectService, route) {
+    function ProjectDetailComponent(projectService, router, route) {
         this.projectService = projectService;
+        this.router = router;
         this.route = route;
         this.close = new core_1.EventEmitter();
         this.navigated = false;
@@ -33,6 +34,7 @@ var ProjectDetailComponent = (function () {
             }
         });
     };
+    // Not used in this implementation
     ProjectDetailComponent.prototype.save = function () {
         var _this = this;
         this.projectService
@@ -42,6 +44,10 @@ var ProjectDetailComponent = (function () {
             _this.goBack(project);
         })
             .catch(function (error) { return _this.error = error; });
+    };
+    ProjectDetailComponent.prototype.gotoIdDetail = function (id) {
+        var link = ['/detail', id];
+        this.router.navigate(link);
     };
     ProjectDetailComponent.prototype.goBack = function (savedProject) {
         if (savedProject === void 0) { savedProject = null; }
@@ -64,7 +70,7 @@ var ProjectDetailComponent = (function () {
             templateUrl: './app/project-detail.component.html',
             styleUrls: ['./app/project-detail.component.css']
         }), 
-        __metadata('design:paramtypes', [project_service_1.ProjectService, router_1.ActivatedRoute])
+        __metadata('design:paramtypes', [project_service_1.ProjectService, router_1.Router, router_1.ActivatedRoute])
     ], ProjectDetailComponent);
     return ProjectDetailComponent;
 }());
