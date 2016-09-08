@@ -1,21 +1,34 @@
 Splash page, contains...
 
 Name, email, phone number on top
-Search bar below, returns:
-|
----> Mini description of pertinent entries
+Search bar below 
+	Label: "What area of experience are you looking for?"
+	Default: "E.g. Typescript, Web Design, CSS"
+	This bar returns returns:
+		* Mini description of pertinent entries
+			- This includes icon and short description
+			- On click, takes the user to the detail page
 
-Familiar languages / systems
+Below this is a nav bar, with wide blocky buttons for four main areas:
 
-Projects in brief, github page
-|
----> View: Expanded details for each project, screenshots to page through
+1. Familiar languages / systems
+		* Includes name of technology and degree of familiarity formatted as a table
 
-Work experience in brief
-|
----> View: Expanded details for work experience, links to websites
+2. Projects in brief, github page
+		* Name, short description, reduced size screenshot
+		* On click, go to new view: 
+			- Expanded details for an individual project
+			- Screenshots to page through
+			- Links to related entries, such as work experience
 
-Other experience, including RAC, education, DMFG
+3. Work experience in brief
+		* Company name, name of role, brief accomplishments
+		* On click, go to new view:
+			- Expanded details for work experience
+			- Screenshots of products?
+			- Links to company websites
+
+4. Other experience, including RAC, education, DMFG
 
 Styling:
 Large text, wide white space, horizontally centered, no/subtle background
