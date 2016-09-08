@@ -27,3 +27,13 @@ button:disabled {
   color: #ccc; 
   cursor: auto;
 }
+.screen-wrapper {
+
+}
+.large-screenshot {
+  display: block;
+  margin: auto;
+  max-height: 600px;
+  max-width: 600px;
+  
+}

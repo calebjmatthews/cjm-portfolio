@@ -3,9 +3,9 @@ export class Project {
 	type: string;
 	name: string;
 	logo: string;
-	screenshot: string[];
+	screenshot: string[] = [];
 	shortDescription: string;
-	longDescription: string[];
+	longDescription: string[] = [];
 	link: number;
 	linkName: string;
 }
