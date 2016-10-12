@@ -67,8 +67,7 @@ var ProjectDetailComponent = (function () {
     ProjectDetailComponent = __decorate([
         core_1.Component({
             selector: 'project-detail',
-            templateUrl: './app/project-detail.component.html',
-            styleUrls: ['./app/project-detail.component.css']
+            templateUrl: './app/project-detail.component.html'
         }), 
         __metadata('design:paramtypes', [project_service_1.ProjectService, router_1.Router, router_1.ActivatedRoute])
     ], ProjectDetailComponent);

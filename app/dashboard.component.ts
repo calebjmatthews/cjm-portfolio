@@ -6,8 +6,7 @@ import { ProjectService } from './project.service';
 
 @Component({
   selector: 'my-dashboard',
-  templateUrl: 'app/dashboard.component.html',
-  styleUrls: ['app/dashboard.component.css']
+  templateUrl: 'app/dashboard.component.html'
 })
 
 export class DashboardComponent implements OnInit { 

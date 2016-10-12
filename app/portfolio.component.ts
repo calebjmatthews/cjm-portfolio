@@ -6,8 +6,7 @@ import { ProjectService } from './project.service';
 
 @Component({
   selector: 'portfolio',
-  templateUrl: './app/portfolio.component.html',
-  styleUrls: ['./app/portfolio.component.css']
+  templateUrl: './app/portfolio.component.html'
 })
 
 export class PortfolioComponent implements OnInit {

@@ -3,8 +3,7 @@ import './rxjs-extensions';
 
 @Component({
   selector: 'my-app',
-  templateUrl: './app/app.component.html',
-  styleUrls: ['./app/app.component.css']
+  templateUrl: './app/app.component.html'
 })
 
 export class AppComponent {

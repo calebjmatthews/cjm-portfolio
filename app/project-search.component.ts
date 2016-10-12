@@ -9,7 +9,6 @@ import { Project }              from './project';
 @Component({
 	selector:    'my-project-search',
 	templateUrl: 'app/project-search.component.html',
-	styleUrls:   ['app/project-search.component.css'],
 	providers:   [ProjectSearchService]
 })
 

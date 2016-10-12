@@ -44,7 +44,6 @@ var ProjectSearchComponent = (function () {
         core_1.Component({
             selector: 'my-project-search',
             templateUrl: 'app/project-search.component.html',
-            styleUrls: ['app/project-search.component.css'],
             providers: [project_search_service_1.ProjectSearchService]
         }), 
         __metadata('design:paramtypes', [project_search_service_1.ProjectSearchService, router_1.Router])
