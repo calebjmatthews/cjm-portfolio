@@ -1,6 +1,8 @@
 <div id="search component">
-	<h4>Project Search</h4>
-	<input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+	<h4>What skills or experience are you looking for?</h4>
+	<input type="search" class="form-control" 
+		placeholder="E.g. Typescript, Web Design, CSS" 
+		#searchBox (keyup)="search(searchBox.value)" />
 	<div>
 		<div *ngFor="let project of arrProjects | async"
 			(click)="gotoDetail(project)" class="search-result" >

@@ -1,6 +1,10 @@
+Navigation bar on the top of all pages
+	* Left alligned: Caleb Matthews, Web Dev
+	* Right alligned: Home, Skills, Projects, Work History, The Rest
+
 Splash page, contains...
 
-Name, email, phone number on top
+Name, email, phone number in jumbotron label
 Search bar below 
 	Label: "What area of experience are you looking for?"
 	Default: "E.g. Typescript, Web Design, CSS"
@@ -9,24 +13,24 @@ Search bar below
 			- This includes icon and short description
 			- On click, takes the user to the detail page
 
-Below this is a nav bar, with wide blocky buttons for four main areas:
+The nav bar on top routes to the following pages:
 
 1. Familiar languages / systems
-		* Includes name of technology and degree of familiarity formatted as a table
+	* Includes name of technology and degree of familiarity formatted as a table
 
 2. Projects in brief, github page
-		* Name, short description, reduced size screenshot
-		* On click, go to new view: 
-			- Expanded details for an individual project
-			- Screenshots to page through
-			- Links to related entries, such as work experience
+	* Name, short description, reduced size screenshot
+	* On click, go to new view: 
+		- Expanded details for an individual project
+		- Screenshots to page through
+		- Links to related entries, such as work experience
 
 3. Work experience in brief
-		* Company name, name of role, brief accomplishments
-		* On click, go to new view:
-			- Expanded details for work experience
-			- Screenshots of products?
-			- Links to company websites
+	* Company name, name of role, brief accomplishments
+	* On click, go to new view:
+		- Expanded details for work experience
+		- Screenshots of products?
+		- Links to company websites
 
 4. Other experience, including RAC, education, DMFG
 

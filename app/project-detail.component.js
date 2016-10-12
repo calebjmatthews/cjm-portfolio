@@ -34,17 +34,6 @@ var ProjectDetailComponent = (function () {
             }
         });
     };
-    // Not used in this implementation
-    ProjectDetailComponent.prototype.save = function () {
-        var _this = this;
-        this.projectService
-            .save(this.project)
-            .then(function (project) {
-            _this.project = project;
-            _this.goBack(project);
-        })
-            .catch(function (error) { return _this.error = error; });
-    };
     ProjectDetailComponent.prototype.gotoIdDetail = function (id) {
         var link = ['/detail', id];
         this.router.navigate(link);

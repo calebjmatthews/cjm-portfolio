@@ -3,20 +3,8 @@
 <ul class="projects">
   <li *ngFor="let project of arrProjects" 
   [class.selected]="project === selProject"
-  (click)="onSelect(project)">
-    <span class="badge">{{project.id + 1}}</span> {{project.name}}
-    <button class="delete-button" (click)="deleteProject(project, $event)">
-    	Delete</button>
+  (click)="gotoDetail(project)">
+    {{project.name}}
   </li>
 </ul>
 <div class="error" *ngIf="error">{{error}}</div>
-<button (click)="addProject()">Add New Project</button>
-<div *ngIf="addingProject">
-	<project-detail (close)="close($event)"></project-detail>
-</div>
-<div *ngIf="selProject">
-  <h2>
-    {{selProject.name}} is the selected project
-  </h2>
-  <button (click)="gotoDetail(selProject)">View Details</button>
-</div>

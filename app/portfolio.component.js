@@ -17,7 +17,6 @@ var PortfolioComponent = (function () {
         this.projectService = projectService;
         this.addingProject = false;
     }
-    PortfolioComponent.prototype.onSelect = function (project) { this.selProject = project; };
     PortfolioComponent.prototype.getProjects = function () {
         var _this = this;
         this.projectService.getProjects().then(function (projects) { return _this.arrProjects = projects; });
@@ -25,23 +24,6 @@ var PortfolioComponent = (function () {
     PortfolioComponent.prototype.gotoDetail = function (project) {
         var link = ['/detail', project.id];
         this.router.navigate(link);
-    };
-    PortfolioComponent.prototype.addProject = function () {
-        this.addingProject = true;
-        this.selProject = null;
-    };
-    PortfolioComponent.prototype.deleteProject = function (project, event) {
-        var _this = this;
-        event.stopPropagation();
-        this.projectService
-            .delete(project)
-            .then(function (res) {
-            _this.arrProjects = _this.arrProjects.filter(function (p) { return p !== project; });
-            if (_this.selProject === project) {
-                _this.selProject = null;
-            }
-        })
-            .catch(function (error) { return _this.error = error; });
     };
     PortfolioComponent.prototype.close = function (savedProject) {
         this.addingProject = false;

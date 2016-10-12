@@ -1,8 +1,25 @@
-<h1>Caleb Matthews, Full Stack Web Developer</h1>
-<h3>Madison, WI</h3>
-<h3>calebjmatthews@gmail.com</h3>
-  <nav>
-    <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
-    <a routerLink="/portfolio" routerLinkActive="active">Portfolio</a>
-  </nav>
+<div class="container">
+	<div class="header clearfix">
+		<nav>
+      <ul class="nav nav-pills pull-right">
+      	<li role="presentation" class="active">
+      		<a routerLink="/dashboard" routerLinkActive="active">Home</a>
+      	</li>
+		    <li role="presentation">
+		    	<a routerLink="/" routerLinkActive="active">Skills</a>
+		    </li>
+		    <li role="presentation">
+		    	<a routerLink="/portfolio" routerLinkActive="active">Projects</a>
+		    </li>
+		    <li role="presentation">
+		    	<a routerLink="/" routerLinkActive="active">Work History</a>
+		    </li>
+		    <li role="presentation">
+		    	<a routerLink="/" routerLinkActive="active">The Rest</a>
+		    </li>
+      </ul>
+    </nav>
+    <h3 class="text-muted">Caleb Matthews</h3>
+	</div>
 	<router-outlet></router-outlet>
+</div>

@@ -11,7 +11,6 @@ import { ProjectService } from './project.service';
 
 export class PortfolioComponent implements OnInit {
 	arrProjects: Project[];
-	selProject: Project;
   error: any;
   addingProject: boolean = false;
 
@@ -21,8 +20,6 @@ export class PortfolioComponent implements OnInit {
 
   }
 
-	onSelect(project: Project) { this.selProject = project; }
-
 	getProjects() {
     this.projectService.getProjects().then(projects => this.arrProjects = projects);
   }
@@ -30,22 +27,6 @@ export class PortfolioComponent implements OnInit {
   gotoDetail(project: Project) {
     let link = ['/detail', project.id];
     this.router.navigate(link);
-  }
-
-  addProject(): void {
-    this.addingProject = true;
-    this.selProject = null;
-  }
-
-  deleteProject(project: Project, event: any): void {
-    event.stopPropagation();
-    this.projectService
-        .delete(project)
-        .then(res => {
-          this.arrProjects = this.arrProjects.filter(p => p !== project);
-          if (this.selProject === project) { this.selProject = null; }
-        })
-        .catch(error => this.error = error);
   }
 
   close(savedProject: Project): void {

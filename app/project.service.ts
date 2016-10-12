@@ -27,44 +27,4 @@ export class ProjectService {
     return this.getProjects()
       .then(projects => projects.find(project => project.id === id));
   }
-
-  private post(project: Project): Promise<Project> {
-    let headers = new Headers({'Content-Type': 'application/json'});
-
-    return this.http
-               .post(this.projectsUrl, JSON.stringify(project), {headers: headers})
-               .toPromise()
-               .then(res => res.json().data)
-               .catch(this.handleError);
-  }
-
-  private put(project: Project): Promise<Project> {
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    let url = `${this.projectsUrl}/${project.id}`;
-
-    return this.http
-               .put(url, JSON.stringify(project), {headers: headers})
-               .toPromise()
-               .then(() => project)
-               .catch(this.handleError);
-  }
-
-  delete(project: Project): Promise<Response>  {
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    let url = `${this.projectsUrl}/${project.id}`;
-
-    return this.http
-               .delete(url, {headers: headers})
-               .toPromise()
-               .catch(this.handleError);
-  }
-
-  save(project: Project): Promise<Project> {
-    if (project.id) {
-      return this.put(project);
-    }
-    return this.post(project)
-  }
 }

@@ -30,39 +30,6 @@ var ProjectService = (function () {
         return this.getProjects()
             .then(function (projects) { return projects.find(function (project) { return project.id === id; }); });
     };
-    ProjectService.prototype.post = function (project) {
-        var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
-        return this.http
-            .post(this.projectsUrl, JSON.stringify(project), { headers: headers })
-            .toPromise()
-            .then(function (res) { return res.json().data; })
-            .catch(this.handleError);
-    };
-    ProjectService.prototype.put = function (project) {
-        var headers = new http_1.Headers();
-        headers.append('Content-Type', 'application/json');
-        var url = this.projectsUrl + "/" + project.id;
-        return this.http
-            .put(url, JSON.stringify(project), { headers: headers })
-            .toPromise()
-            .then(function () { return project; })
-            .catch(this.handleError);
-    };
-    ProjectService.prototype.delete = function (project) {
-        var headers = new http_1.Headers();
-        headers.append('Content-Type', 'application/json');
-        var url = this.projectsUrl + "/" + project.id;
-        return this.http
-            .delete(url, { headers: headers })
-            .toPromise()
-            .catch(this.handleError);
-    };
-    ProjectService.prototype.save = function (project) {
-        if (project.id) {
-            return this.put(project);
-        }
-        return this.post(project);
-    };
     ProjectService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])

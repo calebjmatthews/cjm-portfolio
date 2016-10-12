@@ -35,17 +35,6 @@ export class ProjectDetailComponent implements OnInit {
 		});
 	}
 
-	// Not used in this implementation
-	save(): void {
-		this.projectService
-		    .save(this.project)
-		    .then(project => {
-		    	this.project = project;
-		    	this.goBack(project);
-		    })
-		    .catch(error => this.error = error);
-	}
-
 	gotoIdDetail(id) {
 		let link = ['/detail', id];
 		this.router.navigate(link);
