@@ -4,6 +4,7 @@ var Project = (function () {
         this.screenshots = [];
         this.captions = [];
         this.longDescription = [];
+        this.tags = [];
     }
     return Project;
 }());

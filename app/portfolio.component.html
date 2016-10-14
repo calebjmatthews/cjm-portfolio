@@ -1,10 +1,10 @@
 <h1>{{title}}</h1>
 <h2>Projects</h2>
 <ul class="projects">
-  <li *ngFor="let project of arrProjects" 
-  [class.selected]="project === selProject"
-  (click)="gotoDetail(project)">
-    {{project.name}}
-  </li>
+	<div *ngFor="let project of arrProjects">
+		<li *ngIf="project.type==='Programming'" (click)="gotoDetail(project)">
+			{{project.name}}
+		</li>
+	</div>
 </ul>
 <div class="error" *ngIf="error">{{error}}</div>

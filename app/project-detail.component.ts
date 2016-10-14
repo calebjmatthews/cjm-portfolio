@@ -51,7 +51,6 @@ export class ProjectDetailComponent implements OnInit {
 			else if (this.project.captions[0] != undefined) {
 				tCaption = this.project.captions[0];
 			}
-			// else { this.slides[iii].text = ""; }
 			this.slides.push({image: this.project.screenshots[iii], text: tCaption});
 		}
 	}

@@ -4,7 +4,7 @@ var InMemoryDataService = (function () {
     }
     InMemoryDataService.prototype.createDb = function () {
         var projects = [
-            { id: 0,
+            { id: 1,
                 type: "Programming",
                 name: "Mammal Herbivory Simulator",
                 logo: "app/images/angularjs.png",
@@ -29,7 +29,7 @@ var InMemoryDataService = (function () {
                 link: 1,
                 linkName: "Information Systems Resource Support Technician"
             },
-            { id: 1,
+            { id: 2,
                 type: "Programming",
                 name: "Clinical Payments Database",
                 logo: "app/images/msaccess.png",
@@ -42,15 +42,16 @@ var InMemoryDataService = (function () {
                         "several active clinical studies"),
                     ("Utilized SQL to connect to electronic data capture systems for study visit " +
                         "information"),
-                    ("Performed budget calculation of payments and to subjects, IRBs, and clinics") +
-                        ("Automated record keeping and generation of customer letters and payment " +
-                            "requests"),
+                    ("Performed budget calculation of payments and to subjects, IRBs, and " +
+                        " clinics"),
+                    ("Automated record keeping and generation of customer letters and payment " +
+                        "requests"),
                     ("Also created instructional documents and training of peers in the use of " +
                         "this tool")],
                 link: 1,
                 linkName: "Compliance Coordinator"
             },
-            { id: 2,
+            { id: 3,
                 type: "Programming",
                 name: "FDA Panel Data Analysis",
                 logo: "app/images/msvba.png",
@@ -73,7 +74,7 @@ var InMemoryDataService = (function () {
                 link: 1,
                 linkName: "Regulatory Affairs Specialist II"
             },
-            { id: 3,
+            { id: 4,
                 type: "Programming",
                 name: "Archipel.io",
                 logo: "app/images/typescript.png",
@@ -91,54 +92,89 @@ var InMemoryDataService = (function () {
                 link: null,
                 linkName: ""
             },
-            { id: 4,
-                type: "Employment",
-                name: "Product Compliance Specialist",
-                logo: "",
-                screenshots: [""],
-                captions: [("")],
-                shortDescription: (""),
-                longDescription: [("")],
-                link: null,
-                linkName: ""
-            },
             { id: 5,
                 type: "Employment",
                 name: "Information Systems Resource Support Technician",
-                logo: "",
-                screenshots: [""],
-                captions: [("")],
-                shortDescription: (""),
-                longDescription: [("")],
+                employer: "UW Madison Kruger Labs",
+                logo: "app/images/uwmadison.png",
+                screenshots: ["app/images/browse1.png", "app/images/browse2.png",
+                    "app/images/browse3"],
+                captions: ["Simulation visualization and statistics",
+                    "User modifiable fields", "Modal window with additional options"],
+                shortDescription: ("My primary aim has been to develop a program to address " +
+                    "scientific questions about the validity of two different deer population " +
+                    "estimation equations"),
+                longDescription: [("Wrote an algorithm-driven program in Javascript and " +
+                        "AngularJS designed to simulate camera-capture of mammal browsing"),
+                    ("Wrote technical documentation detailing the function of the code and " +
+                        "rationale behind design decisions"),
+                    ("Continue to support the program through multiple code revisions and " +
+                        "requests for additional features")],
                 link: null,
                 linkName: ""
             },
             { id: 6,
                 type: "Employment",
-                name: "Regulatory Affairs Specialist II",
-                logo: "",
-                screenshots: [""],
-                captions: [("")],
-                shortDescription: (""),
-                longDescription: [("")],
+                name: "Product Compliance Specialist",
+                employer: "Accuray, Inc.",
+                logo: "app/images/accuray.png",
+                screenshots: ["app/images/accuray1.png", "app/images/accuray2.png"],
+                captions: ["A TomoTehrapy device, Accuray's flagship product",
+                    "A CyberKnife device"],
+                shortDescription: ("Managed medical device events for TomoTherapy " +
+                    "and CyberKnife devices, and performed a highly effective rework of the " +
+                    "existing event coding categorization system"),
+                longDescription: [("Initiated and managed a rework of the event coding " +
+                        "system, which allowed product events to be broken down with greater " +
+                        "consistency and in greater granularity"),
+                    ("This project involved working with  product experts and users of the " +
+                        "previous coding system, and will be used as a primary driver of " +
+                        "product investigation thresholds moving forward"),
+                    ("The set of event codes was monitored and adjusted biweekly to capture " +
+                        "changing trends from the field"),
+                    ("Processed medical device events to ensure accuracy and completeness, as " +
+                        "well as to escalate for further investigation when appropriate"),
+                    ("Performed product investigations to determine root cause and potential " +
+                        "impact in cases where the device malfunctioned or did not meet " +
+                        "specification"),
+                    ("Wrote and managed an Event Report regarding field service errors, " +
+                        "including presentation to the CAPA Review Board")],
                 link: null,
                 linkName: ""
             },
             { id: 7,
                 type: "Employment",
-                name: "Quality Coordinator",
-                logo: "",
+                name: "Regulatory Affairs Specialist II",
+                employer: "Cochlear Americas",
+                logo: "cochlear.png",
                 screenshots: [""],
                 captions: [("")],
                 shortDescription: (""),
-                longDescription: [("")],
+                longDescription: [("Managed a Class III product recall whose scope " +
+                        "extended to the United States and Canada, from initial notice to recall " +
+                        "closure"),
+                    ("Audited clinical study sites to ensure proper informed consent, " +
+                        "adherence to GCP and study protocol, validity of records, and " +
+                        "calibration of equipment"),
+                    ("Author of over a dozen successful regulatory submissions"),
+                    ("Principal member of Class III PMA Panel Meeting team, roles included " +
+                        "responsibility for secondary analysis and graphical presentation of " +
+                        "data, creation and organization of backup materials, and ad hoc data " +
+                        "analysis and presentation during meeting"),
+                    ("Wrote regulatory procedures and work instructions"),
+                    ("Regulatory member of Content Review Board, which reviewed marketing " +
+                        "materials (patient-, clinic-, and internal-facing) to ensure compliance " +
+                        "with approved product claims, clinical trial data, and FDA regulations"),
+                    ("Participated in several distributor site audits in regulatory advisory " +
+                        "and document retrieval roles")],
                 link: null,
                 linkName: ""
             },
             { id: 8,
-                type: "Skill",
-                name: "",
-                logo: "",
+                type: "Employment",
+                name: "Quality Coordinator",
+                employer: "Cochlear Americas",
+                logo: "cochlear.png",
                 screenshots: [""],
                 captions: [("")],
                 shortDescription: (""),
@@ -158,6 +194,17 @@ var InMemoryDataService = (function () {
                 linkName: ""
             },
             { id: 10,
+                type: "Skill",
+                name: "",
+                logo: "",
+                screenshots: [""],
+                captions: [("")],
+                shortDescription: (""),
+                longDescription: [("")],
+                link: null,
+                linkName: ""
+            },
+            { id: 11,
                 type: "Skill",
                 name: "",
                 logo: "",
