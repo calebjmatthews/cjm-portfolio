@@ -15,15 +15,15 @@ Search bar below
 
 The nav bar on top routes to the following pages:
 
-1. Familiar languages / systems
-	* Includes name of technology and degree of familiarity formatted as a table
-
-2. Projects in brief, github page
+1. Projects in brief, github page
 	* Name, short description, reduced size screenshot
 	* On click, go to new view: 
 		- Expanded details for an individual project
 		- Screenshots to page through
 		- Links to related entries, such as work experience
+
+2. Familiar languages / systems
+	* Includes name of technology and degree of familiarity formatted as a table
 
 3. Work experience in brief
 	* Company name, name of role, brief accomplishments

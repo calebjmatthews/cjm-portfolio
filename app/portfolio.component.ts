@@ -17,7 +17,6 @@ export class PortfolioComponent implements OnInit {
 	constructor(
     private router: Router,
     private projectService: ProjectService) {
-
   }
 
 	getProjects() {
