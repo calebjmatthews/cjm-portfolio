@@ -1,0 +1,26 @@
+img {
+	display: block;
+	margin: auto;
+	max-width: 750px;
+	max-height: 350px;
+}
+h2 {
+	text-align: center;
+	margin: 0 0 25px 0;
+}
+ul {
+	margin: auto;
+	max-width: 500px;
+}
+li {
+	margin: 5px 0 5px 0;
+}
+
+.addlInfo {
+	margin: 0 0 25px 0;
+}
+.cjmpSlide {
+	width: 750px;
+	height: 450px;
+	background-color: #dce0e8;
+}

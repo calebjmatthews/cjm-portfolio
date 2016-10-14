@@ -44,6 +44,14 @@ ul {
   min-width: 425px;
 }
 
+.cjmpLink {
+  color: #0645AD;
+}
+.cjmpLink:hover {
+  color:  #0B0080;
+  text-decoration: underline;
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   /* Remove the padding we set earlier */

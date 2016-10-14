@@ -15,6 +15,8 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
+// Imports for Angular2 Bootstrap
+var ng2_bootstrap_1 = require('ng2-bootstrap/ng2-bootstrap');
 // Imports for loading & configuring the in-memory web api
 var http_2 = require('@angular/http');
 var angular2_in_memory_web_api_1 = require('angular2-in-memory-web-api');
@@ -31,7 +33,7 @@ var AppModule = (function () {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, app_routing_1.routing, http_1.HttpModule],
+            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, app_routing_1.routing, http_1.HttpModule, ng2_bootstrap_1.CarouselModule],
             declarations: [app_component_1.AppComponent, dashboard_component_1.DashboardComponent, portfolio_component_1.PortfolioComponent,
                 project_detail_component_1.ProjectDetailComponent, project_search_component_1.ProjectSearchComponent],
             providers: [project_service_1.ProjectService,

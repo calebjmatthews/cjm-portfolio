@@ -7,6 +7,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 import { HttpModule }    from '@angular/http';
 
+// Imports for Angular2 Bootstrap
+import { CarouselModule } from 'ng2-bootstrap/ng2-bootstrap';
+
 // Imports for loading & configuring the in-memory web api
 import { XHRBackend }                        from '@angular/http';
 import { InMemoryBackendService, SEED_DATA } from 'angular2-in-memory-web-api';
@@ -21,7 +24,7 @@ import { ProjectService }         from './project.service';
 import { ProjectSearchComponent } from './project-search.component';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, routing, HttpModule ],
+  imports:      [ BrowserModule, FormsModule, routing, HttpModule, CarouselModule ],
   declarations: [ AppComponent, DashboardComponent, PortfolioComponent, 
     ProjectDetailComponent, ProjectSearchComponent ],
   providers:    [ ProjectService, 

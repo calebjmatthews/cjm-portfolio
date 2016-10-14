@@ -18,6 +18,7 @@ var ProjectDetailComponent = (function () {
         this.router = router;
         this.route = route;
         this.close = new core_1.EventEmitter();
+        this.slides = [];
         this.navigated = false;
     }
     ProjectDetailComponent.prototype.ngOnInit = function () {
@@ -26,13 +27,29 @@ var ProjectDetailComponent = (function () {
             if (params['id'] != undefined) {
                 var id = +params['id'];
                 _this.navigated = true;
-                _this.projectService.getProject(id).then(function (project) { return _this.project = project; });
+                _this.projectService.getProject(id).then(function (project) {
+                    _this.project = project;
+                    _this.setSlides();
+                });
             }
             else {
                 _this.navigated = false;
                 _this.project = new project_1.Project();
             }
         });
+    };
+    ProjectDetailComponent.prototype.setSlides = function () {
+        for (var iii = 0; iii < this.project.screenshots.length; iii++) {
+            var tCaption = void 0;
+            if (this.project.captions[iii] != undefined) {
+                tCaption = this.project.captions[iii];
+            }
+            else if (this.project.captions[0] != undefined) {
+                tCaption = this.project.captions[0];
+            }
+            // else { this.slides[iii].text = ""; }
+            this.slides.push({ image: this.project.screenshots[iii], text: tCaption });
+        }
     };
     ProjectDetailComponent.prototype.gotoIdDetail = function (id) {
         var link = ['/detail', id];
@@ -56,7 +73,8 @@ var ProjectDetailComponent = (function () {
     ProjectDetailComponent = __decorate([
         core_1.Component({
             selector: 'project-detail',
-            templateUrl: './app/project-detail.component.html'
+            templateUrl: './app/project-detail.component.html',
+            styleUrls: ['./app/project-detail.component.css']
         }), 
         __metadata('design:paramtypes', [project_service_1.ProjectService, router_1.Router, router_1.ActivatedRoute])
     ], ProjectDetailComponent);

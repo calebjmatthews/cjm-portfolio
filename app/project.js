@@ -1,7 +1,8 @@
 "use strict";
 var Project = (function () {
     function Project() {
-        this.screenshot = [];
+        this.screenshots = [];
+        this.captions = [];
         this.longDescription = [];
     }
     return Project;
