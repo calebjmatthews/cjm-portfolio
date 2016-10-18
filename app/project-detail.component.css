@@ -25,3 +25,13 @@ li {
 	height: 450px;
 	background-color: #dce0e8;
 }
+.cjmpSDContainer {
+	position: relative;
+	left: calc(-50vw + 50%);
+	width: 100vw;
+	margin: 20px 0 0 0;
+	padding: 5px;
+}
+.cjmpShortDescription {
+	text-align: center;
+}

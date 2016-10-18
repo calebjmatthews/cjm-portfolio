@@ -20,13 +20,14 @@ import { routing }                from './app.routing';
 import { DashboardComponent }     from './dashboard.component';
 import { PortfolioComponent }     from './portfolio.component';
 import { ProjectDetailComponent } from './project-detail.component';
+import { ProjectStubComponent }   from './project-stub.component';
 import { ProjectService }         from './project.service';
 import { ProjectSearchComponent } from './project-search.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, routing, HttpModule, CarouselModule ],
   declarations: [ AppComponent, DashboardComponent, PortfolioComponent, 
-    ProjectDetailComponent, ProjectSearchComponent ],
+    ProjectDetailComponent, ProjectStubComponent, ProjectSearchComponent ],
   providers:    [ ProjectService, 
     { provide: XHRBackend, useClass: InMemoryBackendService }, // in-mem server
     { provide: SEED_DATA,  useClass: InMemoryDataService }     // in-mem server

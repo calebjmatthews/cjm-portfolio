@@ -1,9 +1,9 @@
-<h1>{{title}}</h1>
 <h2>Projects</h2>
-<ul class="projects">
+<ul class="list-unstyled">
 	<div *ngFor="let project of arrProjects">
 		<li *ngIf="project.type==='Programming'" (click)="gotoDetail(project)">
-			{{project.name}}
+			<project-stub [givenId] = "project.id">
+			</project-stub>
 		</li>
 	</div>
 </ul>

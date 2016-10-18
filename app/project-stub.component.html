@@ -1,0 +1,23 @@
+<div class="row cjmpStub" *ngIf="project">
+	<div class="col-md-1">
+		<img [src]="project.logo" />
+	</div>
+	<div class="cjmpStubText col-md-11" [ngSwitch]="project.type">
+
+		<span *ngSwitchCase="'Programming'">
+			<h4>{{ project.name }}</h4>
+			{{ project.shortDescription }}
+		</span>
+
+		<span *ngSwitchCase="'Employment'">
+			<h4>{{ project.name }} : {{ project.employer }}</h4>
+			{{ project.shortDescription }}
+		</span>
+
+		<span *ngSwitchCase="'Skill'">
+			<h4>{{ project.name }}</h4>
+			Familiarity: {{ project.familiarity }}
+		</span>
+
+	</div>
+</div>

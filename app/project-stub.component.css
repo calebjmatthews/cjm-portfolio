@@ -1,0 +1,21 @@
+li {
+
+}
+img {
+	max-width: 50px;
+	max-height: 50px;
+}
+
+.cjmpStub {
+	margin: 5px 10px 5px 10px;
+	padding: 10px;
+	border: 1px solid #7a7a7a;
+	border-radius: 5px;
+	cursor: default;
+}
+.cjmpStub:hover {
+	background-color: #e5e5e5;
+}
+.cjmpStubText {
+	
+}
