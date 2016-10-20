@@ -1,9 +1,14 @@
-li {
-
-}
 img {
-	max-width: 50px;
-	max-height: 50px;
+	max-height: 100%;  
+  max-width: 100%; 
+  width: auto;
+  height: auto;
+  position: absolute;  
+  top: 0;  
+  bottom: 0;  
+  left: 0;  
+  right: 0;  
+  margin: auto;
 }
 
 .cjmpStub {
@@ -11,11 +16,17 @@ img {
 	padding: 10px;
 	border: 1px solid #7a7a7a;
 	border-radius: 5px;
-	cursor: default;
+	cursor: pointer;
 }
 .cjmpStub:hover {
 	background-color: #e5e5e5;
 }
-.cjmpStubText {
-	
+.cjmpImgContainer {
+	margin: 5px;
+	float: left;
+}
+.cjmpFrame {
+	height: 50px;
+  width: 50px;
+  position: relative;
 }

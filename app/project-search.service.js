@@ -16,7 +16,7 @@ var ProjectSearchService = (function () {
     }
     ProjectSearchService.prototype.search = function (term) {
         return this.http
-            .get("app/projects/?name=" + term)
+            .get("app/projects/?tags=" + term)
             .map(function (r) { return r.json().data; });
     };
     ProjectSearchService = __decorate([

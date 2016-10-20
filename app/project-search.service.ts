@@ -11,7 +11,7 @@ export class ProjectSearchService {
 
 	search(term: string): Observable<Project[]> {
 		return this.http
-		           .get(`app/projects/?name=${term}`)
+		           .get(`app/projects/?tags=${term}`)
 		           .map((r: Response) => r.json().data as Project[]);
 	}
 }

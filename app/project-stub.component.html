@@ -1,8 +1,10 @@
-<div class="row cjmpStub" *ngIf="project">
-	<div class="col-md-1">
-		<img [src]="project.logo" />
+<div class="cjmpStub" *ngIf="project">
+	<div class="cjmpImgContainer">
+		<div class="cjmpFrame">
+			<img [src]="project.logo" />
+		</div>
 	</div>
-	<div class="cjmpStubText col-md-11" [ngSwitch]="project.type">
+	<div [ngSwitch]="project.type">
 
 		<span *ngSwitchCase="'Programming'">
 			<h4>{{ project.name }}</h4>
@@ -10,7 +12,7 @@
 		</span>
 
 		<span *ngSwitchCase="'Employment'">
-			<h4>{{ project.name }} : {{ project.employer }}</h4>
+			<h4>{{ project.name }} at {{ project.employer }}</h4>
 			{{ project.shortDescription }}
 		</span>
 

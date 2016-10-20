@@ -6,7 +6,7 @@
 	<div>
 		<div *ngFor="let project of arrProjects | async"
 			(click)="gotoDetail(project)" class="search-result" >
-			{{project.name}}
+			<project-stub [givenId]="project.id"></project-stub>
 		</div>
 	</div>
 </div>

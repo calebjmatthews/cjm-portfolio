@@ -14,7 +14,7 @@ var InMemoryDataService = (function () {
                     "User modifiable fields", "Modal window with additional options"],
                 shortDescription: ("A user-modifiable simulation of organism movement, " +
                     "camera capture accuracy, and population estimation"),
-                longDescription: [("An algorithm-driven program in Javascript and " +
+                longDescription: [("An algorithm-driven program in Javascript, Bootstrap, " +
                         "Angular1 designed to simulate camera observation research of mammal " +
                         "herbivory"),
                     ("This modeling software was developed as a browser application, " +
@@ -26,8 +26,12 @@ var InMemoryDataService = (function () {
                         "size/placement"),
                     ("Automatically generated an array of statistics to compare two " +
                         "competing population estimation methods")],
-                link: 1,
-                linkName: "Information Systems Resource Support Technician"
+                link: 5,
+                linkName: "Information Systems Resource Support Technician",
+                tags: ["Mammal Herbivory Simulator",
+                    "Information Systems Resource Support Technician", "AngularJS", "Angular1",
+                    "Javascript", "Bootstrap", "AngularJS", "Angular1", "Ecological Modeling",
+                    "UW Madison", "Eric Kruger", "Random Walk", "HTML Canvas", "Web Design"]
             },
             { id: 2,
                 type: "Programming",
@@ -48,8 +52,11 @@ var InMemoryDataService = (function () {
                         "requests"),
                     ("Also created instructional documents and training of peers in the use of " +
                         "this tool")],
-                link: 1,
-                linkName: "Compliance Coordinator"
+                link: 8,
+                linkName: "Quality Coordinator",
+                tags: ["Clinical Payments Database", "Compliance Coordinator",
+                    "Cochlear Americas", "Microsoft Access", "Database", "SQL",
+                    "Clinical Study Payments", "Protocol and SOP Writing"]
             },
             { id: 3,
                 type: "Programming",
@@ -71,8 +78,13 @@ var InMemoryDataService = (function () {
                         "tool was used successfully to create several supporting slides"),
                     ("The meeting was a success; the Hybrid Implant was recommended for " +
                         "approval by the panel of experts")],
-                link: 1,
-                linkName: "Regulatory Affairs Specialist II"
+                link: 7,
+                linkName: "Regulatory Affairs Specialist II",
+                tags: ["FDA Panel Data Analysis", "Regulatory Affairs Specialist II",
+                    "Cochlear Americas", "Cochlear Hybrid Implant",
+                    "Food and Drug Administration",
+                    "Class III Medical Device PMA Panel Meeting", "Microsoft Excel",
+                    "Visual Basic for Applications", "Data Presentation"]
             },
             { id: 4,
                 type: "Programming",
@@ -90,7 +102,9 @@ var InMemoryDataService = (function () {
                     ("It utilizes a custom-made (x,y) point and (x,y,z) hexagon system " +
                         "of classes and functions for UI and graphical display")],
                 link: null,
-                linkName: ""
+                linkName: "",
+                tags: ["Archipel.io", "Typescript", "Javascript", "PixiJS", "Web Design",
+                    "WebGL"]
             },
             { id: 5,
                 type: "Employment",
