@@ -1,6 +1,10 @@
 {
   "name": "cjmportfolio",
+  "description": "A progrmming portfolio made in Angular2",
   "version": "1.0.0",
+  "engines": {
+    "node": "4.4.7"
+  },
   "scripts": {
     "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
     "lite": "lite-server",
