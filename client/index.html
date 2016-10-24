@@ -1,0 +1,45 @@
+<!-- 
+Thank you for taking the time to visit my development portfolio.
+I'd be more than happy to talk: whether about employment, Angular2, 
+or programming in general.
+You can call me at (970)227-3928, or email me at calebjmatthews@gmail.com.  Best,
+-Caleb 
+-->
+
+<html>
+  <head>
+
+    <!-- Initial settings needed by Bootstrap -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="/">
+    <link rel="stylesheet" 
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.css">
+
+    <title>Caleb Matthews, Web Dev</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Load libraries -->
+    <script src="libs/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="libs/systemjs/dist/system.src.js"></script>
+    <script src="libs/rxjs/bundles/Rx.js"></script>
+    <script src="libs/angular2/bundles/angular2.dev.js"></script>
+    <script src="libs/angular2/bundles/router.dev.js"></script>
+
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="systemjs.config.js"></script>
+    <script>
+
+    System.import('app').catch(function(err){ console.error(err); });
+    </script>
+  </head>
+
+  <body>
+    <my-app>Loading...</my-app>
+  </body>
+  
+</html>
