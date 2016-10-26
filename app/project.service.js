@@ -8,33 +8,32 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var http_1 = require('@angular/http');
+const core_1 = require('@angular/core');
+const http_1 = require('@angular/http');
 require('rxjs/add/operator/toPromise');
-var ProjectService = (function () {
-    function ProjectService(http) {
+let ProjectService = class ProjectService {
+    constructor(http) {
         this.http = http;
         this.projectsUrl = 'app/projects'; // URL to web api
     }
-    ProjectService.prototype.getProjects = function () {
+    getProjects() {
         return this.http.get(this.projectsUrl)
             .toPromise()
-            .then(function (response) { return response.json().data; })
+            .then(response => response.json().data)
             .catch(this.handleError);
-    };
-    ProjectService.prototype.handleError = function (error) {
+    }
+    handleError(error) {
         console.error('An error occurred', error);
         return Promise.reject(error.message || error);
-    };
-    ProjectService.prototype.getProject = function (id) {
+    }
+    getProject(id) {
         return this.getProjects()
-            .then(function (projects) { return projects.find(function (project) { return project.id === id; }); });
-    };
-    ProjectService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http])
-    ], ProjectService);
-    return ProjectService;
-}());
+            .then(projects => projects.find(project => project.id === id));
+    }
+};
+ProjectService = __decorate([
+    core_1.Injectable(), 
+    __metadata('design:paramtypes', [http_1.Http])
+], ProjectService);
 exports.ProjectService = ProjectService;
 //# sourceMappingURL=project.service.js.map

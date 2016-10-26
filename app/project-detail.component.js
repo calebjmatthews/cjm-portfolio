@@ -8,12 +8,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var project_1 = require('./project');
-var project_service_1 = require('./project.service');
-var ProjectDetailComponent = (function () {
-    function ProjectDetailComponent(projectService, router, route) {
+const core_1 = require('@angular/core');
+const router_1 = require('@angular/router');
+const project_1 = require('./project');
+const project_service_1 = require('./project.service');
+let ProjectDetailComponent = class ProjectDetailComponent {
+    constructor(projectService, router, route) {
         this.projectService = projectService;
         this.router = router;
         this.route = route;
@@ -21,26 +21,25 @@ var ProjectDetailComponent = (function () {
         this.slides = [];
         this.navigated = false;
     }
-    ProjectDetailComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.route.params.forEach(function (params) {
+    ngOnInit() {
+        this.route.params.forEach((params) => {
             if (params['id'] != undefined) {
-                var id = +params['id'];
-                _this.navigated = true;
-                _this.projectService.getProject(id).then(function (project) {
-                    _this.project = project;
-                    _this.setSlides();
+                let id = +params['id'];
+                this.navigated = true;
+                this.projectService.getProject(id).then(project => {
+                    this.project = project;
+                    this.setSlides();
                 });
             }
             else {
-                _this.navigated = false;
-                _this.project = new project_1.Project();
+                this.navigated = false;
+                this.project = new project_1.Project();
             }
         });
-    };
-    ProjectDetailComponent.prototype.setSlides = function () {
-        for (var iii = 0; iii < this.project.screenshots.length; iii++) {
-            var tCaption = void 0;
+    }
+    setSlides() {
+        for (let iii = 0; iii < this.project.screenshots.length; iii++) {
+            let tCaption;
             if (this.project.captions[iii] != undefined) {
                 tCaption = this.project.captions[iii];
             }
@@ -49,35 +48,33 @@ var ProjectDetailComponent = (function () {
             }
             this.slides.push({ image: this.project.screenshots[iii], text: tCaption });
         }
-    };
-    ProjectDetailComponent.prototype.gotoIdDetail = function (id) {
-        var link = ['/detail', id];
+    }
+    gotoIdDetail(id) {
+        let link = ['/detail', id];
         this.router.navigate(link);
-    };
-    ProjectDetailComponent.prototype.goBack = function (savedProject) {
-        if (savedProject === void 0) { savedProject = null; }
+    }
+    goBack(savedProject = null) {
         this.close.emit(savedProject);
         if (this.navigated) {
             window.history.back();
         }
-    };
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', project_1.Project)
-    ], ProjectDetailComponent.prototype, "project", void 0);
-    __decorate([
-        core_1.Output(), 
-        __metadata('design:type', Object)
-    ], ProjectDetailComponent.prototype, "close", void 0);
-    ProjectDetailComponent = __decorate([
-        core_1.Component({
-            selector: 'project-detail',
-            templateUrl: './app/project-detail.component.html',
-            styleUrls: ['./app/project-detail.component.css']
-        }), 
-        __metadata('design:paramtypes', [project_service_1.ProjectService, router_1.Router, router_1.ActivatedRoute])
-    ], ProjectDetailComponent);
-    return ProjectDetailComponent;
-}());
+    }
+};
+__decorate([
+    core_1.Input(), 
+    __metadata('design:type', project_1.Project)
+], ProjectDetailComponent.prototype, "project", void 0);
+__decorate([
+    core_1.Output(), 
+    __metadata('design:type', Object)
+], ProjectDetailComponent.prototype, "close", void 0);
+ProjectDetailComponent = __decorate([
+    core_1.Component({
+        selector: 'project-detail',
+        templateUrl: './app/project-detail.component.html',
+        styleUrls: ['./app/project-detail.component.css']
+    }), 
+    __metadata('design:paramtypes', [project_service_1.ProjectService, router_1.Router, router_1.ActivatedRoute])
+], ProjectDetailComponent);
 exports.ProjectDetailComponent = ProjectDetailComponent;
 //# sourceMappingURL=project-detail.component.js.map

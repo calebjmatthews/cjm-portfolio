@@ -8,32 +8,30 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var project_service_1 = require('./project.service');
-var DashboardComponent = (function () {
-    function DashboardComponent(router, projectService) {
+const core_1 = require('@angular/core');
+const router_1 = require('@angular/router');
+const project_service_1 = require('./project.service');
+let DashboardComponent = class DashboardComponent {
+    constructor(router, projectService) {
         this.router = router;
         this.projectService = projectService;
         this.arrProjects = [];
     }
-    DashboardComponent.prototype.ngOnInit = function () {
-        var _this = this;
+    ngOnInit() {
         this.projectService.getProjects()
-            .then(function (arrProjects) { return _this.arrProjects = arrProjects.slice(0, 4); });
-    };
-    DashboardComponent.prototype.gotoDetail = function (project) {
-        var link = ['/detail', project.id];
+            .then(arrProjects => this.arrProjects = arrProjects.slice(0, 4));
+    }
+    gotoDetail(project) {
+        let link = ['/detail', project.id];
         this.router.navigate(link);
-    };
-    DashboardComponent = __decorate([
-        core_1.Component({
-            selector: 'my-dashboard',
-            templateUrl: 'app/dashboard.component.html'
-        }), 
-        __metadata('design:paramtypes', [router_1.Router, project_service_1.ProjectService])
-    ], DashboardComponent);
-    return DashboardComponent;
-}());
+    }
+};
+DashboardComponent = __decorate([
+    core_1.Component({
+        selector: 'my-dashboard',
+        templateUrl: 'app/dashboard.component.html'
+    }), 
+    __metadata('design:paramtypes', [router_1.Router, project_service_1.ProjectService])
+], DashboardComponent);
 exports.DashboardComponent = DashboardComponent;
 //# sourceMappingURL=dashboard.component.js.map
