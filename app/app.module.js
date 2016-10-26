@@ -19,8 +19,7 @@ var http_1 = require('@angular/http');
 var ng2_bootstrap_1 = require('ng2-bootstrap/ng2-bootstrap');
 // Imports for loading & configuring the in-memory web api
 var http_2 = require('@angular/http');
-var angular2_in_memory_web_api_1 = require('angular2-in-memory-web-api');
-var in_memory_data_service_1 = require('./in-memory-data.service');
+var angular_in_memory_web_api_1 = require('angular-in-memory-web-api');
 var app_component_1 = require('./app.component');
 var app_routing_1 = require('./app.routing');
 var dashboard_component_1 = require('./dashboard.component');
@@ -38,8 +37,7 @@ var AppModule = (function () {
             declarations: [app_component_1.AppComponent, dashboard_component_1.DashboardComponent, portfolio_component_1.PortfolioComponent,
                 project_detail_component_1.ProjectDetailComponent, project_stub_component_1.ProjectStubComponent, project_search_component_1.ProjectSearchComponent],
             providers: [project_service_1.ProjectService,
-                { provide: http_2.XHRBackend, useClass: angular2_in_memory_web_api_1.InMemoryBackendService },
-                { provide: angular2_in_memory_web_api_1.SEED_DATA, useClass: in_memory_data_service_1.InMemoryDataService } // in-mem server
+                { provide: http_2.XHRBackend, useClass: angular_in_memory_web_api_1.InMemoryBackendService },
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 
