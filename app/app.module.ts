@@ -12,7 +12,7 @@ import { CarouselModule } from 'ng2-bootstrap/ng2-bootstrap';
 
 // Imports for loading & configuring the in-memory web api
 import { XHRBackend }                        from '@angular/http';
-import { InMemoryBackendService } from 'angular-in-memory-web-api';
+import { InMemoryBackendService, SEED_DATA } from 'angular2-in-memory-web-api';
 import { InMemoryDataService }               from './in-memory-data.service';
 
 import { AppComponent }           from './app.component';
@@ -30,6 +30,7 @@ import { ProjectSearchComponent } from './project-search.component';
     ProjectDetailComponent, ProjectStubComponent, ProjectSearchComponent ],
   providers:    [ ProjectService, 
     { provide: XHRBackend, useClass: InMemoryBackendService }, // in-mem server
+    { provide: SEED_DATA,  useClass: InMemoryDataService }     // in-mem server
   ],
   bootstrap:    [ AppComponent ]
 })

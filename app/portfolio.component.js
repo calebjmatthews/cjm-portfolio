@@ -8,40 +8,38 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var project_service_1 = require('./project.service');
-var PortfolioComponent = (function () {
-    function PortfolioComponent(router, projectService) {
+const core_1 = require('@angular/core');
+const router_1 = require('@angular/router');
+const project_service_1 = require('./project.service');
+let PortfolioComponent = class PortfolioComponent {
+    constructor(router, projectService) {
         this.router = router;
         this.projectService = projectService;
         this.addingProject = false;
     }
-    PortfolioComponent.prototype.getProjects = function () {
-        var _this = this;
-        this.projectService.getProjects().then(function (projects) { return _this.arrProjects = projects; });
-    };
-    PortfolioComponent.prototype.gotoDetail = function (project) {
-        var link = ['/detail', project.id];
+    getProjects() {
+        this.projectService.getProjects().then(projects => this.arrProjects = projects);
+    }
+    gotoDetail(project) {
+        let link = ['/detail', project.id];
         this.router.navigate(link);
-    };
-    PortfolioComponent.prototype.close = function (savedProject) {
+    }
+    close(savedProject) {
         this.addingProject = false;
         if (savedProject) {
             this.getProjects();
         }
-    };
-    PortfolioComponent.prototype.ngOnInit = function () {
+    }
+    ngOnInit() {
         this.getProjects();
-    };
-    PortfolioComponent = __decorate([
-        core_1.Component({
-            selector: 'portfolio',
-            templateUrl: './app/portfolio.component.html'
-        }), 
-        __metadata('design:paramtypes', [router_1.Router, project_service_1.ProjectService])
-    ], PortfolioComponent);
-    return PortfolioComponent;
-}());
+    }
+};
+PortfolioComponent = __decorate([
+    core_1.Component({
+        selector: 'portfolio',
+        templateUrl: './app/portfolio.component.html'
+    }), 
+    __metadata('design:paramtypes', [router_1.Router, project_service_1.ProjectService])
+], PortfolioComponent);
 exports.PortfolioComponent = PortfolioComponent;
 //# sourceMappingURL=portfolio.component.js.map
