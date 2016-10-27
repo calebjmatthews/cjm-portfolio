@@ -1,7 +1,7 @@
 "use strict";
 const express = require('express');
 const path = require('path');
-var port = process.env.PORT || 5000;
+var port = process.env.PORT || 8000;
 var app = express();
 app.use('/app', express.static(path.resolve(__dirname, 'app')));
 // var renderIndex = (req: express.Request, res: express.Response) => {
