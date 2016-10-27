@@ -9,6 +9,6 @@
     "removeComments": false,
     "noImplicitAny": false
   },
-  "include": ["app", "server.ts"],
+  "include": ["app/*", "server.ts"],
   "exclude": ["node_modules", "typings"]
 }
