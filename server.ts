@@ -23,11 +23,13 @@
 var express = require('express');
 var app = express();
 
+console.log(app);
+
 app.get('/', function (req, res) {
   res.send('Hello World!');
 });
 
 var port: number = process.env.PORT || 8000
 app.listen(port, function () {
-  console.log('Example app listening on port 3000!');
+  console.log('Example app listening on port ' + port );
 });

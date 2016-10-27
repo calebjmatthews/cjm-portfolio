@@ -17,10 +17,12 @@
 // });
 var express = require('express');
 var app = express();
+console.log(app);
 app.get('/', function (req, res) {
     res.send('Hello World!');
 });
-app.listen(3000, function () {
-    console.log('Example app listening on port 3000!');
+var port = process.env.PORT || 8000;
+app.listen(port, function () {
+    console.log('Example app listening on port ' + port);
 });
 //# sourceMappingURL=server.js.map
