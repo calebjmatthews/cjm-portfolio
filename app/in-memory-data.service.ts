@@ -123,7 +123,7 @@ export class InMemoryDataService {
         linkName: [""],
         tags: ["Archipel.io", "Typescript", "Javascript", "PixiJS", "Web Design", 
           "WebGL"]
-      }
+      },
       { id: 5,
         type: "Employment",
         name: "Information Systems Resource Support Technician",

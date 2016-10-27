@@ -1,0 +1,30 @@
+<h2>Skills</h2>
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr class="cjmpHeader">
+        <th>Skill</th>
+        <th>Extensive<br>Experience</th>
+        <th>Moderate<br>Experience</th>
+        <th>Some<br>Experience</th>
+        <th>Related<br>Projects</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let project of arrProjects">
+        <td *ngIf="project.type==='Skill'"><div class="cjmpImgContainer">
+          <div class="cjmpFrame">
+            <img [src]="project.logo" />
+          </div>
+        </div>{{ project.name }}</td>
+        <td *ngIf="project.type==='Skill'">
+          <span *ngIf="project.familiarity===3">X</span></td>
+        <td *ngIf="project.type==='Skill'">
+          <span *ngIf="project.familiarity===2">X</span></td>
+        <td *ngIf="project.type==='Skill'">
+          <span *ngIf="project.familiarity===1">X</span></td>
+        <td *ngIf="project.type==='Skill'">{{ project.linkName[0] }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
