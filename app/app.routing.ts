@@ -15,7 +15,7 @@ const appRoutes: Routes = [
 	  component: DashboardComponent
 	},
   {
-    path: 'portfolio',
+    path: 'programming',
     component: PortfolioComponent
   },
   {

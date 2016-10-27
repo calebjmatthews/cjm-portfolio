@@ -14,7 +14,7 @@ const appRoutes = [
         component: dashboard_component_1.DashboardComponent
     },
     {
-        path: 'portfolio',
+        path: 'programming',
         component: portfolio_component_1.PortfolioComponent
     },
     {
