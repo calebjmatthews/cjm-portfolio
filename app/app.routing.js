@@ -2,6 +2,7 @@
 const router_1 = require('@angular/router');
 const dashboard_component_1 = require('./dashboard.component');
 const portfolio_component_1 = require('./portfolio.component');
+const employment_component_1 = require('./employment.component');
 const project_detail_component_1 = require('./project-detail.component');
 const appRoutes = [
     {
@@ -15,6 +16,18 @@ const appRoutes = [
     },
     {
         path: 'programming',
+        component: portfolio_component_1.PortfolioComponent
+    },
+    {
+        path: 'employment',
+        component: employment_component_1.EmploymentComponent
+    },
+    {
+        path: 'skills',
+        component: portfolio_component_1.PortfolioComponent
+    },
+    {
+        path: 'therest',
         component: portfolio_component_1.PortfolioComponent
     },
     {

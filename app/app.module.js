@@ -25,6 +25,7 @@ const app_component_1 = require('./app.component');
 const app_routing_1 = require('./app.routing');
 const dashboard_component_1 = require('./dashboard.component');
 const portfolio_component_1 = require('./portfolio.component');
+const employment_component_1 = require('./employment.component');
 const project_detail_component_1 = require('./project-detail.component');
 const project_stub_component_1 = require('./project-stub.component');
 const project_service_1 = require('./project.service');
@@ -35,7 +36,8 @@ AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, app_routing_1.routing, http_1.HttpModule, ng2_bootstrap_1.CarouselModule],
         declarations: [app_component_1.AppComponent, dashboard_component_1.DashboardComponent, portfolio_component_1.PortfolioComponent,
-            project_detail_component_1.ProjectDetailComponent, project_stub_component_1.ProjectStubComponent, project_search_component_1.ProjectSearchComponent],
+            employment_component_1.EmploymentComponent, project_detail_component_1.ProjectDetailComponent, project_stub_component_1.ProjectStubComponent,
+            project_search_component_1.ProjectSearchComponent],
         providers: [project_service_1.ProjectService,
             { provide: http_2.XHRBackend, useClass: angular2_in_memory_web_api_1.InMemoryBackendService },
             { provide: angular2_in_memory_web_api_1.SEED_DATA, useClass: in_memory_data_service_1.InMemoryDataService } // in-mem server

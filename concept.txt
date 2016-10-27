@@ -31,6 +31,25 @@ The nav bar on top routes to the following pages:
 
 3. Familiar languages / systems
 	* Includes name of technology and degree of familiarity formatted as a table
+	* Skills to include here:
+		High
+			Javascript: 1, 4, 5, 9
+			Typescript: 4, 9
+			HTML: 1, 4, 5, 9
+			Bootstrap: 1, 5, 9
+			VBA: 2, 3, 7, 8
+			Technical Writing: 1, 3, 5, 6, 7, 8
+			Regulatory Affairs: 3, 6, 7, 8
+			Clinical Studies Management: 2, 7, 8
+			Quality Management System: 6, 7, 8
+		Medium
+			CSS: 1, 4, 5, 9
+			Angular: 1, 5
+			Angular2: 9
+			SQL: 2
+			UX: 2, 3, 4, 9
+			Statistical Analysis: 1, 3, 5, 7
+		Low: Python, C++
 
 4. Other experience, including RAC, education, DMFG
 

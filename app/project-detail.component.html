@@ -22,7 +22,7 @@
   <div *ngIf="project.link" class="addlInfo">
     For more information on the context of this project, see the 
   	<span class="cjmpLink" 
-      (click)="gotoIdDetail(project.link)">{{project.linkName}}</span> 
+      (click)="gotoIdDetail(project.link[0])">{{project.linkName[0]}}</span> 
   	section.
   </div>
   <button (click)="goBack()" class="btn btn-default">Back</button>

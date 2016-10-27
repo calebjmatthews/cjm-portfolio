@@ -113,17 +113,16 @@ class InMemoryDataService {
                     "app/images/browse3"],
                 captions: ["Simulation visualization and statistics",
                     "User modifiable fields", "Modal window with additional options"],
-                shortDescription: ("My primary aim has been to develop a program to address " +
-                    "scientific questions about the validity of two different deer population " +
-                    "estimation equations"),
+                shortDescription: ("Developed a program to address scientific questions " +
+                    "about the validity of two different deer population estimation equations"),
                 longDescription: [("Wrote an algorithm-driven program in Javascript and " +
                         "AngularJS designed to simulate camera-capture of mammal browsing"),
                     ("Wrote technical documentation detailing the function of the code and " +
                         "rationale behind design decisions"),
                     ("Continue to support the program through multiple code revisions and " +
                         "requests for additional features")],
-                link: null,
-                linkName: ""
+                link: 1,
+                linkName: "Mammal Herbivory Simulator"
             },
             { id: 6,
                 type: "Employment",
@@ -158,17 +157,23 @@ class InMemoryDataService {
                 type: "Employment",
                 name: "Regulatory Affairs Specialist II",
                 employer: "Cochlear Americas",
-                logo: "cochlear.png",
-                screenshots: [""],
-                captions: [("")],
-                shortDescription: (""),
+                logo: "app/images/cochlear.png",
+                screenshots: ["app/images/ras2.png", "app/images/ras1.png",
+                    "app/images/hybrid3.png"],
+                captions: [("An example of marketing material I reviewed as part of the CRB"),
+                    ("The Cochlear Hybrid device, the subject of our team's PMA"),
+                    ("An example of secondary data analysis to support the Hybrid PMA")],
+                shortDescription: ("A broad range of successes, such as " +
+                    "approval of a PMA for a new Class III device, and acceptance of " +
+                    "over a dozen regulatory submissions"),
                 longDescription: [("Managed a Class III product recall whose scope " +
                         "extended to the United States and Canada, from initial notice to recall " +
                         "closure"),
                     ("Audited clinical study sites to ensure proper informed consent, " +
                         "adherence to GCP and study protocol, validity of records, and " +
                         "calibration of equipment"),
-                    ("Author of over a dozen successful regulatory submissions"),
+                    ("Author of over a dozen successful regulatory submissions, including " +
+                        "510ks, 180 Day Notices, and Real Time Reviews"),
                     ("Principal member of Class III PMA Panel Meeting team, roles included " +
                         "responsibility for secondary analysis and graphical presentation of " +
                         "data, creation and organization of backup materials, and ad hoc data " +
@@ -179,20 +184,34 @@ class InMemoryDataService {
                         "with approved product claims, clinical trial data, and FDA regulations"),
                     ("Participated in several distributor site audits in regulatory advisory " +
                         "and document retrieval roles")],
-                link: null,
-                linkName: ""
+                link: 3,
+                linkName: "FDA Panel Data Analysis"
             },
             { id: 8,
                 type: "Employment",
                 name: "Quality Coordinator",
                 employer: "Cochlear Americas",
-                logo: "cochlear.png",
+                logo: "app/images/cochlear.png",
                 screenshots: [""],
                 captions: [("")],
-                shortDescription: (""),
-                longDescription: [("")],
-                link: null,
-                linkName: ""
+                shortDescription: ("Dramatically increased efficiency by automating the " +
+                    "clinical study payment process"),
+                longDescription: [("Creation, filing, and management of over 1500 Medical " +
+                        "Device Reports and Adverse Event records"),
+                    ("Support of the initiation of a clinical study, including CRO selection, " +
+                        "IRB applications, logistical management of Investigator’s Meeting, and " +
+                        " creation of CRFs and study documents"),
+                    ("Review of published literature for product-related adverse events"),
+                    ("Design, development, and maintenance of an MS Access Database which " +
+                        "featured: utilization of SQL to connect to electronic data capture " +
+                        "systems for financial processing of clinical studies; calculation " +
+                        "of payments to subjects, IRBs, and clinics; and automatic record keeping " +
+                        "and automatic generation of letters and payment requests."),
+                    ("Also responsible for work instruction documents and training of peers " +
+                        "in the use of this tool and unrelated procedures for clinical " +
+                        "study payments")],
+                link: 2,
+                linkName: "Clinical Payments Database"
             },
             { id: 9,
                 type: "Skill",

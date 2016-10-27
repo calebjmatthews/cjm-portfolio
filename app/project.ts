@@ -9,7 +9,7 @@ export class Project {
 	captions: string[] = [];
 	shortDescription: string;
 	longDescription: string[] = [];
-	link: number;
-	linkName: string;
+	link: number[];
+	linkName: string[];
 	tags: string[] = [];
 }

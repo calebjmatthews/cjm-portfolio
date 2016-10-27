@@ -23,8 +23,8 @@ export class InMemoryDataService {
             "size/placement"),
           ("Automatically generated an array of statistics to compare two " +
             "competing population estimation methods")],
-        link: 5,
-        linkName: "Information Systems Resource Support Technician",
+        link: [5],
+        linkName: ["Information Systems Resource Support Technician"],
         tags: ["Mammal Herbivory Simulator", 
           "Information Systems Resource Support Technician", "AngularJS", "Angular1", 
           "Javascript", "Bootstrap", "AngularJS", "Angular1", "Ecological Modeling", 
@@ -49,8 +49,8 @@ export class InMemoryDataService {
             "requests"),
           ("Also created instructional documents and training of peers in the use of " +
             "this tool")],
-        link: 8,
-        linkName: "Quality Coordinator",
+        link: [8],
+        linkName: ["Quality Coordinator"],
         tags: ["Clinical Payments Database", "Compliance Coordinator", 
           "Cochlear Americas", "Microsoft Access", "Database", "SQL", 
           "Clinical Study Payments", "Protocol and SOP Writing"]
@@ -75,8 +75,8 @@ export class InMemoryDataService {
             "tool was used successfully to create several supporting slides"), 
           ("The meeting was a success; the Hybrid Implant was recommended for " + 
             "approval by the panel of experts")],
-        link: 7,
-        linkName: "Regulatory Affairs Specialist II",
+        link: [7],
+        linkName: ["Regulatory Affairs Specialist II"],
         tags: ["FDA Panel Data Analysis", "Regulatory Affairs Specialist II", 
           "Cochlear Americas", "Cochlear Hybrid Implant", 
           "Food and Drug Administration", 
@@ -99,10 +99,31 @@ export class InMemoryDataService {
           ("It utilizes a custom-made (x,y) point and (x,y,z) hexagon system " + 
             "of classes and functions for UI and graphical display")],
         link: null,
-        linkName: "",
+        linkName: [""],
         tags: ["Archipel.io", "Typescript", "Javascript", "PixiJS", "Web Design", 
           "WebGL"]
       },
+      {
+        id: 9,
+        type: "Programming",
+        name: "Development Portfolio",
+        logo: "app/images/typescript.png",
+        screenshots: ["app/images/archipelio1.png",  "app/images/archipelio3.png", 
+          "app/images/archipelio2.png"],
+        captions: [("A screenshot of Archipel.io in action")],
+        shortDescription: ("A strategy browser game developed as an exercise in " + 
+          "Typescript, Object Oriented Programming, and real time graphical display"),
+        longDescription: [("Archipel.io is built with Typescript and PixiJS, a " + 
+            "Javascript WebGL renderer"),
+          ("The game features procedural island generation, local two-player " + 
+            " gameplay, and an incremental settlement-building theme"), 
+          ("It utilizes a custom-made (x,y) point and (x,y,z) hexagon system " + 
+            "of classes and functions for UI and graphical display")],
+        link: null,
+        linkName: [""],
+        tags: ["Archipel.io", "Typescript", "Javascript", "PixiJS", "Web Design", 
+          "WebGL"]
+      }
       { id: 5,
         type: "Employment",
         name: "Information Systems Resource Support Technician",
@@ -112,17 +133,16 @@ export class InMemoryDataService {
           "app/images/browse3"],
         captions: ["Simulation visualization and statistics", 
           "User modifiable fields", "Modal window with additional options"],
-        shortDescription: ("My primary aim has been to develop a program to address " + 
-          "scientific questions about the validity of two different deer population " + 
-          "estimation equations"),
+        shortDescription: ("Developed a program to address scientific questions " + 
+          "about the validity of two different deer population estimation equations"),
         longDescription: [("Wrote an algorithm-driven program in Javascript and " + 
             "AngularJS designed to simulate camera-capture of mammal browsing"),
           ("Wrote technical documentation detailing the function of the code and " + 
             "rationale behind design decisions"),
           ("Continue to support the program through multiple code revisions and " + 
             "requests for additional features")],
-        link: null,
-        linkName: ""
+        link: [1],
+        linkName: ["Mammal Herbivory Simulator"]
       },
       { id: 6,
         type: "Employment",
@@ -151,23 +171,29 @@ export class InMemoryDataService {
           ("Wrote and managed an Event Report regarding field service errors, " + 
             "including presentation to the CAPA Review Board")],
         link: null,
-        linkName: ""
+        linkName: [""]
       },
       { id: 7,
         type: "Employment",
         name: "Regulatory Affairs Specialist II",
         employer: "Cochlear Americas",
-        logo: "cochlear.png",
-        screenshots: [""],
-        captions: [("")],
-        shortDescription: (""),
+        logo: "app/images/cochlear.png",
+        screenshots: ["app/images/ras2.png", "app/images/ras1.png", 
+          "app/images/hybrid3.png"],
+        captions: [("An example of marketing material I reviewed as part of the CRB"),
+          ("The Cochlear Hybrid device, the subject of our team's PMA"), 
+          ("An example of secondary data analysis to support the Hybrid PMA")],
+        shortDescription: ("A broad range of successes, such as " +
+          "approval of a PMA for a new Class III device, and acceptance of " + 
+          "over a dozen regulatory submissions"),
         longDescription: [("Managed a Class III product recall whose scope " + 
             "extended to the United States and Canada, from initial notice to recall " + 
             "closure"),
           ("Audited clinical study sites to ensure proper informed consent, " + 
             "adherence to GCP and study protocol, validity of records, and " + 
             "calibration of equipment"),
-          ("Author of over a dozen successful regulatory submissions"),
+          ("Author of over a dozen successful regulatory submissions, including " + 
+            "510ks, 180 Day Notices, and Real Time Reviews"),
           ("Principal member of Class III PMA Panel Meeting team, roles included " + 
             "responsibility for secondary analysis and graphical presentation of " + 
             "data, creation and organization of backup materials, and ad hoc data " + 
@@ -178,56 +204,204 @@ export class InMemoryDataService {
             "with approved product claims, clinical trial data, and FDA regulations"),
           ("Participated in several distributor site audits in regulatory advisory " + 
             "and document retrieval roles")],
-        link: null,
-        linkName: ""
+        link: [3],
+        linkName: ["FDA Panel Data Analysis"]
       },
       { id: 8,
         type: "Employment",
         name: "Quality Coordinator",
         employer: "Cochlear Americas",
-        logo: "cochlear.png",
+        logo: "app/images/cochlear.png",
         screenshots: [""],
         captions: [("")],
-        shortDescription: (""),
-        longDescription: [("")],
-        link: null,
-        linkName: ""
-      },
-      { id: 9,
-        type: "Skill",
-        name: "",
-        familiarity: 0,
-        logo: "",
-        screenshots: [""],
-        captions: [("")],
-        shortDescription: (""),
-        longDescription: [("")],
-        link: null,
-        linkName: ""
+        shortDescription: ("Dramatically improved the Quality and Clinical Study " + 
+          "Systems by overhauling SOPs and automating the clinical study " + 
+          "payment process"),
+        longDescription: [("Creation, filing, and management of over 1500 Medical " + 
+            "Device Reports and Adverse Event records"), 
+          ("Support of the initiation of a clinical study, including CRO selection, " + 
+            "IRB applications, logistical management of Investigator’s Meeting, and " +
+            " creation of CRFs and study documents"), 
+          ("Review of published literature for product-related adverse events"), 
+          ("Design, development, and maintenance of an MS Access Database which " + 
+            "featured: utilization of SQL to connect to electronic data capture " + 
+            "systems for financial processing of clinical studies; calculation " + 
+            "of payments to subjects, IRBs, and clinics; and automatic record keeping " + 
+            "and automatic generation of letters and payment requests."), 
+          ("Also responsible for work instruction documents and training of peers " + 
+            "in the use of this tool and unrelated procedures for clinical " + 
+            "study payments")],
+        link: [2],
+        linkName: ["Clinical Payments Database"]
       },
       { id: 10,
         type: "Skill",
-        name: "",
-        familiarity: 0,
-        logo: "",
-        screenshots: [""],
-        captions: [("")],
-        shortDescription: (""),
-        longDescription: [("")],
-        link: null,
-        linkName: ""
+        name: "Javascript",
+        familiarity: 3,
+        logo: "app/images/javascript.png",
+        link: [1, 4, 5, 9],
+        linkName: ["Mammal Herbivory Simulator", "Archipel.io", 
+          "Information Systems Resource Support Technician", "Development Portfolio"],
+        tags: ["Javascript", "JS"]
       },
       { id: 11,
         type: "Skill",
-        name: "",
-        familiarity: 0,
-        logo: "",
-        screenshots: [""],
-        captions: [("")],
-        shortDescription: (""),
-        longDescription: [("")],
+        name: "Typescript",
+        familiarity: 3,
+        logo: "app/images/typescript.png",
+        link: [4, 9],
+        linkName: ["Archipel.io", "Development Portfolio"],
+        tags: ["Typescript", "TS"]
+      },
+      { id: 12,
+        type: "Skill",
+        name: "HTML",
+        familiarity: 3,
+        logo: "app/images/html.png",
+        link: [1, 4, 5, 9],
+        linkName: ["Mammal Herbivory Simulator", "Archipel.io", 
+          "Information Systems Resource Support Technician", "Development Portfolio"],
+        tags: ["HTML", "HyperText Markup Language"]
+      },
+      { id: 13,
+        type: "Skill",
+        name: "Bootstrap",
+        familiarity: 3,
+        logo: "app/images/bootstrap.png",
+        link: [1, 5, 9],
+        linkName: ["Mammal Herbivory Simulator",  
+          "Information Systems Resource Support Technician", "Development Portfolio"],
+        tags: ["Bootstrap"],
+      },
+      { id: 14,
+        type: "Skill",
+        name: "Visual Basic for Applications",
+        familiarity: 3,
+        logo: "app/images/msvba.png",
+        link: [2, 3, 7, 8],
+        linkName: ["Clinical Payments Database", "FDA Panel Data Analysis", 
+          "Regulatory Affairs Specialist II", "Quality Coordinator"],
+        tags: ["Visual Basic for Applications", "VBA"]
+      },
+      { id: 15,
+        type: "Skill",
+        name: "Technical Writing",
+        familiarity: 3,
+        logo: "app/images/pen.png",
+        link: [1, 3, 5, 6, 7, 8],
+        linkName: ["Mammal Herbivory Simulator", "FDA Panel Data Analysis", 
+          "Information Systems Resource Support Technician", 
+          "Product Compliance Specialist", "Regulatory Affairs Specialist II", 
+          "Quality Coordinator"],
+        tags: ["Technical Writing"]
+      },
+      { id: 16,
+        type: "Skill",
+        name: "Regulatory Affairs",
+        familiarity: 3,
+        logo: "app/images/rac.png",
+        link: [3, 6, 7, 8],
+        linkName: ["FDA Panel Data Analysis", 
+          "Product Compliance Specialist", "Regulatory Affairs Specialist II", 
+          "Quality Coordinator"],
+        tags: ["Regulatory Affairs", "RA", "RAC", "ISO 13485", "21 CFR 820"]
+      },
+      { id: 17,
+        type: "Skill",
+        name: "Clinical Studies Management",
+        familiarity: 3,
+        logo: "app/images/caduceus.png",
+        link: [2, 7, 8],
+        linkName: ["Clinical Payments Database", "Regulatory Affairs Specialist II", 
+          "Quality Coordinator"],
+        tags: ["Clinical Studies Management", "21 CFR 812", "21 CFR 56", "21 CFR 50"]
+      },
+      { id: 18,
+        type: "Skill",
+        name: "Quality Management System",
+        familiarity: 3,
+        logo: "app/images/qms.png",
+        link: [6, 7, 8],
+        linkName: ["Product Compliance Specialist", "Regulatory Affairs Specialist II", 
+          "Quality Coordinator"],
+        tags: ["Quality Management System", "QMS", "ISO 13485", "21 CFR 820"]
+      },
+      { id: 19,
+        type: "Skill",
+        name: "Cascading Style Sheets (CSS)",
+        familiarity: 2,
+        logo: "app/images/css.png",
+        link: [1, 4, 5, 9],
+        linkName: ["Mammal Herbivory Simulator", "Archipel.io", 
+          "Information Systems Resource Support Technician", "Development Portfolio"],
+        tags: ["Cascading Style Sheets", "CSS"]
+      },
+      { id: 20,
+        type: "Skill",
+        name: "AngularJS",
+        familiarity: 2,
+        logo: "app/images/angularjs.png",
+        link: [1, 5, 9],
+        linkName: ["Mammal Herbivory Simulator", 
+          "Information Systems Resource Support Technician", "Development Portfolio"],
+        tags: ["AngularJS"]
+      },
+      { id: 21,
+        type: "Skill",
+        name: "Angular2",
+        familiarity: 2,
+        logo: "app/images/angularjs.png",
+        link: [9],
+        linkName: ["Development Portfolio"],
+        tags: ["Angular2"]
+      },
+      { id: 22,
+        type: "Skill",
+        name: "SQL",
+        familiarity: 2,
+        logo: "app/images/sql.png",
+        link: [2],
+        linkName: ["Clinical Payments Database"],
+        tags: ["SQL", "SQL Server"]
+      },
+      { id: 23,
+        type: "Skill",
+        name: "User Experience Design (UX)",
+        familiarity: 2,
+        logo: "app/images/ux.png",
+        link: [2, 3, 4, 9],
+        linkName: ["Clinical Payments Database", "FDA Panel Data Analysis", 
+          "Archipel.io", "Development Portfolio"],
+        tags: ["User Experience Design", "UX"]
+      },
+      { id: 24,
+        type: "Skill",
+        name: "Statistical Analysis",
+        familiarity: 2,
+        logo: "app/images/graph.png",
+        link: [1, 3, 5, 7],
+        linkName: ["Mammal Herbivory Simulator", "FDA Panel Data Analysis", 
+          "Information Systems Resource Support Technician", 
+          "Regulatory Affairs Specialist II"],
+        tags: ["Statistical Analysis"]
+      },
+      { id: 25,
+        type: "Skill",
+        name: "Python",
+        familiarity: 1,
+        logo: "app/images/python.png",
         link: null,
-        linkName: ""
+        linkName: [""],
+        tags: ["Python"]
+      },
+      { id: 26,
+        type: "Skill",
+        name: "C++",
+        familiarity: 1,
+        logo: "app/images/c++.png",
+        link: null,
+        linkName: [""],
+        tags: ["C++"]
       }
     ];
     return {projects};
