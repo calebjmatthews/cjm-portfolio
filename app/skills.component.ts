@@ -38,9 +38,18 @@ export class SkillsComponent implements OnInit {
 		this.getProjects();
 	}
 
+  getProject(givenId: number) {
+    for (let iii = 0; iii < this.arrProjects.length; iii++) {
+      if (this.arrProjects[iii].id === givenId) {
+        return this.arrProjects[iii];
+      }
+    }
+    return null;
+  }
+
   linkInitials(project: Project, linkId: number) {
     let initials: string = "";
-    let projectName: string = this.arrProjects[linkId].name;
+    let projectName: string = this.getProject(linkId).name;
 
     for (let iii = 0; iii < projectName.length; iii++) {
       let character = projectName[iii];
@@ -50,7 +59,7 @@ export class SkillsComponent implements OnInit {
 
     if (initials.length === 0) { return ""; }
     else if (initials.length <= 3) { return initials; }
-    else if (initials.length > 3) { return initials.slice(0, 2); }
+    else if (initials.length > 3) { return initials.slice(0, 3); }
     else { return ""; }
   }
 }

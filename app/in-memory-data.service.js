@@ -106,7 +106,7 @@ class InMemoryDataService {
             },
             {
                 id: 9,
-                type: "Programming",
+                type: "Self",
                 name: "Development Portfolio",
                 logo: "app/images/typescript.png",
                 screenshots: ["app/images/archipelio1.png", "app/images/archipelio3.png",

@@ -11,6 +11,11 @@
 			{{ project.shortDescription }}
 		</span>
 
+		<span *ngSwitchCase="'Self'">
+			<h4>{{ project.name }}</h4>
+			{{ project.shortDescription }}
+		</span>
+
 		<span *ngSwitchCase="'Employment'">
 			<h4>{{ project.name }} at {{ project.employer }}</h4>
 			{{ project.shortDescription }}

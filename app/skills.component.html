@@ -18,15 +18,17 @@
           </div>
         </div><br>{{ project.name }}</div></td>
         <td *ngIf="project.type==='Skill'"><div class="cjmp2">
-          <span *ngIf="project.familiarity===3">X</span></div></td>
+          <span class="cjmpX" *ngIf="project.familiarity===3">X</span></div></td>
         <td *ngIf="project.type==='Skill'"><div class="cjmp3">
-          <span *ngIf="project.familiarity===2">X</span></div></td>
+          <span class="cjmpX" *ngIf="project.familiarity===2">X</span></div></td>
         <td *ngIf="project.type==='Skill'"><div class="cjmp4">
-          <span *ngIf="project.familiarity===1">X</span></div></td>
+          <span class="cjmpX" *ngIf="project.familiarity===1">X</span></div></td>
         <td *ngIf="project.type==='Skill'"><div class="cjmp5">
-          <div class="cjmpLinkInitial" *ngFor="let linkId of project.link">
-            {{ this.linkInitials(project, linkId) }} 
-          </div> 
+          <span *ngFor="let linkId of project.link">
+            <div class="cjmpLinkInitial" (click)="gotoDetail(this.getProject(linkId))">
+              {{ this.linkInitials(project, linkId) }} 
+            </div>
+          </span>
         </div></td>
       </tr>
     </tbody>

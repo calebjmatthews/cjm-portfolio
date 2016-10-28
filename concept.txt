@@ -52,6 +52,17 @@ The nav bar on top routes to the following pages:
 		Low: Python, C++
 
 4. Other experience, including RAC, education, DMFG
+	Where I Am
+		I moved to Madison, Wisconsin in the summer of 2014.  About the same time that programming was growing from a tool that I used at work, to a hobby that consumed huge pieces of my free time.
+		Since my first job I had used VBA to avoid repetitive work, but it's been very different designing entire projects from the ground up and I've loved it.
+
+	Medical and Scientific Knowledge
+		I studied Biochemistry and Colorado State University from 2006 - 2010, and I was a registered Emergency Medical Technician (EMT-B) from 2010 - 2011.
+		I haven't stopped loving medicine. Working with cochlear implant and radiation therapy manufacturers has given me a fascinating, inside view of the forefront of medical technology.
+	Leadership
+		Two and a half years ago I founded the Downtown Madison Fiction Group, with the goal of working with other writers to improve style and clarity.
+		We meet weekly, and have almost two hundred members.  Leading meetings has been intimidating work, and I've learned far more than I've taught.
+		Several members have actually become published authors during their time with the group!
 
 Styling:
 Large text, wide white space, horizontally centered, no/subtle background

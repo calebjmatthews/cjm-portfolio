@@ -13,10 +13,6 @@ img {
 h2 {
   text-align: center;
 }
-span {
-  margin: 10px 0 0 0;
-  font-size: 32px;
-}
 table tbody, table thead
 {
     display: block;
@@ -64,8 +60,12 @@ td {
 .cjmp5 {
   width: 120px;
 }
+.cjmpX {
+  margin: 25px 0 0 0;
+  font-size: 32px;
+}
 .cjmpLinkInitial {
-  margin: 5px;
+  margin: 5px 0px 0px 0px;
   padding: 8px 0 0 0;
   display: inline-block;
   height: 30px;
