@@ -403,6 +403,40 @@ class InMemoryDataService {
                 link: null,
                 linkName: [""],
                 tags: ["C++"]
+            },
+            { id: 27,
+                type: "The Rest",
+                name: "Where I Am",
+                screenshots: ["app/images/madison.png"],
+                longDescription: [("I moved to Madison, Wisconsin in the summer of 2014. " +
+                        "About this same time programming was growing from a tool that I " +
+                        "used at work, to a hobby that consumed huge pieces of my free time."),
+                    ("Since my first job I had used VBA to avoid repetitive work, but it's " +
+                        "been very different designing entire projects from the ground up, " +
+                        "and I've loved it.")]
+            },
+            { id: 28,
+                type: "The Rest",
+                name: "Medical and Scientific Knowledge",
+                screenshots: ["app/images/csu.png"],
+                longDescription: [("I studied Biochemistry at Colorado State University " +
+                        "from 2006 - 2010, and I was a registered Emergency Medical Technician " +
+                        "(EMT-B) from 2010 - 2011."),
+                    ("I haven't stopped loving medicine. Working with cochlear implant and " +
+                        "radiation therapy manufacturers has given me a fascinating, " +
+                        "inside view of the forefront of medical technology.")]
+            },
+            { id: 29,
+                type: "The Rest",
+                name: "Leadership and Writing",
+                screenshots: ["app/images/dmfg.png"],
+                longDescription: [("Two and a half years ago I founded the Downtown " +
+                        "Madison Fiction Group, with the goal of working with other writers " +
+                        "to improve style and clarity."),
+                    ("We meet weekly, and have almost two hundred members.  Leading meetings " +
+                        "has been intimidating work, and I've learned far more than I've taught."),
+                    ("Several members have actually become published authors during their time " +
+                        "with the group!")]
             }
         ];
         return { projects };

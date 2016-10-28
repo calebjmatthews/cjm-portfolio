@@ -4,6 +4,7 @@ const dashboard_component_1 = require('./dashboard.component');
 const portfolio_component_1 = require('./portfolio.component');
 const employment_component_1 = require('./employment.component');
 const skills_component_1 = require('./skills.component');
+const the_rest_component_1 = require('./the-rest.component');
 const project_detail_component_1 = require('./project-detail.component');
 const appRoutes = [
     {
@@ -28,8 +29,8 @@ const appRoutes = [
         component: skills_component_1.SkillsComponent
     },
     {
-        path: 'therest',
-        component: portfolio_component_1.PortfolioComponent
+        path: 'the-rest',
+        component: the_rest_component_1.TheRestComponent
     },
     {
         path: 'detail/:id',

@@ -1,0 +1,13 @@
+<h2>The Rest</h2>
+<ul class="list-unstyled">
+	<div *ngFor="let project of arrProjects">
+		<li class="cjmpContainer" *ngIf="project.type==='The Rest'">
+			<div class="cjmpHeader">{{ project.name }}</div>
+			<img [src]="project.screenshots[0]" />
+			<ul class="cjmpBody" *ngFor="let desc of project.longDescription">
+				<li>{{ desc }}</li>
+			</ul>
+		</li>
+	</div>
+</ul>
+<div class="error" *ngIf="error">{{error}}</div>

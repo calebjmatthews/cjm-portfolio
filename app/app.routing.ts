@@ -4,6 +4,7 @@ import { DashboardComponent }    from './dashboard.component';
 import { PortfolioComponent }    from './portfolio.component';
 import { EmploymentComponent }	 from './employment.component';
 import { SkillsComponent }			 from './skills.component';
+import { TheRestComponent }      from './the-rest.component';
 import { ProjectDetailComponent} from './project-detail.component';
 
 const appRoutes: Routes = [
@@ -29,8 +30,8 @@ const appRoutes: Routes = [
     component: SkillsComponent
   },
   {
-    path: 'therest',
-    component: PortfolioComponent
+    path: 'the-rest',
+    component: TheRestComponent
   },
   {
   	path: 'detail/:id',

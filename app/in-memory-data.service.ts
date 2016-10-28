@@ -404,7 +404,7 @@ export class InMemoryDataService {
         tags: ["C++"]
       },
       { id: 27,
-        type: "TheRest",
+        type: "The Rest",
         name: "Where I Am",
         screenshots: ["app/images/madison.png"],
         longDescription: [("I moved to Madison, Wisconsin in the summer of 2014. " + 
@@ -415,9 +415,9 @@ export class InMemoryDataService {
             "and I've loved it.")]
       },
       { id: 28,
-        type: "TheRest",
+        type: "The Rest",
         name: "Medical and Scientific Knowledge",
-        screenshots: ["csu.png"],
+        screenshots: ["app/images/csu.png"],
         longDescription: [("I studied Biochemistry at Colorado State University " + 
             "from 2006 - 2010, and I was a registered Emergency Medical Technician " + 
             "(EMT-B) from 2010 - 2011."),
@@ -426,7 +426,7 @@ export class InMemoryDataService {
             "inside view of the forefront of medical technology.")]
       },
       { id: 29,
-        type: "TheRest",
+        type: "The Rest",
         name: "Leadership and Writing",
         screenshots: ["app/images/dmfg.png"],
         longDescription: [("Two and a half years ago I founded the Downtown " + 

@@ -1,0 +1,23 @@
+img {
+  float: left;
+  max-height: 300px;  
+  max-width: 300px;
+  margin: 0 30px 10px 0;
+}
+
+.cjmpContainer {
+  min-height: 300px;
+  border: 1px solid #7a7a7a;
+  border-radius: 5px;
+  margin: 20px;
+}
+.cjmpHeader {
+  margin: 0 0 10px 0;
+  background: #4e78b5;
+  font-size: 24px;
+  text-align: center;
+  color: #ffffff;
+}
+.cjmpBody {
+  margin: 20px;
+}
