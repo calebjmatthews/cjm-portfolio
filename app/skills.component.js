@@ -33,6 +33,31 @@ let SkillsComponent = class SkillsComponent {
     ngOnInit() {
         this.getProjects();
     }
+    linkInitials(project, linkId) {
+        let initials = "";
+        let projectName = this.arrProjects[linkId].name;
+        for (let iii = 0; iii < projectName.length; iii++) {
+            let character = projectName[iii];
+            if ((character === ".") || (character === " ")) {
+                continue;
+            }
+            else if (character == character.toUpperCase()) {
+                initials += (character);
+            }
+        }
+        if (initials.length === 0) {
+            return "";
+        }
+        else if (initials.length <= 3) {
+            return initials;
+        }
+        else if (initials.length > 3) {
+            return initials.slice(0, 2);
+        }
+        else {
+            return "";
+        }
+    }
 };
 SkillsComponent = __decorate([
     core_1.Component({

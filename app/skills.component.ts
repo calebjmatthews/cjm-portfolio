@@ -37,4 +37,20 @@ export class SkillsComponent implements OnInit {
   ngOnInit() {
 		this.getProjects();
 	}
+
+  linkInitials(project: Project, linkId: number) {
+    let initials: string = "";
+    let projectName: string = this.arrProjects[linkId].name;
+
+    for (let iii = 0; iii < projectName.length; iii++) {
+      let character = projectName[iii];
+      if ((character === ".")  || (character === " ")) { continue; }
+      else if (character == character.toUpperCase()) { initials += (character); }
+    }
+
+    if (initials.length === 0) { return ""; }
+    else if (initials.length <= 3) { return initials; }
+    else if (initials.length > 3) { return initials.slice(0, 2); }
+    else { return ""; }
+  }
 }

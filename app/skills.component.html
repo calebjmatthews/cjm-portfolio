@@ -1,29 +1,33 @@
 <h2>Skills</h2>
-<div class="table-responsive">
+<div>
   <table class="table table-striped table-bordered table-hover">
     <thead>
       <tr class="cjmpHeader">
-        <th>Skill</th>
-        <th>Extensive<br>Experience</th>
-        <th>Moderate<br>Experience</th>
-        <th>Some<br>Experience</th>
-        <th>Related<br>Projects</th>
+        <th><div class="cjmp1">Skill</div></th>
+        <th><div class="cjmp2">Extensive<br>Experience</div></th>
+        <th><div class="cjmp3">Moderate<br>Experience</div></th>
+        <th><div class="cjmp4">Some<br>Experience</div></th>
+        <th><div class="cjmp5">Related<br>Projects</div></th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let project of arrProjects">
-        <td *ngIf="project.type==='Skill'"><div class="cjmpImgContainer">
+        <td *ngIf="project.type==='Skill'"><div class="cjmp1"><div class="cjmpImgContainer">
           <div class="cjmpFrame">
             <img [src]="project.logo" />
           </div>
-        </div>{{ project.name }}</td>
-        <td *ngIf="project.type==='Skill'">
-          <span *ngIf="project.familiarity===3">X</span></td>
-        <td *ngIf="project.type==='Skill'">
-          <span *ngIf="project.familiarity===2">X</span></td>
-        <td *ngIf="project.type==='Skill'">
-          <span *ngIf="project.familiarity===1">X</span></td>
-        <td *ngIf="project.type==='Skill'">{{ project.linkName[0] }}</td>
+        </div><br>{{ project.name }}</div></td>
+        <td *ngIf="project.type==='Skill'"><div class="cjmp2">
+          <span *ngIf="project.familiarity===3">X</span></div></td>
+        <td *ngIf="project.type==='Skill'"><div class="cjmp3">
+          <span *ngIf="project.familiarity===2">X</span></div></td>
+        <td *ngIf="project.type==='Skill'"><div class="cjmp4">
+          <span *ngIf="project.familiarity===1">X</span></div></td>
+        <td *ngIf="project.type==='Skill'"><div class="cjmp5">
+          <div class="cjmpLinkInitial" *ngFor="let linkId of project.link">
+            {{ this.linkInitials(project, linkId) }} 
+          </div> 
+        </div></td>
       </tr>
     </tbody>
   </table>
