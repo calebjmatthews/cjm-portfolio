@@ -71,7 +71,7 @@ SkillsComponent = __decorate([
     core_1.Component({
         selector: 'skills',
         templateUrl: './app/skills.component.html',
-        styleUrls: ['./app/skills.component.css']
+        styleUrls: ['./app/skills.component.css'],
     }), 
     __metadata('design:paramtypes', [router_1.Router, project_service_1.ProjectService])
 ], SkillsComponent);

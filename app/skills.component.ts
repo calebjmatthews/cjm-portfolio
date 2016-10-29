@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Router }            from '@angular/router';
 
+import { TooltipModule }     from 'ng2-bootstrap/components/tooltip';
+
 import { Project }        from './project';
 import { ProjectService } from './project.service';
 
 @Component({
   selector: 'skills',
   templateUrl: './app/skills.component.html',
-  styleUrls: ['./app/skills.component.css']
+  styleUrls: ['./app/skills.component.css'],
 })
 
 export class SkillsComponent implements OnInit {

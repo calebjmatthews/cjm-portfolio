@@ -63,7 +63,12 @@ class InMemoryDataService {
                 screenshots: ["app/images/hybrid1.png", "app/images/hybrid2.png",
                     "app/images/hybrid3.png", "app/images/hybrid4.png",
                     "app/images/hybrid5.png", "app/images/hybrid6.png"],
-                captions: [("")],
+                captions: [("An example of data analysis performed prior to the panel meeting"),
+                    ("An example of data analysis performed prior to the panel meeting"),
+                    ("An example of data analysis performed prior to the panel meeting"),
+                    ("An example of data analysis performed prior to the panel meeting"),
+                    ("An example of data analysis performed prior to the panel meeting"),
+                    ("Data analysis and resulting graph that was created on demand")],
                 shortDescription: ("A macro-heavy spreadsheet used to perform on-demand " +
                     "data analysis during a critical presentation to the FDA"),
                 longDescription: [("In order to support Pre-Market Approval (PMA) for a " +
@@ -151,8 +156,8 @@ class InMemoryDataService {
                 employer: "Accuray, Inc.",
                 logo: "app/images/accuray.png",
                 screenshots: ["app/images/accuray1.png", "app/images/accuray2.png"],
-                captions: ["A TomoTehrapy device, Accuray's flagship product",
-                    "A CyberKnife device"],
+                captions: ["The TomoTehrapy device, Accuray's flagship product",
+                    "The CyberKnife device, used for radiation therapy"],
                 shortDescription: ("Managed medical device events for TomoTherapy " +
                     "and CyberKnife devices, and performed a highly effective rework of the " +
                     "existing event coding categorization system"),
@@ -183,7 +188,7 @@ class InMemoryDataService {
                     "app/images/hybrid3.png"],
                 captions: [("An example of marketing material I reviewed as part of the CRB"),
                     ("The Cochlear Hybrid device, the subject of our team's PMA"),
-                    ("An example of secondary data analysis to support the Hybrid PMA")],
+                    ("An example of secondary data analysis created to support the Hybrid PMA")],
                 shortDescription: ("A broad range of successes, such as " +
                     "approval of a PMA for a new Class III device, and acceptance of " +
                     "over a dozen regulatory submissions"),

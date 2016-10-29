@@ -17,6 +17,7 @@ const forms_1 = require('@angular/forms');
 const http_1 = require('@angular/http');
 // Imports for Angular2 Bootstrap
 const ng2_bootstrap_1 = require('ng2-bootstrap/ng2-bootstrap');
+const ng2_bootstrap_2 = require('ng2-bootstrap/ng2-bootstrap');
 // Imports for loading & configuring the in-memory web api
 const http_2 = require('@angular/http');
 const angular2_in_memory_web_api_1 = require('angular2-in-memory-web-api');
@@ -36,7 +37,8 @@ let AppModule = class AppModule {
 };
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, app_routing_1.routing, http_1.HttpModule, ng2_bootstrap_1.CarouselModule],
+        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, app_routing_1.routing, http_1.HttpModule, ng2_bootstrap_1.CarouselModule,
+            ng2_bootstrap_2.TooltipModule],
         declarations: [app_component_1.AppComponent, dashboard_component_1.DashboardComponent, portfolio_component_1.PortfolioComponent,
             employment_component_1.EmploymentComponent, skills_component_1.SkillsComponent, the_rest_component_1.TheRestComponent, project_detail_component_1.ProjectDetailComponent,
             project_stub_component_1.ProjectStubComponent, project_search_component_1.ProjectSearchComponent],

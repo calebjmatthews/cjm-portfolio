@@ -9,6 +9,7 @@ import { HttpModule }    from '@angular/http';
 
 // Imports for Angular2 Bootstrap
 import { CarouselModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { TooltipModule } from 'ng2-bootstrap/ng2-bootstrap';
 
 // Imports for loading & configuring the in-memory web api
 import { XHRBackend }                        from '@angular/http';
@@ -28,7 +29,8 @@ import { ProjectService }         from './project.service';
 import { ProjectSearchComponent } from './project-search.component';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, routing, HttpModule, CarouselModule ],
+  imports:      [ BrowserModule, FormsModule, routing, HttpModule, CarouselModule, 
+  	TooltipModule ],
   declarations: [ AppComponent, DashboardComponent, PortfolioComponent, 
     EmploymentComponent, SkillsComponent, TheRestComponent, ProjectDetailComponent, 
     ProjectStubComponent, ProjectSearchComponent ],

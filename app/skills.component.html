@@ -25,9 +25,11 @@
           <span class="cjmpX" *ngIf="project.familiarity===1">X</span></div></td>
         <td *ngIf="project.type==='Skill'"><div class="cjmp5">
           <span *ngFor="let linkId of project.link">
-            <div class="cjmpLinkInitial" (click)="gotoDetail(this.getProject(linkId))">
-              {{ this.linkInitials(project, linkId) }} 
-            </div>
+            <a [tooltip] = "this.getProject(linkId).name">
+              <div class="cjmpLinkInitial" (click)="gotoDetail(this.getProject(linkId))">
+                {{ this.linkInitials(project, linkId) }} 
+              </div>
+            </a>
           </span>
         </div></td>
       </tr>
