@@ -3,16 +3,16 @@ import path = require('path');
 var port: number = process.env.PORT || 8000;
 var app = express();
 
-app.use('/app', express.static(path.resolve(__dirname, 'app')));
-
-// var renderIndex = (req: express.Request, res: express.Response) => {
-//     res.sendFile(path.resolve(__dirname, 'index.html'));
-// }
-// 
-// app.get('/*', renderIndex);
+// app.use('/app', express.static(path.resolve(__dirname, 'app')));
 
 var serveStatic = require('serve-static');
 app.use(serveStatic(__dirname, { 'index': ['index.html'] }));
+
+var renderIndex = (req: express.Request, res: express.Response) => {
+    res.sendFile(path.resolve(__dirname, 'index.html'));
+}
+
+app.get('/*', renderIndex);
 
 var server = app.listen(port, function() {
   var host = server.address().address;
