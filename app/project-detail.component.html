@@ -4,7 +4,7 @@
   	<carousel [interval]="5000" [noWrap]="false">
       <slide class="cjmpSlide" *ngFor="let screenshots of slides" 
         [active]="screenshots.active">
-        <img [src]="screenshots.image">
+        <img class="cjmpScreenshot" [src]="screenshots.image">
 
         <div class="carousel-caption">
           <p>{{screenshots.text}}</p>

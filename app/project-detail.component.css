@@ -1,9 +1,3 @@
-img {
-	display: block;
-	margin: auto;
-	max-width: 750px;
-	max-height: 350px;
-}
 h2 {
 	text-align: center;
 	margin: 0 0 25px 0;
@@ -23,7 +17,13 @@ li {
 .cjmpSlide {
 	width: 750px;
 	height: 450px;
-	background-color: #dce0e8;
+/*	background-color: #dce0e8;*/
+}
+.cjmpScreenshot {
+	display: block;
+	margin: auto;
+	max-width: 750px;
+	max-height: 450px;
 }
 .cjmpSDContainer {
 	position: relative;
