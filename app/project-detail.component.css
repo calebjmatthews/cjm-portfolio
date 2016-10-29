@@ -14,13 +14,24 @@ li {
 .addlInfo {
 	margin: 0 0 25px 0;
 }
+.cjmpGradient {
+	position: absolute;
+	z-index: 1;
+	width: 750px;
+	height: 450px;
+}
+.carousel-caption {
+	z-index: 2;
+}
 .cjmpSlide {
 	width: 750px;
 	height: 450px;
 /*	background-color: #dce0e8;*/
 }
 .cjmpScreenshot {
-	display: block;
+	position: absolute;
+	left: 0;
+	right: 0;
 	margin: auto;
 	max-width: 750px;
 	max-height: 450px;
