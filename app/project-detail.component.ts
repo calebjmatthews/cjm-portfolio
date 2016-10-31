@@ -43,6 +43,7 @@ export class ProjectDetailComponent implements OnInit {
 	}
 
 	setSlides(): void {
+		this.slides = [];
 		for (let iii = 0; iii < this.project.screenshots.length; iii++) {
 			let tCaption: string;
 			if (this.project.captions[iii] != undefined) {

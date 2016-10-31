@@ -21,7 +21,7 @@ let ProjectStubComponent = class ProjectStubComponent {
         });
     }
     translateFamiliarity(givenFamiliarity) {
-        let famArray = ["no", "some", "moderate", "extensive"];
+        let famArray = ["No", "Some", "Moderate", "Extensive"];
         return famArray[givenFamiliarity];
     }
 };

@@ -38,6 +38,7 @@ let ProjectDetailComponent = class ProjectDetailComponent {
         });
     }
     setSlides() {
+        this.slides = [];
         for (let iii = 0; iii < this.project.screenshots.length; iii++) {
             let tCaption;
             if (this.project.captions[iii] != undefined) {
