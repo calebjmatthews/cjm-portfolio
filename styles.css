@@ -47,6 +47,7 @@ ul {
 .cjmpLink:hover {
   color:  #0B0080;
   text-decoration: underline;
+  cursor: pointer;
 }
 
 /* Responsive: Portrait tablets and up */

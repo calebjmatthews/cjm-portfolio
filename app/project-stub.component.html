@@ -22,8 +22,8 @@
 		</span>
 
 		<span *ngSwitchCase="'Skill'">
-			<h4>{{ project.name }}</h4>
-			Familiarity: {{ project.familiarity }}
+			<h4>{{ project.name }}: </h4>
+			{{ translateFamiliarity(project.familiarity) }} familiarity
 		</span>
 
 	</div>

@@ -20,6 +20,10 @@ let ProjectStubComponent = class ProjectStubComponent {
             this.project = project;
         });
     }
+    translateFamiliarity(givenFamiliarity) {
+        let famArray = ["no", "some", "moderate", "extensive"];
+        return famArray[givenFamiliarity];
+    }
 };
 __decorate([
     core_1.Input(), 

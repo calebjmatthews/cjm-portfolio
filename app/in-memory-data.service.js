@@ -118,8 +118,7 @@ class InMemoryDataService {
                 screenshots: ["app/images/cjmp1.png", "app/images/cjmp2.png",
                     "app/images/cjmp3.png"],
                 captions: [("Splash page and search functionality returning results"),
-                    ("A detail page for the Browsing Simulator project, with carosel to " +
-                        "showcase screenshots"),
+                    ("A detail page with carosel to showcase screenshots"),
                     ("The skills page, with tooltip-enabled navigation buttons")],
                 shortDescription: ("A portfolio web app made in Angular2 and Typescript, " +
                     "mobile compatible and featuring robust search functionality"),
@@ -421,8 +420,8 @@ class InMemoryDataService {
                 screenshots: ["app/images/madison.png"],
                 longDescription: [("I moved to Madison, Wisconsin in the summer of 2014. " +
                         "About this same time programming was growing from a tool that I " +
-                        "used at work, to a hobby that consumed huge pieces of my free time."),
-                    ("Since my first job I had used VBA to avoid repetitive work, but it's " +
+                        "used at work to a hobby that consumed huge pieces of my free time."),
+                    ("Since my first job I have used VBA to avoid repetitive work, but it's " +
                         "been very different designing entire projects from the ground up, " +
                         "and I've loved it.")]
             },

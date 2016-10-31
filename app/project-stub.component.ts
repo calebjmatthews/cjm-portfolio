@@ -23,4 +23,9 @@ export class ProjectStubComponent implements OnInit {
 			this.project = project;
 		});
 	}
+
+	translateFamiliarity(givenFamiliarity: string) {
+		let famArray: string[] = ["No", "Some", "Moderate", "Extensive"];
+		return famArray[givenFamiliarity];
+	}
 }
