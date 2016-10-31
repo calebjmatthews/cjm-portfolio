@@ -97,7 +97,8 @@ class InMemoryDataService {
                     "app/images/archipelio2.png"],
                 captions: [("A screenshot of Archipel.io in action")],
                 shortDescription: ("A strategy browser game developed as an exercise in " +
-                    "Typescript, Object Oriented Programming, and real time graphical display"),
+                    "Typescript, object oriented programming (OOP), and real time graphical " +
+                    "display"),
                 longDescription: [("Archipel.io is built with Typescript and PixiJS, a " +
                         "Javascript WebGL renderer"),
                     ("The game features procedural island generation, local two-player " +
@@ -113,22 +114,27 @@ class InMemoryDataService {
                 id: 9,
                 type: "Self",
                 name: "Development Portfolio",
-                logo: "app/images/typescript.png",
-                screenshots: ["app/images/archipelio1.png", "app/images/archipelio3.png",
-                    "app/images/archipelio2.png"],
-                captions: [("A screenshot of Archipel.io in action")],
-                shortDescription: ("A strategy browser game developed as an exercise in " +
-                    "Typescript, Object Oriented Programming, and real time graphical display"),
-                longDescription: [("Archipel.io is built with Typescript and PixiJS, a " +
-                        "Javascript WebGL renderer"),
-                    ("The game features procedural island generation, local two-player " +
-                        " gameplay, and an incremental settlement-building theme"),
-                    ("It utilizes a custom-made (x,y) point and (x,y,z) hexagon system " +
-                        "of classes and functions for UI and graphical display")],
+                logo: "app/images/angularjs.png",
+                screenshots: ["app/images/cjmp1.png", "app/images/cjmp2.png",
+                    "app/images/cjmp3.png"],
+                captions: [("Splash page and search functionality returning results"),
+                    ("A detail page for the Browsing Simulator project, with carosel to " +
+                        "showcase screenshots"),
+                    ("The skills page, with tooltip-enabled navigation buttons")],
+                shortDescription: ("A portfolio web app made in Angular2 and Typescript, " +
+                    "mobile compatible and featuring robust search functionality"),
+                longDescription: [("A programming and design portfolio in the form of a " +
+                        "mobile web application, and what you're reading right now"),
+                    ("Made in Angular2 and Typescript, the portfolio also uses " +
+                        "twitter-bootstrap for CSS styling, and ng2-bootstrap directives for " +
+                        "to create tooltips and the image carosel used in the project detail page"),
+                    ("A mock database service is used to store data and deliver to " +
+                        "components. Although unnecesary for the complexity of the app, this " +
+                        "could be modified to operate as a traditional web-ready database")],
                 link: null,
                 linkName: [""],
-                tags: ["Archipel.io", "Typescript", "Javascript", "PixiJS", "Web Design",
-                    "WebGL"]
+                tags: ["Typescript", "Javascript", "Angular2", "Bootstrap", "Web Design",
+                    "WebGL", "Development Portfolio"]
             },
             { id: 5,
                 type: "Employment",
