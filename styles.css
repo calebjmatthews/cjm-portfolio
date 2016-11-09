@@ -31,24 +31,15 @@ h2 {
 /* Customize container */
 @media (min-width: 768px) {
   .container {
-    max-width: 780px;
+    max-width: 768px;
   }
 }
 .container-narrow > hr {
   margin: 30px 0;
 }
-ul {
+/*ul {
   min-width: 425px;
-}
-
-.cjmpLink {
-  color: #0645AD;
-}
-.cjmpLink:hover {
-  color:  #0B0080;
-  text-decoration: underline;
-  cursor: pointer;
-}
+}*/
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {

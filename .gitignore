@@ -3,3 +3,5 @@ app/.DS_Store
 node_modules/
 typings/
 npm-debug.log
+bootstrap.js
+jquery-3.1.1.js

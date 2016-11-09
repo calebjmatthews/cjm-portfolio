@@ -1,0 +1,39 @@
+.cjmp-link {
+  color: #0645AD;
+}
+.cjmp-link:hover {
+  color:  #0B0080;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.cjmp-btn {
+	margin: 15px;
+	background-color: #4e78b5;
+	border-radius: 5px;
+	height: 20px;
+	width: 20px;
+	border: none;
+}
+
+.cjmp-navbtn {
+	border-radius: 5px;
+}
+.cjmp-navbtn .active {
+	background-color: #4e78b5;
+	border-radius: 5px;
+}
+.cjmp-navbtn a:hover {
+	background-color: #80A4D9;
+	border-radius: 5px;
+}
+
+.cjmp-navbtn-text {
+	color: #4e78b5;
+}
+.active {
+	color: #ffffff;
+}
+.cjmp-navbtn:hover .cjmp-navbtn-text {
+	color: #ffffff;
+}

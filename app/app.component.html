@@ -1,25 +1,38 @@
 <div class="container">
-	<div class="header clearfix">
-		<nav>
-      <ul class="nav nav-pills pull-right">
-      	<li role="presentation" class="active">
-      		<a routerLink="/dashboard" routerLinkActive="active">Home</a>
-      	</li>
-		    <li role="presentation">
-		    	<a routerLink="/programming" routerLinkActive="active">Projects</a>
-		    </li>
-		    <li role="presentation">
-		    	<a routerLink="/employment" routerLinkActive="active">Work History</a>
-		    </li>
-		    <li role="presentation">
-		    	<a routerLink="/skills" routerLinkActive="active">Skills</a>
-		    </li>
-		    <li role="presentation">
-		    	<a routerLink="/the-rest" routerLinkActive="active">The Rest</a>
-		    </li>
-      </ul>
-    </nav>
-    <h3 class="text-muted">Caleb Matthews</h3>
-	</div>
+	<nav class="navbar cjmp-navbar">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand">Caleb Matthews</a>
+				<button type="button" class="cjmp-btn navbar-toggle collapsed" data-toggle="collapse" data-target="#cjmp-navbar-collapse" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+				</button>
+			</div>
+
+			<div class="collapse navbar-collapse" id="cjmp-navbar-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li role="presentation" class="cjmp-navbtn">
+	      		<a class="cjmp-navbtn-text" routerLink="/dashboard" routerLinkActive="active">
+	      			Home</a>
+	      	</li>
+			    <li class="cjmp-navbtn" role="presentation">
+			    	<a class="cjmp-navbtn-text" routerLink="/programming" routerLinkActive="active">
+			    		Projects</a>
+			    </li>
+			    <li class="cjmp-navbtn" role="presentation">
+			    	<a class="cjmp-navbtn-text" routerLink="/employment" routerLinkActive="active">
+			    		Work History</a>
+			    </li>
+			    <li class="cjmp-navbtn" role="presentation">
+			    	<a class="cjmp-navbtn-text" routerLink="/skills" routerLinkActive="active">
+			    		Skills</a>
+			    </li>
+			    <li class="cjmp-navbtn" role="presentation">
+			    	<a class="cjmp-navbtn-text" routerLink="/the-rest" routerLinkActive="active">
+			    		The Rest</a>
+			    </li>
+	      </ul>
+	    </div>
+	  </div>
+	</nav>
 	<router-outlet></router-outlet>
 </div>
