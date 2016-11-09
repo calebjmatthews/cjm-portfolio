@@ -1,6 +1,6 @@
 img {
 	max-height: 100%;  
-  max-width: 100%; 
+  max-width: 50px; 
   width: auto;
   height: auto;
   position: absolute;  
@@ -10,60 +10,62 @@ img {
   right: 0;  
   margin: auto;
 }
-table tbody, table thead
-{
-    display: block;
-}
-table tbody 
-{
-   overflow: auto;
-   height: 400px;
-}
-th {
-  text-align: center;
-  font-weight: bold;
-  width: 750px;
-}
-tr {
-  width: 750px;
+table {
+  width: 100%;
 }
 td {
   vertical-align: bottom;
   text-align: center;
   height: 60px;
 }
+th {
+  text-align: center;
+  font-size: 9px;
+}
+th .cjmp-col1 {
+  text-align: center;
+  font-size: 14px;
+}
+td .cjmp-col1 {
+  text-align: center;
+  font-size: 12px;
+}
+.cjmp-project-name {
+  float: left;
+  width: 100%;
+}
 
 .cjmpImgContainer {
 	margin: 5px;
-	float: left;
+	float: none;
 }
 .cjmpFrame {
   height: 50px;
-  width: 50px;
+  width: 100%;
   position: relative;
 }
-.cjmp1 {
-  width: 220px;
+/*.cjmp-col1 {
+  width: 30%;
 }
-.cjmp2 {
-  width: 110px;
+.cjmp-col2 {
+  width: 15%;
 }
-.cjmp3 {
-  width: 110px;
+.cjmp-col3 {
+  width: 15%;
 }
-.cjmp4 {
-  width: 110px;
+.cjmp-col4 {
+  width: 15%;
 }
-.cjmp5 {
-  width: 120px;
-}
+.cjmp-col5 {
+  width: 25%;
+}*/
 .cjmpX {
   margin: 25px 0 0 0;
   font-size: 32px;
 }
 .cjmpLinkInitial {
   margin: 5px 0px 0px 0px;
-  padding: 8px 0 0 0;
+  padding: 7px 0 0 0;
   display: inline-block;
   height: 30px;
   width: 30px;
@@ -75,4 +77,91 @@ td {
 }
 .cjmpLinkInitial:hover {
   background-color: #35517A;
+}
+
+/* Responsive: Larger phones and small browser windows */
+@media (min-width: 500px) {
+
+  img {
+    max-width: 100%; 
+  }
+  .cjmpImgContainer {
+    margin: 5px;
+    float: left;
+  }
+  .cjmpFrame {
+    width: 50px;
+  }
+  .cjmp-project-name {
+    float: none;
+  }
+  th {
+    text-align: center;
+    font-size: 14px;
+  }
+  th .cjmp-col1 {
+    text-align: center;
+    font-size: 14px;
+  }
+  td .cjmp-col1 {
+    text-align: center;
+    font-size: 14px;
+  }
+
+}
+
+/* Responsive: Portrait tablets and up */
+@media (min-width: 768px) {
+
+  img {
+    max-width: 100%; 
+  }
+  .cjmpImgContainer {
+    margin: 5px;
+    float: left;
+  }
+  .cjmpFrame {
+    width: 50px;
+  }
+  .cjmp-project-name {
+    float: none;
+    display: table;
+    position: absolute;
+    height: 60px;
+    width: 220px;
+  }
+  .cjmp-project-name span {
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 60px;
+  }
+  .cjmp-col1 {
+    width: 220px;
+  }
+  .cjmp-col2 {
+    width: 110px;
+  }
+  .cjmp-col3 {
+    width: 110px;
+  }
+  .cjmp-col4 {
+    width: 110px;
+  }
+  .cjmp-col5 {
+    width: 120px;
+  }
+  th {
+    text-align: center;
+    font-size: 16px;
+  }
+  th .cjmp-col1 {
+    text-align: center;
+    font-size: 16px;
+  }
+
+  td .cjmp-col1 {
+    text-align: center;
+    font-size: 16px;
+  }
+
 }
