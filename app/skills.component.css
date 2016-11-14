@@ -82,19 +82,6 @@ td .cjmp-col1 {
 /* Responsive: Larger phones and small browser windows */
 @media (min-width: 500px) {
 
-  img {
-    max-width: 100%; 
-  }
-  .cjmpImgContainer {
-    margin: 5px;
-    float: left;
-  }
-  .cjmpFrame {
-    width: 50px;
-  }
-  .cjmp-project-name {
-    float: none;
-  }
   th {
     text-align: center;
     font-size: 14px;
