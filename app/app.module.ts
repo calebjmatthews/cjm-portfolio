@@ -2,7 +2,7 @@
 // 1. Change tabs to spaces
 // 2. Give selectors cjmp- prefix
 
-import { NgModule }      from '@angular/core';
+import { NgModule, enableProdMode }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 import { HttpModule }    from '@angular/http';
@@ -27,6 +27,8 @@ import { ProjectDetailComponent } from './project-detail.component';
 import { ProjectStubComponent }   from './project-stub.component';
 import { ProjectService }         from './project.service';
 import { ProjectSearchComponent } from './project-search.component';
+
+enableProdMode();
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, routing, HttpModule, CarouselModule, 

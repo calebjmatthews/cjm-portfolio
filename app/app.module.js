@@ -33,6 +33,7 @@ const project_detail_component_1 = require('./project-detail.component');
 const project_stub_component_1 = require('./project-stub.component');
 const project_service_1 = require('./project.service');
 const project_search_component_1 = require('./project-search.component');
+core_1.enableProdMode();
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
