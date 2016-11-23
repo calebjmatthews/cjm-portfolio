@@ -1,6 +1,6 @@
 import express = require('express');
 import path = require('path');
-var port: number = process.env.PORT || 8000;
+var port: number = process.env.PORT || 5000;
 var app = express();
 
 // app.use('/app', express.static(path.resolve(__dirname, 'app')));
