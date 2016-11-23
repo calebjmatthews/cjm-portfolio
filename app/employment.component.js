@@ -8,38 +8,40 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require('@angular/core');
-const router_1 = require('@angular/router');
-const project_service_1 = require('./project.service');
-let EmploymentComponent = class EmploymentComponent {
-    constructor(router, projectService) {
+var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
+var project_service_1 = require('./project.service');
+var EmploymentComponent = (function () {
+    function EmploymentComponent(router, projectService) {
         this.router = router;
         this.projectService = projectService;
         this.addingProject = false;
     }
-    getProjects() {
-        this.projectService.getProjects().then(projects => this.arrProjects = projects);
-    }
-    gotoDetail(project) {
-        let link = ['/detail', project.id];
+    EmploymentComponent.prototype.getProjects = function () {
+        var _this = this;
+        this.projectService.getProjects().then(function (projects) { return _this.arrProjects = projects; });
+    };
+    EmploymentComponent.prototype.gotoDetail = function (project) {
+        var link = ['/detail', project.id];
         this.router.navigate(link);
-    }
-    close(savedProject) {
+    };
+    EmploymentComponent.prototype.close = function (savedProject) {
         this.addingProject = false;
         if (savedProject) {
             this.getProjects();
         }
-    }
-    ngOnInit() {
+    };
+    EmploymentComponent.prototype.ngOnInit = function () {
         this.getProjects();
-    }
-};
-EmploymentComponent = __decorate([
-    core_1.Component({
-        selector: 'employment',
-        templateUrl: './app/employment.component.html'
-    }), 
-    __metadata('design:paramtypes', [router_1.Router, project_service_1.ProjectService])
-], EmploymentComponent);
+    };
+    EmploymentComponent = __decorate([
+        core_1.Component({
+            selector: 'employment',
+            templateUrl: './app/employment.component.html'
+        }), 
+        __metadata('design:paramtypes', [router_1.Router, project_service_1.ProjectService])
+    ], EmploymentComponent);
+    return EmploymentComponent;
+}());
 exports.EmploymentComponent = EmploymentComponent;
 //# sourceMappingURL=employment.component.js.map

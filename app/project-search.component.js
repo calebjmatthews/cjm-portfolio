@@ -8,45 +8,47 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require('@angular/core');
-const router_1 = require('@angular/router');
-const Observable_1 = require('rxjs/Observable');
-const Subject_1 = require('rxjs/Subject');
-const project_search_service_1 = require('./project-search.service');
-let ProjectSearchComponent = class ProjectSearchComponent {
-    constructor(projectSearchService, router) {
+var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
+var Observable_1 = require('rxjs/Observable');
+var Subject_1 = require('rxjs/Subject');
+var project_search_service_1 = require('./project-search.service');
+var ProjectSearchComponent = (function () {
+    function ProjectSearchComponent(projectSearchService, router) {
         this.projectSearchService = projectSearchService;
         this.router = router;
         this.searchTerms = new Subject_1.Subject();
     }
     // Push a search term into the observable stream
-    search(term) {
+    ProjectSearchComponent.prototype.search = function (term) {
         this.searchTerms.next(term);
-    }
-    ngOnInit() {
+    };
+    ProjectSearchComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.arrProjects = this.searchTerms
             .debounceTime(300)
             .distinctUntilChanged()
-            .switchMap(term => term
-            ? this.projectSearchService.search(term)
-            : Observable_1.Observable.of([]))
-            .catch(error => {
+            .switchMap(function (term) { return term
+            ? _this.projectSearchService.search(term)
+            : Observable_1.Observable.of([]); })
+            .catch(function (error) {
             console.log(error);
             return Observable_1.Observable.of([]);
         });
-    }
-    gotoDetail(project) {
-        let link = ['/detail', project.id];
+    };
+    ProjectSearchComponent.prototype.gotoDetail = function (project) {
+        var link = ['/detail', project.id];
         this.router.navigate(link);
-    }
-};
-ProjectSearchComponent = __decorate([
-    core_1.Component({
-        selector: 'my-project-search',
-        templateUrl: 'app/project-search.component.html',
-        providers: [project_search_service_1.ProjectSearchService]
-    }), 
-    __metadata('design:paramtypes', [project_search_service_1.ProjectSearchService, router_1.Router])
-], ProjectSearchComponent);
+    };
+    ProjectSearchComponent = __decorate([
+        core_1.Component({
+            selector: 'my-project-search',
+            templateUrl: 'app/project-search.component.html',
+            providers: [project_search_service_1.ProjectSearchService]
+        }), 
+        __metadata('design:paramtypes', [project_search_service_1.ProjectSearchService, router_1.Router])
+    ], ProjectSearchComponent);
+    return ProjectSearchComponent;
+}());
 exports.ProjectSearchComponent = ProjectSearchComponent;
 //# sourceMappingURL=project-search.component.js.map

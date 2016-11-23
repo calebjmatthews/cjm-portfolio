@@ -8,21 +8,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require('@angular/core');
-const http_1 = require('@angular/http');
-let ProjectSearchService = class ProjectSearchService {
-    constructor(http) {
+var core_1 = require('@angular/core');
+var http_1 = require('@angular/http');
+var ProjectSearchService = (function () {
+    function ProjectSearchService(http) {
         this.http = http;
     }
-    search(term) {
+    ProjectSearchService.prototype.search = function (term) {
         return this.http
-            .get(`app/projects/?tags=${term}`)
-            .map((r) => r.json().data);
-    }
-};
-ProjectSearchService = __decorate([
-    core_1.Injectable(), 
-    __metadata('design:paramtypes', [http_1.Http])
-], ProjectSearchService);
+            .get("app/projects/?tags=" + term)
+            .map(function (r) { return r.json().data; });
+    };
+    ProjectSearchService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [http_1.Http])
+    ], ProjectSearchService);
+    return ProjectSearchService;
+}());
 exports.ProjectSearchService = ProjectSearchService;
 //# sourceMappingURL=project-search.service.js.map

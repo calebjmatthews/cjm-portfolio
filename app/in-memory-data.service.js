@@ -1,7 +1,9 @@
 "use strict";
-class InMemoryDataService {
-    createDb() {
-        let projects = [
+var InMemoryDataService = (function () {
+    function InMemoryDataService() {
+    }
+    InMemoryDataService.prototype.createDb = function () {
+        var projects = [
             { id: 1,
                 type: "Programming",
                 name: "Mammal Herbivory Simulator",
@@ -449,8 +451,9 @@ class InMemoryDataService {
                         "with the group!")]
             }
         ];
-        return { projects };
-    }
-}
+        return { projects: projects };
+    };
+    return InMemoryDataService;
+}());
 exports.InMemoryDataService = InMemoryDataService;
 //# sourceMappingURL=in-memory-data.service.js.map

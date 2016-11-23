@@ -8,44 +8,45 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require('@angular/core');
-const router_1 = require('@angular/router');
-const project_service_1 = require('./project.service');
-let SkillsComponent = class SkillsComponent {
-    constructor(router, projectService) {
+var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
+var project_service_1 = require('./project.service');
+var SkillsComponent = (function () {
+    function SkillsComponent(router, projectService) {
         this.router = router;
         this.projectService = projectService;
         this.addingProject = false;
     }
-    getProjects() {
-        this.projectService.getProjects().then(projects => this.arrProjects = projects);
-    }
-    gotoDetail(project) {
-        let link = ['/detail', project.id];
+    SkillsComponent.prototype.getProjects = function () {
+        var _this = this;
+        this.projectService.getProjects().then(function (projects) { return _this.arrProjects = projects; });
+    };
+    SkillsComponent.prototype.gotoDetail = function (project) {
+        var link = ['/detail', project.id];
         this.router.navigate(link);
-    }
-    close(savedProject) {
+    };
+    SkillsComponent.prototype.close = function (savedProject) {
         this.addingProject = false;
         if (savedProject) {
             this.getProjects();
         }
-    }
-    ngOnInit() {
+    };
+    SkillsComponent.prototype.ngOnInit = function () {
         this.getProjects();
-    }
-    getProject(givenId) {
-        for (let iii = 0; iii < this.arrProjects.length; iii++) {
+    };
+    SkillsComponent.prototype.getProject = function (givenId) {
+        for (var iii = 0; iii < this.arrProjects.length; iii++) {
             if (this.arrProjects[iii].id === givenId) {
                 return this.arrProjects[iii];
             }
         }
         return null;
-    }
-    linkInitials(project, linkId) {
-        let initials = "";
-        let projectName = this.getProject(linkId).name;
-        for (let iii = 0; iii < projectName.length; iii++) {
-            let character = projectName[iii];
+    };
+    SkillsComponent.prototype.linkInitials = function (project, linkId) {
+        var initials = "";
+        var projectName = this.getProject(linkId).name;
+        for (var iii = 0; iii < projectName.length; iii++) {
+            var character = projectName[iii];
             if ((character === ".") || (character === " ")) {
                 continue;
             }
@@ -65,15 +66,16 @@ let SkillsComponent = class SkillsComponent {
         else {
             return "";
         }
-    }
-};
-SkillsComponent = __decorate([
-    core_1.Component({
-        selector: 'skills',
-        templateUrl: './app/skills.component.html',
-        styleUrls: ['./app/skills.component.css'],
-    }), 
-    __metadata('design:paramtypes', [router_1.Router, project_service_1.ProjectService])
-], SkillsComponent);
+    };
+    SkillsComponent = __decorate([
+        core_1.Component({
+            selector: 'skills',
+            templateUrl: './app/skills.component.html',
+            styleUrls: ['./app/skills.component.css'],
+        }), 
+        __metadata('design:paramtypes', [router_1.Router, project_service_1.ProjectService])
+    ], SkillsComponent);
+    return SkillsComponent;
+}());
 exports.SkillsComponent = SkillsComponent;
 //# sourceMappingURL=skills.component.js.map

@@ -1,12 +1,12 @@
 "use strict";
-const router_1 = require('@angular/router');
-const dashboard_component_1 = require('./dashboard.component');
-const portfolio_component_1 = require('./portfolio.component');
-const employment_component_1 = require('./employment.component');
-const skills_component_1 = require('./skills.component');
-const the_rest_component_1 = require('./the-rest.component');
-const project_detail_component_1 = require('./project-detail.component');
-const appRoutes = [
+var router_1 = require('@angular/router');
+var dashboard_component_1 = require('./dashboard.component');
+var portfolio_component_1 = require('./portfolio.component');
+var employment_component_1 = require('./employment.component');
+var skills_component_1 = require('./skills.component');
+var the_rest_component_1 = require('./the-rest.component');
+var project_detail_component_1 = require('./project-detail.component');
+var appRoutes = [
     {
         path: '',
         redirectTo: '/dashboard',

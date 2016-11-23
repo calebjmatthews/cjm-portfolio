@@ -1,12 +1,12 @@
 "use strict";
-const express = require('express');
-const path = require('path');
+var express = require('express');
+var path = require('path');
 var port = process.env.PORT || 8000;
 var app = express();
 // app.use('/app', express.static(path.resolve(__dirname, 'app')));
 var serveStatic = require('serve-static');
 app.use(serveStatic(__dirname, { 'index': ['index.html'] }));
-var renderIndex = (req, res) => {
+var renderIndex = function (req, res) {
     res.sendFile(path.resolve(__dirname, 'index.html'));
 };
 app.get('/*', renderIndex);
