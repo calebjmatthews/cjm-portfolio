@@ -16,7 +16,7 @@
   <div class="bg-primary cjmpSDContainer">
     <h4 class="cjmpShortDescription">{{ project.shortDescription }}</h4>
   </div>
-  <ul>
+  <ul class="cjmpBullet">
   	<li *ngFor="let line of project.longDescription">{{line}}</li>
   </ul>
   <div *ngIf="project.link" class="addlInfo">

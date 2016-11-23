@@ -49,6 +49,9 @@ li {
 .cjmpShortDescription {
 	text-align: center;
 }
+.cjmpBullet {
+	padding-left: 20px;
+}
 .cjmpLink {
   color: #0645AD;
 }
