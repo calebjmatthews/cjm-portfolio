@@ -1,0 +1,38 @@
+h1 {
+	text-align: center;
+}
+.cjmp-headshot {
+	float: left;
+	margin: 0px 20px 0px 00px;
+	height: 100px;
+	width: 100px;
+	border-radius: 50px;
+}
+.cjmp-basic-info {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	float: left;
+	width: 100%;
+	font-size: 16px;
+	margin: 5px 0px 20px 0px;
+}
+.cjmp-basic-details {
+	padding: 12px;
+}
+.cjmp-full-width {
+	width: 100%;
+}
+
+@media (min-width: 500px) {
+
+	.cjmp-headshot {
+		margin: 0px 20px 0px 20px;
+	}
+  .cjmp-basic-info {
+  	font-size: 20px;
+  }
+  .cjmp-basic-details {
+		padding: 6px;
+	}
+
+}
