@@ -3,6 +3,7 @@ export class Project {
 	type: string;
 	name: string;
 	employer: string;
+	timeframe: string;
 	familiarity: number;
 	logo: string;
 	screenshots: string[] = [];

@@ -17,7 +17,9 @@
 		</span>
 
 		<span *ngSwitchCase="'Employment'">
-			<h4>{{ project.name }} at {{ project.employer }}</h4>
+			<h4>{{ project.name }} </h4>
+			<h5>at {{ project.employer }} <span class="cjmp-timeframe">
+				({{ project.timeframe }})</span></h5>
 			{{ project.shortDescription }}
 		</span>
 

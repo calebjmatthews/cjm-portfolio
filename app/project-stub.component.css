@@ -10,6 +10,13 @@ img {
   right: 0;  
   margin: auto;
 }
+h4 {
+  text-align: left;
+}
+h5 {
+  text-align: right;
+  font-style: italic;
+}
 
 .cjmpStub {
 	margin: 5px 10px 5px 10px;
@@ -22,11 +29,30 @@ img {
 	background-color: #e5e5e5;
 }
 .cjmpImgContainer {
-	margin: 5px;
+	margin: 5px 10px 5px 5px;
 	float: left;
 }
 .cjmpFrame {
 	height: 50px;
   width: 50px;
   position: relative;
+}
+.cjmp-timeframe {
+  display: block;
+}
+
+/* Responsive: Larger phones, small browser windows, and up */
+@media (min-width: 500px) {
+
+  h4 {
+    text-align: left;
+  }
+  h5 {
+    text-align: left;
+  }
+
+  .cjmp-timeframe {
+    display: inline;
+  }
+
 }
