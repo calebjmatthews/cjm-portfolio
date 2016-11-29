@@ -39,15 +39,13 @@ li {
   left: 0;
   right: 0;
 
-  animation-duration: 5s;
-  animation-name: fadeinout;
+  animation-duration: 1s;
+  animation-name: fadein;
 }
 
-@keyframes fadeinout {
+@keyframes fadein {
   0%   { opacity: 0; }
-  10%  { opacity: 1; }
-  90%  { opacity: 1; }
-  100% { opacity: 0; }
+  100% { opacity: 1; }
 }
 .cjmpSDContainer {
 	position: relative;

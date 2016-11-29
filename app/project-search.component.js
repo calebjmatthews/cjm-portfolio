@@ -37,7 +37,13 @@ var ProjectSearchComponent = (function () {
         });
     };
     ProjectSearchComponent.prototype.gotoDetail = function (project) {
-        var link = ['/detail', project.id];
+        var link = [];
+        if (project.type === "Skill") {
+            link = ['/skills'];
+        }
+        else {
+            link = ['/detail', project.id];
+        }
         this.router.navigate(link);
     };
     ProjectSearchComponent = __decorate([

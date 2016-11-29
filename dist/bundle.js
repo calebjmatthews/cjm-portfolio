@@ -227,9 +227,9 @@ var InMemoryDataService = (function () {
             { id: 1,
                 type: "Programming",
                 name: "Mammal Herbivory Simulator",
-                logo: "app/images/uwmadison.png",
-                screenshots: ["app/images/browse1.png",
-                    "app/images/browse2.png", "app/images/browse3.png"],
+                logo: "app/images/uwmadison.jpg",
+                screenshots: ["app/images/browse1.jpg",
+                    "app/images/browse2.jpg", "app/images/browse3.jpg"],
                 captions: ["Simulation visualization and statistics",
                     "User modifiable fields", "Modal window with additional options"],
                 shortDescription: ("A user-modifiable simulation of organism movement, " +
@@ -256,7 +256,7 @@ var InMemoryDataService = (function () {
             { id: 2,
                 type: "Programming",
                 name: "Clinical Payments Database",
-                logo: "app/images/cochlear.png",
+                logo: "app/images/cochlear.jpg",
                 screenshots: [],
                 captions: [("")],
                 shortDescription: ("A Microsoft Access database that automated the clinical " +
@@ -281,10 +281,10 @@ var InMemoryDataService = (function () {
             { id: 3,
                 type: "Programming",
                 name: "FDA Panel Data Analysis",
-                logo: "app/images/cochlear.png",
-                screenshots: ["app/images/hybrid1.png", "app/images/hybrid2.png",
-                    "app/images/hybrid3.png", "app/images/hybrid4.png",
-                    "app/images/hybrid5.png", "app/images/hybrid6.png"],
+                logo: "app/images/cochlear.jpg",
+                screenshots: ["app/images/hybrid1.jpg", "app/images/hybrid2.jpg",
+                    "app/images/hybrid3.jpg", "app/images/hybrid4.jpg",
+                    "app/images/hybrid5.jpg", "app/images/hybrid6.jpg"],
                 captions: [("An example of data analysis performed prior to the panel meeting"),
                     ("An example of data analysis performed prior to the panel meeting"),
                     ("An example of data analysis performed prior to the panel meeting"),
@@ -314,9 +314,9 @@ var InMemoryDataService = (function () {
             { id: 4,
                 type: "Programming",
                 name: "Archipel.io",
-                logo: "app/images/archipelio.png",
-                screenshots: ["app/images/archipelio1.png", "app/images/archipelio3.png",
-                    "app/images/archipelio2.png"],
+                logo: "app/images/archipelio.jpg",
+                screenshots: ["app/images/archipelio1.jpg", "app/images/archipelio3.jpg",
+                    "app/images/archipelio2.jpg"],
                 captions: [("A screenshot of Archipel.io in action")],
                 shortDescription: ("A strategy browser game developed as an exercise in " +
                     "Typescript, object oriented programming (OOP), and real time graphical " +
@@ -336,9 +336,9 @@ var InMemoryDataService = (function () {
                 id: 9,
                 type: "Self",
                 name: "Development Portfolio",
-                logo: "app/images/angularjs.png",
-                screenshots: ["app/images/cjmp1.png", "app/images/cjmp2.png",
-                    "app/images/cjmp3.png"],
+                logo: "app/images/angularjs.jpg",
+                screenshots: ["app/images/cjmp1.jpg", "app/images/cjmp2.jpg",
+                    "app/images/cjmp3.jpg"],
                 captions: [("Splash page and search functionality returning results"),
                     ("A detail page with carosel to showcase screenshots"),
                     ("The skills page, with tooltip-enabled navigation buttons")],
@@ -362,8 +362,8 @@ var InMemoryDataService = (function () {
                 name: "Information Systems Resource Technician",
                 employer: "UW Madison",
                 timeframe: "Dec 2015 - Current",
-                logo: "app/images/uwmadison.png",
-                screenshots: ["app/images/browse1.png", "app/images/browse2.png",
+                logo: "app/images/uwmadison.jpg",
+                screenshots: ["app/images/browse1.jpg", "app/images/browse2.jpg",
                     "app/images/browse3"],
                 captions: ["Simulation visualization and statistics",
                     "User modifiable fields", "Modal window with additional options"],
@@ -383,8 +383,8 @@ var InMemoryDataService = (function () {
                 name: "Product Compliance Specialist",
                 employer: "Accuray, Inc.",
                 timeframe: "Oct 2015 - Aug 2016",
-                logo: "app/images/accuray.png",
-                screenshots: ["app/images/accuray1.png", "app/images/accuray2.png"],
+                logo: "app/images/accuray.jpg",
+                screenshots: ["app/images/accuray1.jpg", "app/images/accuray2.jpg"],
                 captions: ["The TomoTherapy device, Accuray's flagship product",
                     "The CyberKnife device, used for radiation therapy"],
                 shortDescription: ("Managed medical device events for TomoTherapy " +
@@ -413,14 +413,14 @@ var InMemoryDataService = (function () {
                 name: "Regulatory Affairs Specialist II",
                 employer: "Cochlear Americas",
                 timeframe: "Jul 2013 - Apr 2015",
-                logo: "app/images/cochlear.png",
-                screenshots: ["app/images/ras2.png", "app/images/ras1.png",
-                    "app/images/hybrid3.png"],
+                logo: "app/images/cochlear.jpg",
+                screenshots: ["app/images/ras2.jpg", "app/images/ras1.jpg",
+                    "app/images/hybrid3.jpg"],
                 captions: [("An example of marketing material I reviewed as part of the CRB"),
                     ("The Cochlear Hybrid device, the subject of our team's PMA"),
                     ("An example of secondary data analysis created to support the Hybrid PMA")],
                 shortDescription: ("A broad range of successes, such as " +
-                    "approval of a PMA for a new Class III device, and acceptance of " +
+                    "approval of a PMA for a new Class III device and acceptance of " +
                     "over a dozen regulatory submissions"),
                 longDescription: [("Managed a Class III product recall whose scope " +
                         "extended to the United States and Canada, from initial notice to recall " +
@@ -448,9 +448,7 @@ var InMemoryDataService = (function () {
                 name: "Quality Coordinator",
                 employer: "Cochlear Americas",
                 timeframe: "Oct 2011 - Jul 2013",
-                logo: "app/images/cochlear.png",
-                screenshots: [""],
-                captions: [("")],
+                logo: "app/images/cochlear.jpg",
                 shortDescription: ("Dramatically improved the Quality and Clinical Study " +
                     "Systems by overhauling SOPs and automating the clinical study " +
                     "payment process"),
@@ -475,7 +473,7 @@ var InMemoryDataService = (function () {
                 type: "Skill",
                 name: "Javascript",
                 familiarity: 3,
-                logo: "app/images/javascript.png",
+                logo: "app/images/javascript.jpg",
                 link: [1, 4, 5, 9],
                 linkName: ["Mammal Herbivory Simulator", "Archipel.io",
                     "Information Systems Resource Support Technician", "Development Portfolio"],
@@ -485,7 +483,7 @@ var InMemoryDataService = (function () {
                 type: "Skill",
                 name: "Typescript",
                 familiarity: 3,
-                logo: "app/images/typescript.png",
+                logo: "app/images/typescript.jpg",
                 link: [4, 9],
                 linkName: ["Archipel.io", "Development Portfolio"],
                 tags: ["Typescript", "TS"]
@@ -494,7 +492,7 @@ var InMemoryDataService = (function () {
                 type: "Skill",
                 name: "HTML5",
                 familiarity: 3,
-                logo: "app/images/html5.png",
+                logo: "app/images/html5.jpg",
                 link: [1, 4, 5, 9],
                 linkName: ["Mammal Herbivory Simulator", "Archipel.io",
                     "Information Systems Resource Support Technician", "Development Portfolio"],
@@ -504,7 +502,7 @@ var InMemoryDataService = (function () {
                 type: "Skill",
                 name: "Bootstrap",
                 familiarity: 3,
-                logo: "app/images/bootstrap.png",
+                logo: "app/images/bootstrap.jpg",
                 link: [1, 5, 9],
                 linkName: ["Mammal Herbivory Simulator",
                     "Information Systems Resource Support Technician", "Development Portfolio"],
@@ -514,7 +512,7 @@ var InMemoryDataService = (function () {
                 type: "Skill",
                 name: "Visual Basic for Applications",
                 familiarity: 3,
-                logo: "app/images/msvba.png",
+                logo: "app/images/msvba.jpg",
                 link: [2, 3, 7, 8],
                 linkName: ["Clinical Payments Database", "FDA Panel Data Analysis",
                     "Regulatory Affairs Specialist II", "Quality Coordinator"],
@@ -524,7 +522,7 @@ var InMemoryDataService = (function () {
                 type: "Skill",
                 name: "Technical Writing",
                 familiarity: 3,
-                logo: "app/images/pen.png",
+                logo: "app/images/pen.jpg",
                 link: [1, 3, 5, 6, 7, 8],
                 linkName: ["Mammal Herbivory Simulator", "FDA Panel Data Analysis",
                     "Information Systems Resource Support Technician",
@@ -536,7 +534,7 @@ var InMemoryDataService = (function () {
                 type: "Skill",
                 name: "Regulatory Affairs",
                 familiarity: 3,
-                logo: "app/images/rac.png",
+                logo: "app/images/rac.jpg",
                 link: [3, 6, 7, 8],
                 linkName: ["FDA Panel Data Analysis",
                     "Product Compliance Specialist", "Regulatory Affairs Specialist II",
@@ -547,7 +545,7 @@ var InMemoryDataService = (function () {
                 type: "Skill",
                 name: "Clinical Studies Management",
                 familiarity: 3,
-                logo: "app/images/caduceus.png",
+                logo: "app/images/caduceus.jpg",
                 link: [2, 7, 8],
                 linkName: ["Clinical Payments Database", "Regulatory Affairs Specialist II",
                     "Quality Coordinator"],
@@ -557,7 +555,7 @@ var InMemoryDataService = (function () {
                 type: "Skill",
                 name: "Quality Management System",
                 familiarity: 3,
-                logo: "app/images/qms.png",
+                logo: "app/images/qms.jpg",
                 link: [6, 7, 8],
                 linkName: ["Product Compliance Specialist", "Regulatory Affairs Specialist II",
                     "Quality Coordinator"],
@@ -567,7 +565,7 @@ var InMemoryDataService = (function () {
                 type: "Skill",
                 name: "Cascading Style Sheets 3 (CSS3)",
                 familiarity: 3,
-                logo: "app/images/css.png",
+                logo: "app/images/css.jpg",
                 link: [1, 4, 5, 9],
                 linkName: ["Mammal Herbivory Simulator", "Archipel.io",
                     "Information Systems Resource Support Technician", "Development Portfolio"],
@@ -577,7 +575,7 @@ var InMemoryDataService = (function () {
                 type: "Skill",
                 name: "AngularJS",
                 familiarity: 2,
-                logo: "app/images/angularjs.png",
+                logo: "app/images/angularjs.jpg",
                 link: [1, 5, 9],
                 linkName: ["Mammal Herbivory Simulator",
                     "Information Systems Resource Support Technician", "Development Portfolio"],
@@ -587,7 +585,7 @@ var InMemoryDataService = (function () {
                 type: "Skill",
                 name: "Angular2",
                 familiarity: 2,
-                logo: "app/images/angularjs.png",
+                logo: "app/images/angularjs.jpg",
                 link: [9],
                 linkName: ["Development Portfolio"],
                 tags: ["Angular2"]
@@ -596,7 +594,7 @@ var InMemoryDataService = (function () {
                 type: "Skill",
                 name: "SQL",
                 familiarity: 2,
-                logo: "app/images/sql.png",
+                logo: "app/images/sql.jpg",
                 link: [2],
                 linkName: ["Clinical Payments Database"],
                 tags: ["SQL", "SQL Server"]
@@ -605,7 +603,7 @@ var InMemoryDataService = (function () {
                 type: "Skill",
                 name: "User Experience Design (UX)",
                 familiarity: 2,
-                logo: "app/images/ux.png",
+                logo: "app/images/ux.jpg",
                 link: [2, 3, 4, 9],
                 linkName: ["Clinical Payments Database", "FDA Panel Data Analysis",
                     "Archipel.io", "Development Portfolio"],
@@ -615,7 +613,7 @@ var InMemoryDataService = (function () {
                 type: "Skill",
                 name: "Statistical Analysis",
                 familiarity: 2,
-                logo: "app/images/graph.png",
+                logo: "app/images/graph.jpg",
                 link: [1, 3, 5, 7],
                 linkName: ["Mammal Herbivory Simulator", "FDA Panel Data Analysis",
                     "Information Systems Resource Support Technician",
@@ -626,7 +624,7 @@ var InMemoryDataService = (function () {
                 type: "Skill",
                 name: "Python",
                 familiarity: 1,
-                logo: "app/images/python.png",
+                logo: "app/images/python.jpg",
                 link: null,
                 linkName: [""],
                 tags: ["Python"]
@@ -635,7 +633,7 @@ var InMemoryDataService = (function () {
                 type: "Skill",
                 name: "C++",
                 familiarity: 1,
-                logo: "app/images/c++.png",
+                logo: "app/images/c++.jpg",
                 link: null,
                 linkName: [""],
                 tags: ["C++"]
@@ -643,7 +641,7 @@ var InMemoryDataService = (function () {
             { id: 27,
                 type: "The Rest",
                 name: "Where I Am",
-                screenshots: ["app/images/madison.png"],
+                screenshots: ["app/images/madison.jpg"],
                 longDescription: [("I moved to Madison, Wisconsin in the summer of 2014. " +
                         "About this same time programming was growing from a tool that I " +
                         "used at work to a hobby that consumed huge pieces of my free time."),
@@ -654,7 +652,7 @@ var InMemoryDataService = (function () {
             { id: 28,
                 type: "The Rest",
                 name: "Medical and Scientific Knowledge",
-                screenshots: ["app/images/csu.png"],
+                screenshots: ["app/images/csu.jpg"],
                 longDescription: [("I studied Biochemistry at Colorado State University " +
                         "from 2006 - 2010, and I was a registered Emergency Medical Technician " +
                         "(EMT-B) from 2010 - 2011."),
@@ -665,7 +663,7 @@ var InMemoryDataService = (function () {
             { id: 29,
                 type: "The Rest",
                 name: "Leadership and Writing",
-                screenshots: ["app/images/dmfg.png"],
+                screenshots: ["app/images/dmfg.jpg"],
                 longDescription: [("Two and a half years ago I founded the Downtown " +
                         "Madison Fiction Group, with the goal of working with other writers " +
                         "to improve style and clarity."),
@@ -860,7 +858,13 @@ var ProjectSearchComponent = (function () {
         });
     };
     ProjectSearchComponent.prototype.gotoDetail = function (project) {
-        var link = ['/detail', project.id];
+        var link = [];
+        if (project.type === "Skill") {
+            link = ['/skills'];
+        }
+        else {
+            link = ['/detail', project.id];
+        }
         this.router.navigate(link);
     };
     ProjectSearchComponent = __decorate([

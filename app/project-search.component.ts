@@ -45,7 +45,13 @@ export class ProjectSearchComponent implements OnInit {
 	}
 
 	gotoDetail(project: Project): void {
-		let link = ['/detail', project.id];
+		let link: any[] = [];
+		if (project.type === "Skill") {
+			link = ['/skills'];
+		}
+		else {
+			link = ['/detail', project.id];
+		}
 		this.router.navigate(link);
 	}
 }
