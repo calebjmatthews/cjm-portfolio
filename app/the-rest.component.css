@@ -1,23 +1,56 @@
 img {
-  float: left;
-  max-height: 300px;  
-  max-width: 300px;
-  margin: 0 30px 0 10px;
+  max-height: 250px;  
+  max-width: 250px;
+  display: block;
+  margin: auto;
 }
 
-.cjmpContainer {
-  min-height: 300px;
+.cjmp-container {
+  min-height: 245px;
   border: 1px solid #7a7a7a;
   border-radius: 5px;
   margin: 20px;
 }
-.cjmpHeader {
-  margin: 0 0 10px 0;
+.cjmp-header {
+  margin: 0px 0px 10px 0px;
   background: #4e78b5;
   font-size: 24px;
   text-align: center;
   color: #ffffff;
 }
-.cjmpBody {
-  margin: 20px;
+.cjmp-list-container {
+  margin: 10px 0px 0px 0px;
+}
+.cjmp-bullet {
+  margin: 0px 10px 10px 0px;
+}
+
+/* Responsive: Medium sized phones */
+@media (min-width: 400px) {
+
+  img {
+    max-height: 300px;  
+    max-width: 300px;
+    display: block;
+    margin: auto;
+  }
+
+}
+
+/* Responsive: Portrait tablets and up */
+@media (min-width: 768px) {
+
+  img {
+    float: left;
+    display: inline-block;
+    margin: 0px 30px 0px 10px;
+  }
+
+  .cjmp-bullet {
+    margin: 0px 10px 10px 0px;
+  }
+  .cjmp-list-container {
+    margin: 0px;
+  }
+
 }

@@ -3,7 +3,7 @@ h1 {
 }
 .cjmp-headshot {
 	float: left;
-	margin: 0px 20px 0px 00px;
+	margin: 0px 10px 0px 0px;
 	height: 100px;
 	width: 100px;
 	border-radius: 50px;
@@ -13,14 +13,23 @@ h1 {
 	font-weight: 300;
 	float: left;
 	width: 100%;
-	font-size: 16px;
+	font-size: 14px;
 	margin: 5px 0px 20px 0px;
 }
 .cjmp-basic-details {
-	padding: 12px;
+	padding: 16px 0px 0px 0px;
 }
 .cjmp-full-width {
 	width: 100%;
+}
+
+@media (min-width: 400px) {
+
+	.cjmp-basic-info {
+  	font-size: 16px;
+  	padding: 12px 0px 0px 0px;
+  }
+
 }
 
 @media (min-width: 500px) {
