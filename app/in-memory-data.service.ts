@@ -19,7 +19,7 @@ export class InMemoryDataService {
             "web application"),
           ("Two methods of random distribution were used to model organism " +
             "movement, Rayleigh (Gaussian) and Levy (heavy-tailed)"),
-          ("Used the HTML canvas to display orgnism movement and camera " +
+          ("Used the HTML canvas to display organism movement and camera " +
             "size/placement"),
           ("Automatically generated an array of statistics to compare two " +
             "competing population estimation methods")],
@@ -43,7 +43,7 @@ export class InMemoryDataService {
             "several active clinical studies"), 
           ("Utilized SQL to connect to electronic data capture systems for study visit " +
             "information"), 
-          ("Performed budget calculation of payments and to subjects, IRBs, and " + 
+          ("Performed budget calculation of payments to subjects, IRBs, and " + 
             " clinics"),
           ("Automated record keeping and generation of customer letters and payment " +
             "requests"),
@@ -117,7 +117,7 @@ export class InMemoryDataService {
         screenshots: ["app/images/cjmp1.jpg",  "app/images/cjmp2.jpg", 
           "app/images/cjmp3.jpg"],
         captions: [("Splash page and search functionality returning results"), 
-          ("A detail page with carosel to showcase screenshots"),
+          ("A detail page with carousel to showcase screenshots"),
           ("The skills page, with tooltip-enabled navigation buttons")],
         shortDescription: ("A portfolio web app made in Angular2 and Typescript, " + 
           "mobile compatible and featuring robust search functionality"),
@@ -125,9 +125,9 @@ export class InMemoryDataService {
             "mobile web application, and what you're reading right now"),
           ("Made in Angular2 and Typescript, the portfolio also uses " + 
             "twitter-bootstrap for CSS styling, and ng2-bootstrap directives for " + 
-            "to create tooltips and the image carosel used in the project detail page"), 
+            "to create tooltips and the image carousel used in the project detail page"), 
           ("A mock database service is used to store data and deliver to " + 
-            "components. Although unnecesary for the complexity of the app, this " + 
+            "components. Although unnecessary for the complexity of the app, this " + 
             "could be modified to operate as a traditional web-ready database")],
         link: null,
         linkName: [""],
@@ -170,7 +170,7 @@ export class InMemoryDataService {
         longDescription: [("Initiated and managed a rework of the event coding " +
             "system, which allowed product events to be broken down with greater " + 
             "consistency and in greater granularity"), 
-          ("This project involved working with  product experts and users of the " +
+          ("This project involved working with product experts and users of the " +
             "previous coding system, and will be used as a primary driver of " +
             "product investigation thresholds moving forward"), 
           ("The set of event codes was monitored and adjusted biweekly to capture " + 
