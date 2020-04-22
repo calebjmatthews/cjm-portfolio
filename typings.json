@@ -1,8 +1,0 @@
-{
-  "globalDependencies": {
-  	"core-js": "registry:dt/core-js",
-  	"express": "registry:dt/express",
-    "jasmine": "registry:dt/jasmine",
-    "node": "registry:dt/node"
-  }
-}
