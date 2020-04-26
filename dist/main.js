@@ -141,11 +141,22 @@ const react_1 = __importStar(__webpack_require__(/*! react */ "./node_modules/re
 const header_section_1 = __importDefault(__webpack_require__(/*! ./header_section */ "./client/components/header_section.tsx"));
 const headerSectionNames = ['Home', 'Snippets', 'Projects'];
 function Header() {
-    console.log('document.URL');
-    console.log(document.URL);
-    const [currentSection, setCurrentSection] = react_1.useState(null);
+    const [currentSection, setCurrentSection] = react_1.useState('');
+    react_1.useEffect(() => {
+        let urlSuffix = document.URL.split('/')[-1] || '';
+        console.log('urlSuffix');
+        console.log(urlSuffix);
+        setCurrentSection(urlSuffix);
+    }, [document.URL]);
     return (react_1.default.createElement("div", { className: "header" }, headerSectionNames.map((headerSectionName) => {
-        return (react_1.default.createElement(header_section_1.default, { key: headerSectionName, name: headerSectionName }));
+        let selected = false;
+        if (headerSectionName.toLowerCase() == currentSection.toLowerCase()) {
+            selected = true;
+        }
+        else if (headerSectionName == 'Home' && currentSection.length == 0) {
+            selected = true;
+        }
+        return (react_1.default.createElement(header_section_1.default, { key: headerSectionName, name: headerSectionName, selected: selected }));
     })));
 }
 exports.default = Header;
@@ -258,7 +269,7 @@ module.exports = exported;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "body {\n  margin: unset;\n}\n\n.app {\n  height: 100vh;\n  width: 100vw;\n}\n\n.main {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  width: 100%;\n}\n\n.header {\n  background: #fff;\n}\n\n.spacer {\n  height: 10em;\n}\n\n.body {\n  flex: 1 0;\n  background: #fff;\n}\n\n.angled-border {\n  z-index: -1;\n  width: 120%;\n  height: 7em;\n  background: #fff;\n}\n\n\n.angled-border-top {\n  transform: rotate(-5deg) translateY(-5.5vw) translateX(-1vw);\n}\n\n.angled-border-bottom {\n  transform: rotate(-5deg) translateY(4.5vw) translateX(-1vw);\n}\n\n.background-image {\n  z-index: -2;\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100vw;\n  height: auto;\n}\n", ""]);
+exports.push([module.i, "body {\n  margin: unset;\n  font-family: 'Manrope', sans-serif;\n}\n\n.app {\n  height: 100vh;\n  width: 100vw;\n}\n\n.main {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  width: 100%;\n}\n\n.header {\n  display: flex;\n  justify-content: space-evenly;\n  background: #fdf8ee;\n}\n\n.header-section {\n  font-size: 1.2em;\n  letter-spacing: 0.1em;\n  padding: 0.5em 1.5em;\n  background: #fdf8ee;\n  cursor: pointer;\n  transition: background ease-in-out 0.3s;\n}\n.header-section:hover {\n  background: #aec9e4;\n}\n.header-section.selected {\n  background: #2c6298;\n  color: #fdf8ee;\n  box-shadow: 0px 1px 4px 0px #00000085;\n}\n\n.spacer {\n  height: 10em;\n}\n\n.body {\n  flex: 1 0;\n  background: #fdf8ee;\n}\n\n.angled-border {\n  z-index: -1;\n  width: 120%;\n  height: 7em;\n  background: #fdf8ee;\n}\n\n\n.angled-border-top {\n  transform: rotate(-5deg) translateY(-5.5vw) translateX(-1vw);\n}\n\n.angled-border-bottom {\n  transform: rotate(-5deg) translateY(4.5vw) translateX(-1vw);\n}\n\n.background-image {\n  z-index: -2;\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100vw;\n  height: auto;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
