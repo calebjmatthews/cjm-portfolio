@@ -101,10 +101,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 const bg = __webpack_require__(/*! ../images/capitol.jpg */ "./client/images/capitol.jpg");
+const header_1 = __importDefault(__webpack_require__(/*! ./header */ "./client/components/header.tsx"));
 function App() {
     return (react_1.default.createElement("div", { className: "app" },
         react_1.default.createElement("div", { className: "main" },
-            react_1.default.createElement("div", { className: "header" }, "Hello, world!"),
+            react_1.default.createElement(header_1.default, null),
             react_1.default.createElement("div", { className: "angled-border angled-border-top" }),
             react_1.default.createElement("div", { className: "spacer" }),
             react_1.default.createElement("div", { className: "angled-border angled-border-bottom" }),
@@ -112,6 +113,70 @@ function App() {
         react_1.default.createElement("img", { className: "background-image", src: bg.default })));
 }
 exports.default = App;
+
+
+/***/ }),
+
+/***/ "./client/components/header.tsx":
+/*!**************************************!*\
+  !*** ./client/components/header.tsx ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+const header_section_1 = __importDefault(__webpack_require__(/*! ./header_section */ "./client/components/header_section.tsx"));
+const headerSectionNames = ['Home', 'Snippets', 'Projects'];
+function Header() {
+    console.log('document.URL');
+    console.log(document.URL);
+    const [currentSection, setCurrentSection] = react_1.useState(null);
+    return (react_1.default.createElement("div", { className: "header" }, headerSectionNames.map((headerSectionName) => {
+        return (react_1.default.createElement(header_section_1.default, { key: headerSectionName, name: headerSectionName }));
+    })));
+}
+exports.default = Header;
+
+
+/***/ }),
+
+/***/ "./client/components/header_section.tsx":
+/*!**********************************************!*\
+  !*** ./client/components/header_section.tsx ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+function HeaderSection(props) {
+    return (react_1.default.createElement("div", { className: (props.selected) ? 'header-section selected' : 'header-section' }, props.name));
+}
+exports.default = HeaderSection;
+class HeaderSectionProps {
+    constructor(headerSectionProps) {
+        this.name = headerSectionProps.name;
+        this.selected = headerSectionProps.selected;
+    }
+}
 
 
 /***/ }),
