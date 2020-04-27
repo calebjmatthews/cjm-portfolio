@@ -1,21 +1,28 @@
 import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 const bg = require('../images/capitol.jpg');
 import Header from './header';
+import Home from './home';
+import Snippets from './snippets';
 
 export default function App() {
   return (
-    <div className="app">
-      <div className="main">
-        <Header />
-        <div className="angled-border angled-border-top"></div>
-        <div className="spacer"></div>
-        <div className="angled-border angled-border-bottom"></div>
-        <div className="body">
-          This is the world, hello.
+    <BrowserRouter>
+      <div className="app">
+        <div className="main">
+          <Header />
+          <Switch>
+            <Route path="/snippets">
+              <Snippets />
+            </Route>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
         </div>
+        <img className="background-image" src={bg.default} />
       </div>
-      <img className="background-image" src={bg.default} />
-    </div>
+    </BrowserRouter>
   )
 }

@@ -1,8 +1,17 @@
 import React from 'react';
 
 export default function HeaderSection(props: HeaderSectionProps) {
+  function headerClick(name: string) {
+    let relativeUrl = '';
+    if (name != 'Home') {
+      relativeUrl = name.toLowerCase();
+    }
+    location.assign('/' + relativeUrl);
+  }
+
   return (
-    <div className={(props.selected) ? 'header-section selected' : 'header-section'}>
+    <div className={(props.selected) ? 'header-section selected' : 'header-section'}
+      onClick={() => {headerClick(props.name)}}>
       { props.name }
     </div>
   );

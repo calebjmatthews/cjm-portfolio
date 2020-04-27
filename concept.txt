@@ -5,7 +5,7 @@ Navigation bar on the top of all pages
 Splash page, contains...
 
 Name, email, phone number in jumbotron label
-Search bar below 
+Search bar below
 	Label: "What area of experience are you looking for?"
 	Default: "E.g. Typescript, Web Design, CSS"
 	This bar returns returns:
@@ -17,7 +17,7 @@ The nav bar on top routes to the following pages:
 
 1. Projects in brief, github page
 	* Name, short description, reduced size screenshot
-	* On click, go to new view: 
+	* On click, go to new view:
 		- Expanded details for an individual project
 		- Screenshots to page through
 		- Links to related entries, such as work experience
@@ -66,3 +66,7 @@ The nav bar on top routes to the following pages:
 
 Styling:
 Large text, wide white space, horizontally centered, no/subtle background
+
+width: 100%;
+height: 5em;
+transform: rotate(-5deg) translateY(-50px);
