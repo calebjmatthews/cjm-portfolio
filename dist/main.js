@@ -279,21 +279,25 @@ function ScrambledText() {
     const [characters, setCharacters] = react_1.useState('abcdef');
     const [timeouts, setTimeouts] = react_1.useState([]);
     react_1.useEffect(() => {
-        let newCharacters = '';
-        for (let index = 0; index < numChars; index++) {
-            newCharacters += (randomUnicode());
-        }
-        setCharacters(newCharacters);
-        timeouts.map((timeout) => {
-            clearTimeout(timeout);
+        setCharacters((characters) => {
+            let newCharacters = '';
+            for (let index = 0; index < numChars; index++) {
+                newCharacters += (randomUnicode());
+            }
+            return newCharacters;
         });
-        let newTimeouts = [];
-        for (let index = 0; index < numChars; index++) {
-            newTimeouts.push(setTimeout(() => {
-                setScrambledValue(index);
-            }, (Math.floor(randomHeavyTailed() * 1000))));
-        }
-        setTimeouts(newTimeouts);
+        setTimeouts((timeouts) => {
+            timeouts.map((timeout) => {
+                clearTimeout(timeout);
+            });
+            let newTimeouts = [];
+            for (let index = 0; index < numChars; index++) {
+                newTimeouts.push(setTimeout(() => {
+                    setScrambledValue(index);
+                }, (Math.floor(randomHeavyTailed() * 1000))));
+            }
+            return newTimeouts;
+        });
         function setScrambledValue(index) {
             setCharacters((characters) => {
                 return characters.slice(0, index) + randomUnicode()
@@ -357,23 +361,26 @@ const [characters, setCharacters] = useState('abcdef');
 const [timeouts, setTimeouts] = useState([]);
 
 useEffect(() => {
-  let newCharacters = '';
-  for (let index = 0; index < numChars; index++) {
-    newCharacters += (randomUnicode());
-  }
-  setCharacters(newCharacters);
+  setCharacters((characters) => {
+    let newCharacters = '';
+    for (let index = 0; index < numChars; index++) {
+      newCharacters += (randomUnicode());
+    }
+    return newCharacters;
+  });
 
-  timeouts.map((timeout) => {
-    clearTimeout(timeout);
-  })
-
-  let newTimeouts = [];
-  for (let index = 0; index < numChars; index++) {
-    newTimeouts.push(setTimeout(() => {
-      setScrambledValue(index);
-    }, (Math.floor(randomHeavyTailed() * 1000))))
-  }
-  setTimeouts(newTimeouts);
+  setTimeouts((timeouts) => {
+    timeouts.map((timeout) => {
+      clearTimeout(timeout);
+    })
+    let newTimeouts = [];
+    for (let index = 0; index < numChars; index++) {
+      newTimeouts.push(setTimeout(() => {
+        setScrambledValue(index);
+      }, (Math.floor(randomHeavyTailed() * 1000))))
+    }
+    return newTimeouts
+  });
 
   function setScrambledValue(index: number): void {
     setCharacters((characters) => {
