@@ -1,0 +1,27 @@
+.snippet .title {
+  font-size: 1.4em;
+}
+
+.snippet .date-line {
+  opacity: 0.8;
+}
+
+.snippet .content-header {
+  display: flex;
+}
+
+.snippet .tab {
+  padding: 0.5em 1.5em;
+  cursor: pointer;
+  border: 1px solid #666;
+}
+
+.snippet .content-container {
+  padding: 1em;
+  border: 1px solid #666;
+}
+
+.scrambled-text {
+  font-family: monospace;
+  word-break: break-all;
+}

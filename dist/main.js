@@ -149,8 +149,6 @@ function Header() {
     const [currentSection, setCurrentSection] = react_1.useState('');
     react_1.useEffect(() => {
         let urlSuffix = document.URL.split('/')[-1] || '';
-        console.log('urlSuffix');
-        console.log(urlSuffix);
         setCurrentSection(urlSuffix);
     }, [document.URL]);
     return (react_1.default.createElement("div", { className: "header" }, headerSectionNames.map((headerSectionName) => {
@@ -244,11 +242,186 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+const scrambled_text_1 = __importDefault(__webpack_require__(/*! ./snippets/scrambled_text */ "./client/components/snippets/scrambled_text.tsx"));
 function Snippets() {
     return (react_1.default.createElement("div", { className: "snippets" },
-        react_1.default.createElement("div", { className: "body" }, "Snippets!")));
+        react_1.default.createElement("div", { className: "body" },
+            react_1.default.createElement("div", { className: "snippet" },
+                react_1.default.createElement(scrambled_text_1.default, null)))));
 }
 exports.default = Snippets;
+
+
+/***/ }),
+
+/***/ "./client/components/snippets/scrambled_text.tsx":
+/*!*******************************************************!*\
+  !*** ./client/components/snippets/scrambled_text.tsx ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+function ScrambledText() {
+    const [openSection, setOpenSection] = react_1.useState('Demo');
+    const [numChars, setNumChars] = react_1.useState(6);
+    const [pausing, setPausing] = react_1.useState(true);
+    const [characters, setCharacters] = react_1.useState('abcdef');
+    const [timeouts, setTimeouts] = react_1.useState([]);
+    react_1.useEffect(() => {
+        let newCharacters = '';
+        for (let index = 0; index < numChars; index++) {
+            newCharacters += (randomUnicode());
+        }
+        setCharacters(newCharacters);
+        timeouts.map((timeout) => {
+            clearTimeout(timeout);
+        });
+        let newTimeouts = [];
+        for (let index = 0; index < numChars; index++) {
+            newTimeouts.push(setTimeout(() => {
+                setScrambledValue(index);
+            }, (Math.floor(randomHeavyTailed() * 1000))));
+        }
+        setTimeouts(newTimeouts);
+        function setScrambledValue(index) {
+            setCharacters((characters) => {
+                return characters.slice(0, index) + randomUnicode()
+                    + characters.slice(index + 1, numChars);
+            });
+            setTimeouts((timeouts) => {
+                let newTimeouts = timeouts.slice();
+                newTimeouts[index] = setTimeout(() => {
+                    setScrambledValue(index);
+                }, (Math.floor(randomHeavyTailed() * 1000)));
+                return newTimeouts;
+            });
+        }
+    }, [numChars]);
+    function randomHeavyTailed() {
+        let rdm = Math.random();
+        if (rdm < 0.5) {
+            return rdm * rdm;
+        }
+        else {
+            return 1 - ((1 - rdm) * (1 - rdm));
+        }
+    }
+    function randomUnicode() {
+        let char = String.fromCharCode(0x0021 + Math.random() * (0x007F - 0x0021 + 1));
+        if (char.length > 0 && char != " ") {
+            return char;
+        }
+        return randomUnicode();
+    }
+    function changeNumChars(ev) {
+        setNumChars(ev.target.value);
+    }
+    function clickTab(newSectionName) {
+        if (newSectionName != openSection) {
+            setOpenSection(newSectionName);
+        }
+    }
+    return (react_1.default.createElement("div", { className: "snippet" },
+        react_1.default.createElement("div", { className: "title" }, "Scrambled Text"),
+        react_1.default.createElement("div", { className: "date-line" }, "Tuesday April 28th, 2020"),
+        react_1.default.createElement("div", { className: "description" }, "A simple visual effect to scramble individual letters of a certain length."),
+        react_1.default.createElement("div", { className: "content-header" },
+            react_1.default.createElement("div", { className: "tab", onClick: () => clickTab('Demo') }, "Demo"),
+            react_1.default.createElement("div", { className: "tab", onClick: () => clickTab('Javascript') }, "Javascript"),
+            react_1.default.createElement("div", { className: "tab", onClick: () => clickTab('HTML') }, "HTML")),
+        react_1.default.createElement("div", { className: "content-container" }, renderSection(openSection))));
+    function renderSection(sectionName) {
+        switch (sectionName) {
+            case 'Demo':
+                return (react_1.default.createElement("div", { className: "section", id: "demo" },
+                    react_1.default.createElement("div", { className: "input-group" },
+                        react_1.default.createElement("input", { value: numChars, onChange: changeNumChars })),
+                    react_1.default.createElement("div", { className: "scrambled-text" }, characters)));
+            case 'Javascript':
+                return (react_1.default.createElement("div", { className: "section", id: "javascript" },
+                    react_1.default.createElement("pre", null,
+                        react_1.default.createElement("code", null, `const [numChars, setNumChars] = useState(6);
+const [pausing, setPausing] = useState(true);
+const [characters, setCharacters] = useState('abcdef');
+const [timeouts, setTimeouts] = useState([]);
+
+useEffect(() => {
+  let newCharacters = '';
+  for (let index = 0; index < numChars; index++) {
+    newCharacters += (randomUnicode());
+  }
+  setCharacters(newCharacters);
+
+  timeouts.map((timeout) => {
+    clearTimeout(timeout);
+  })
+
+  let newTimeouts = [];
+  for (let index = 0; index < numChars; index++) {
+    newTimeouts.push(setTimeout(() => {
+      setScrambledValue(index);
+    }, (Math.floor(randomHeavyTailed() * 1000))))
+  }
+  setTimeouts(newTimeouts);
+
+  function setScrambledValue(index: number): void {
+    setCharacters((characters) => {
+      return characters.slice(0, index) + randomUnicode()
+        + characters.slice(index+1, numChars);
+    });
+    setTimeouts((timeouts) => {
+      let newTimeouts = timeouts.slice();
+      newTimeouts[index] = setTimeout(() => {
+        setScrambledValue(index);
+      }, (Math.floor(randomHeavyTailed() * 1000)));
+      return newTimeouts;
+    });
+  }
+}, [numChars]);
+
+function randomHeavyTailed(): number {
+  let rdm = Math.random();
+  if (rdm < 0.5) {
+    return rdm * rdm;
+  }
+  else {
+    return 1 - ((1 - rdm) * (1 - rdm));
+  }
+}
+
+function randomUnicode() {
+  let char = String.fromCharCode(0x0021 + Math.random() * (0x007F-0x0021+1))
+  if (char.length > 0 && char != " ") {
+    return char;
+  }
+  return randomUnicode();
+}
+
+function changeNumChars(ev: any) {
+  setNumChars(ev.target.value);
+}`))));
+            case 'HTML':
+                return (react_1.default.createElement("div", { className: "section", id: "html" },
+                    react_1.default.createElement("pre", null,
+                        react_1.default.createElement("code", null, `<div className="input-group">
+  <input value={numChars} onChange={changeNumChars} />
+</div>
+<div className="scrambled-text">{characters}</div>`))));
+        }
+    }
+}
+exports.default = ScrambledText;
 
 
 /***/ }),
@@ -283,6 +456,7 @@ const react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules
 const react_dom_1 = __importDefault(__webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js"));
 const app_1 = __importDefault(__webpack_require__(/*! ./components/app */ "./client/components/app.tsx"));
 __webpack_require__(/*! ./styles/root.css */ "./client/styles/root.css");
+__webpack_require__(/*! ./styles/snippets.css */ "./client/styles/snippets.css");
 react_dom_1.default.render(react_1.default.createElement(app_1.default, null), document.getElementById('root'));
 
 
@@ -297,6 +471,37 @@ react_dom_1.default.render(react_1.default.createElement(app_1.default, null), d
 
 var api = __webpack_require__(/*! ../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
             var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!./root.css */ "./node_modules/css-loader/dist/cjs.js!./client/styles/root.css");
+
+            content = content.__esModule ? content.default : content;
+
+            if (typeof content === 'string') {
+              content = [[module.i, content, '']];
+            }
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = api(content, options);
+
+var exported = content.locals ? content.locals : {};
+
+
+
+module.exports = exported;
+
+/***/ }),
+
+/***/ "./client/styles/snippets.css":
+/*!************************************!*\
+  !*** ./client/styles/snippets.css ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var api = __webpack_require__(/*! ../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+            var content = __webpack_require__(/*! !../../node_modules/css-loader/dist/cjs.js!./snippets.css */ "./node_modules/css-loader/dist/cjs.js!./client/styles/snippets.css");
 
             content = content.__esModule ? content.default : content;
 
@@ -423,6 +628,24 @@ var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
 exports.push([module.i, "body {\n  margin: unset;\n  font-family: 'Manrope', sans-serif;\n}\n\n.app {\n  height: 100vh;\n  width: 100vw;\n}\n\n.main {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  width: 100%;\n}\n\n.header {\n  display: flex;\n  justify-content: space-evenly;\n  background: #fdf8ee;\n}\n\n.header-section {\n  font-size: 1.2em;\n  letter-spacing: 0.1em;\n  padding: 0.5em 1.5em;\n  background: #fdf8ee;\n  cursor: pointer;\n  transition: background ease-in-out 0.3s;\n}\n.header-section:hover {\n  background: #aec9e4;\n}\n.header-section.selected {\n  background: #2c6298;\n  color: #fdf8ee;\n  box-shadow: 0px 1px 4px 0px #00000085;\n}\n\n.spacer {\n  height: 10em;\n}\n\n.home {\n  flex: 1 0;\n  display: flex;\n  flex-direction: column;\n}\n\n.home .body {\n  flex: 1 0;\n  background: #fdf8ee;\n}\n\n.snippets {\n  flex: 1 0;\n  background: #fdf8ee;\n}\n\n.snippets .body {\n  margin: 2em 10%;\n}\n\n.angled-border {\n  z-index: -1;\n  width: 120%;\n  height: 7em;\n  background: #fdf8ee;\n}\n\n\n.angled-border-top {\n  transform: rotate(-5deg) translateY(-5.5vw) translateX(-1vw);\n}\n\n.angled-border-bottom {\n  transform: rotate(-5deg) translateY(4.5vw) translateX(-1vw);\n}\n\n.background-image {\n  z-index: -2;\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100vw;\n  height: auto;\n}\n", ""]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./client/styles/snippets.css":
+/*!**************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./client/styles/snippets.css ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, ".snippet .title {\n  font-size: 1.4em;\n}\n\n.snippet .date-line {\n  opacity: 0.8;\n}\n\n.snippet .content-header {\n  display: flex;\n}\n\n.snippet .tab {\n  padding: 0.5em 1.5em;\n  cursor: pointer;\n  border: 1px solid #666;\n}\n\n.snippet .content-container {\n  padding: 1em;\n  border: 1px solid #666;\n}\n\n.scrambled-text {\n  font-family: monospace;\n  word-break: break-all;\n}\n", ""]);
 // Exports
 module.exports = exports;
 

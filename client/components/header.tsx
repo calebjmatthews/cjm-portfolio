@@ -5,10 +5,9 @@ const headerSectionNames = ['Home', 'Snippets', 'Projects'];
 
 export default function Header() {
   const [currentSection, setCurrentSection] = useState('');
+  
   useEffect(() => {
     let urlSuffix = document.URL.split('/')[-1] || '';
-    console.log('urlSuffix');
-    console.log(urlSuffix);
     setCurrentSection(urlSuffix);
   }, [document.URL])
 
