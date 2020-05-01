@@ -219,10 +219,10 @@ function changeNumChars(ev: any) {
             This was my first real experience with React hooks, and I've been pleasantly surprised. All in all, I'd say they're worth learning. I did run into one main issue, with the <code>useEffect()</code> function used to intentionally perform side effects when one or more state values change.
           </p>
           <p>
-            In this case, I wanted to set up the array of timeouts and create the inital scrambled string both on component load and whenever the string length (<code>numChars</code>) was changed. By design, <code>useEffect()</code> allows an array of variables, and after it detects a change in any the <code>useEffect()</code> function will be performed. However, useEffect will also only have the current state of stateful variables that are included in this array.
+            In this case, I wanted to set up the array of timeouts and create the inital scrambled string both on component load and whenever the string length (<code>numChars</code>) was changed. By design, <code>useEffect()</code> allows an array of variables, and after it detects a change in any of them the <code>useEffect()</code> function will be performed. However, useEffect will only have the current state of stateful variables that are included in this array.
           </p>
           <p>
-            This creates an awkward situation. I only want this update function to run when <code>numChars</code> changes, but I also need the current values of the scrambled string and the array of timeouts. The workaround occurs in the state setter functions; rather than passing a simple value, you can pass a function that performs some mutation on the current state. For example, suppose we need a simple counter state variable, but one that could be updated asynchronously and should not increment higher than 10:
+            This creates an awkward situation. I only want this update function to run when <code>numChars</code> changes, but I also need the current values of the scrambled string and the array of timeouts. The workaround occurs in the state setter functions; rather than passing a set value, you can pass a function that performs some mutation on the current state. For example, suppose we need a simple counter state variable, but one that could be updated asynchronously and should not increment higher than 10:
           </p>
           <pre>
               {
