@@ -6,9 +6,7 @@ export default function Snippets() {
   return (
     <div className="snippets">
       <div className="body">
-        <div className="snippet">
-          <ScrambledText />
-        </div>
+        <ScrambledText />
       </div>
     </div>
   );

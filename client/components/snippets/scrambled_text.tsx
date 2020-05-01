@@ -1,6 +1,7 @@
 import React, { useState, useEffect, SyntheticEvent } from 'react';
 
 export default function ScrambledText() {
+  const [expanded, setExpanded] = useState(false);
   const [openSection, setOpenSection] = useState('Demo');
 
   const [numChars, setNumChars] = useState(6);
@@ -74,30 +75,58 @@ export default function ScrambledText() {
 
   return (
     <div className="snippet">
-      <div className="title">
-        Scrambled Text
+      <div className="row">
+        <div className="top-container">
+          <div className="title">
+            Scrambled Text
+          </div>
+          <div className="date-line">
+            Tuesday April 28th, 2020
+          </div>
+          <div className="description">
+            A simple visual effect to scramble individual letters of a certain length.
+          </div>
+        </div>
+        {renderButton()}
       </div>
-      <div className="date-line">
-        Tuesday April 28th, 2020
-      </div>
-      <div className="description">
-        A simple visual effect to scramble individual letters of a certain length.
-      </div>
-      <div className="content-header">
-        <div className={(openSection == 'Demo') ? 'tab selected' : 'tab'}
-          onClick={() => clickTab('Demo')}>Demo</div>
-        <div className={(openSection == 'Javascript') ? 'tab selected' : 'tab'}
-          onClick={() => clickTab('Javascript')}>Javascript</div>
-        <div className={(openSection == 'HTML') ? 'tab selected' : 'tab'}
-          onClick={() => clickTab('HTML')}>HTML</div>
-        <div className={(openSection == 'Write up') ? 'tab selected' : 'tab'}
-          onClick={() => clickTab('Write up')}>Write up</div>
-      </div>
-      <div className="content-container">
-        {renderSection(openSection)}
-      </div>
+
+      {renderContent()}
     </div>
   );
+
+  function renderButton() {
+    let icon = '+';
+    if (expanded) {
+      icon = '-';
+    }
+    return (
+      <div className="icon-button" onClick={() => setExpanded(!expanded)}>
+        {icon}
+      </div>
+    );
+  }
+
+  function renderContent() {
+    if (expanded) {
+      return (
+        <div>
+          <div className="content-header">
+            <div className={(openSection == 'Demo') ? 'tab selected' : 'tab'}
+              onClick={() => clickTab('Demo')}>Demo</div>
+            <div className={(openSection == 'Javascript') ? 'tab selected' : 'tab'}
+              onClick={() => clickTab('Javascript')}>Javascript</div>
+            <div className={(openSection == 'HTML') ? 'tab selected' : 'tab'}
+              onClick={() => clickTab('HTML')}>HTML</div>
+            <div className={(openSection == 'Write up') ? 'tab selected' : 'tab'}
+              onClick={() => clickTab('Write up')}>Write up</div>
+          </div>
+          <div className="content-container">
+            {renderSection(openSection)}
+          </div>
+        </div>
+      );
+    }
+  }
 
   function renderSection(sectionName: string) {
     switch(sectionName) {

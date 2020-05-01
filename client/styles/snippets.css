@@ -7,6 +7,11 @@
   margin: 2em 10%;
 }
 
+.snippet {
+  padding: 0.5em;
+  border: 1px solid #39516a;
+}
+
 .snippet .title {
   font-size: 1.4em;
 }

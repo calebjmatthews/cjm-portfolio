@@ -246,8 +246,7 @@ const scrambled_text_1 = __importDefault(__webpack_require__(/*! ./snippets/scra
 function Snippets() {
     return (react_1.default.createElement("div", { className: "snippets" },
         react_1.default.createElement("div", { className: "body" },
-            react_1.default.createElement("div", { className: "snippet" },
-                react_1.default.createElement(scrambled_text_1.default, null)))));
+            react_1.default.createElement(scrambled_text_1.default, null))));
 }
 exports.default = Snippets;
 
@@ -273,6 +272,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 function ScrambledText() {
+    const [expanded, setExpanded] = react_1.useState(false);
     const [openSection, setOpenSection] = react_1.useState('Demo');
     const [numChars, setNumChars] = react_1.useState(6);
     const [characters, setCharacters] = react_1.useState('abcdef');
@@ -336,15 +336,31 @@ function ScrambledText() {
         }
     }
     return (react_1.default.createElement("div", { className: "snippet" },
-        react_1.default.createElement("div", { className: "title" }, "Scrambled Text"),
-        react_1.default.createElement("div", { className: "date-line" }, "Tuesday April 28th, 2020"),
-        react_1.default.createElement("div", { className: "description" }, "A simple visual effect to scramble individual letters of a certain length."),
-        react_1.default.createElement("div", { className: "content-header" },
-            react_1.default.createElement("div", { className: (openSection == 'Demo') ? 'tab selected' : 'tab', onClick: () => clickTab('Demo') }, "Demo"),
-            react_1.default.createElement("div", { className: (openSection == 'Javascript') ? 'tab selected' : 'tab', onClick: () => clickTab('Javascript') }, "Javascript"),
-            react_1.default.createElement("div", { className: (openSection == 'HTML') ? 'tab selected' : 'tab', onClick: () => clickTab('HTML') }, "HTML"),
-            react_1.default.createElement("div", { className: (openSection == 'Write up') ? 'tab selected' : 'tab', onClick: () => clickTab('Write up') }, "Write up")),
-        react_1.default.createElement("div", { className: "content-container" }, renderSection(openSection))));
+        react_1.default.createElement("div", { className: "row" },
+            react_1.default.createElement("div", { className: "top-container" },
+                react_1.default.createElement("div", { className: "title" }, "Scrambled Text"),
+                react_1.default.createElement("div", { className: "date-line" }, "Tuesday April 28th, 2020"),
+                react_1.default.createElement("div", { className: "description" }, "A simple visual effect to scramble individual letters of a certain length.")),
+            renderButton()),
+        renderContent()));
+    function renderButton() {
+        let icon = '+';
+        if (expanded) {
+            icon = '-';
+        }
+        return (react_1.default.createElement("div", { className: "icon-button", onClick: () => setExpanded(!expanded) }, icon));
+    }
+    function renderContent() {
+        if (expanded) {
+            return (react_1.default.createElement("div", null,
+                react_1.default.createElement("div", { className: "content-header" },
+                    react_1.default.createElement("div", { className: (openSection == 'Demo') ? 'tab selected' : 'tab', onClick: () => clickTab('Demo') }, "Demo"),
+                    react_1.default.createElement("div", { className: (openSection == 'Javascript') ? 'tab selected' : 'tab', onClick: () => clickTab('Javascript') }, "Javascript"),
+                    react_1.default.createElement("div", { className: (openSection == 'HTML') ? 'tab selected' : 'tab', onClick: () => clickTab('HTML') }, "HTML"),
+                    react_1.default.createElement("div", { className: (openSection == 'Write up') ? 'tab selected' : 'tab', onClick: () => clickTab('Write up') }, "Write up")),
+                react_1.default.createElement("div", { className: "content-container" }, renderSection(openSection))));
+        }
+    }
     function renderSection(sectionName) {
         switch (sectionName) {
             case 'Demo':
@@ -462,13 +478,13 @@ function changeNumChars(ev: any) {
                         react_1.default.createElement("code", null, "numChars"),
                         ") was changed. By design, ",
                         react_1.default.createElement("code", null, "useEffect()"),
-                        " allows an array of variables, and after it detects a change in any the ",
+                        " allows an array of variables, and after it detects a change in any of them the ",
                         react_1.default.createElement("code", null, "useEffect()"),
-                        " function will be performed. However, useEffect will also only have the current state of stateful variables that are included in this array."),
+                        " function will be performed. However, useEffect will only have the current state of stateful variables that are included in this array."),
                     react_1.default.createElement("p", null,
                         "This creates an awkward situation. I only want this update function to run when ",
                         react_1.default.createElement("code", null, "numChars"),
-                        " changes, but I also need the current values of the scrambled string and the array of timeouts. The workaround occurs in the state setter functions; rather than passing a simple value, you can pass a function that performs some mutation on the current state. For example, suppose we need a simple counter state variable, but one that could be updated asynchronously and should not increment higher than 10:"),
+                        " changes, but I also need the current values of the scrambled string and the array of timeouts. The workaround occurs in the state setter functions; rather than passing a set value, you can pass a function that performs some mutation on the current state. For example, suppose we need a simple counter state variable, but one that could be updated asynchronously and should not increment higher than 10:"),
                     react_1.default.createElement("pre", null, `const [count, setCount] = useState(0);
 setCount((count) => {
   if (count < 10) {
@@ -687,7 +703,7 @@ module.exports = _inheritsLoose;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "body {\n  margin: unset;\n  font-family: 'Manrope', sans-serif;\n}\n\n.app {\n  height: 100vh;\n  width: 100vw;\n}\n\n.main {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  width: 100%;\n}\n\n.header {\n  display: flex;\n  justify-content: space-evenly;\n  background: #fffdfa;\n}\n\n.header-section {\n  font-size: 1.2em;\n  letter-spacing: 0.1em;\n  padding: 0.5em 1.5em;\n  background: #fffdfa;\n  cursor: pointer;\n  transition: background ease-in-out 0.3s;\n}\n.header-section:hover {\n  background: #a9bbce7d;\n}\n.header-section.selected {\n  background: #39516b;\n  color: #fffdfa;\n}\n\n.spacer {\n  height: 10em;\n}\n\n.home {\n  flex: 1 0;\n  display: flex;\n  flex-direction: column;\n}\n\n.home .body {\n  flex: 1 0;\n  background: #fffdfa;\n}\n\n.angled-border {\n  z-index: -1;\n  width: 120%;\n  height: 7em;\n  background: #fffdfa;\n}\n\n\n.angled-border-top {\n  transform: rotate(-5deg) translateY(-5.5vw) translateX(-1vw);\n}\n\n.angled-border-bottom {\n  transform: rotate(-5deg) translateY(4.5vw) translateX(-1vw);\n}\n\n.background-image {\n  z-index: -2;\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100vw;\n  height: auto;\n}\n", ""]);
+exports.push([module.i, "body {\n  margin: unset;\n  font-family: 'Manrope', sans-serif;\n}\n\n.app {\n  height: 100vh;\n  width: 100vw;\n}\n\n.main {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  width: 100%;\n}\n\n.header {\n  display: flex;\n  justify-content: space-evenly;\n  background: #fffdfa;\n}\n\n.header-section {\n  font-size: 1.2em;\n  letter-spacing: 0.1em;\n  padding: 0.5em 1.5em;\n  background: #fffdfa;\n  cursor: pointer;\n  transition: background ease-in-out 0.3s;\n}\n.header-section:hover {\n  background: #a9bbce7d;\n}\n.header-section.selected {\n  background: #39516b;\n  color: #fffdfa;\n}\n\n.spacer {\n  height: 10em;\n}\n\n.home {\n  flex: 1 0;\n  display: flex;\n  flex-direction: column;\n}\n\n.home .body {\n  flex: 1 0;\n  background: #fffdfa;\n}\n\n.angled-border {\n  z-index: -1;\n  width: 120%;\n  height: 7em;\n  background: #fffdfa;\n}\n\n\n.angled-border-top {\n  transform: rotate(-5deg) translateY(-5.5vw) translateX(-1vw);\n}\n\n.angled-border-bottom {\n  transform: rotate(-5deg) translateY(4.5vw) translateX(-1vw);\n}\n\n.background-image {\n  z-index: -2;\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100vw;\n  height: auto;\n}\n\n.row {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\n.icon-button {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 1em;\n  height: 1em;\n  font-size: 2em;\n  background: #fffdfa;\n  border: 1px solid #39516b;\n  border-radius: 50%;\n  cursor: pointer;\n  transition: background ease-in-out 0.2s, color ease-in-out 0.2s;\n}\n.icon-button:hover {\n  color: #fff;\n  background: #39516b;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -705,7 +721,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".snippets {\n  flex: 1 0;\n  background: #fffdfa;\n}\n\n.snippets .body {\n  margin: 2em 10%;\n}\n\n.snippet .title {\n  font-size: 1.4em;\n}\n\n.snippet .date-line {\n  opacity: 0.5;\n  font-size: 0.8em;\n  margin-left: 1em;\n}\n\n.snippet .content-header {\n  display: flex;\n}\n\n.snippet .tab {\n  padding: 0.5em 1.5em;\n  cursor: pointer;\n  border: 1px solid #39516b;\n  background: #fffdfa;\n  transition: background ease-in-out 0.3s;\n}\n.snippet .tab:hover {\n  background: #a9bbce7d;\n}\n\n.snippet .tab.selected {\n  background: #39516b;\n  color: #fff;\n}\n\n.snippet .content-container {\n  padding: 1em;\n  background: #39516b;\n  color: #fff;\n  border: 1px solid #39516b;\n}\n\n.snippet .description {\n  margin: 0.5em 0 1em 0;\n}\n\n.snippet .section p {\n  text-indent: 1em;\n}\n\n.snippet code {\n  font-size: 1.2em;\n  background: #6c7986;\n  padding: 0 0.25em;\n  border-radius: 0.25em;\n}\n\n.snippet pre {\n  background: #546477;\n  padding: 0 0.5em 0.5em 0.5em;\n  border-radius: 0.25em;\n}\n\n.snippet label {\n  font-style: italic;\n}\n\n.snippet a {\n  color: #9093ff;\n}\n\n.scrambled-text {\n  font-family: monospace;\n  word-break: break-all;\n  line-height: 1.2em;\n}\n", ""]);
+exports.push([module.i, ".snippets {\n  flex: 1 0;\n  background: #fffdfa;\n}\n\n.snippets .body {\n  margin: 2em 10%;\n}\n\n.snippet {\n  padding: 0.5em;\n  border: 1px solid #39516a;\n}\n\n.snippet .title {\n  font-size: 1.4em;\n}\n\n.snippet .date-line {\n  opacity: 0.5;\n  font-size: 0.8em;\n  margin-left: 1em;\n}\n\n.snippet .content-header {\n  display: flex;\n}\n\n.snippet .tab {\n  padding: 0.5em 1.5em;\n  cursor: pointer;\n  border: 1px solid #39516b;\n  background: #fffdfa;\n  transition: background ease-in-out 0.3s;\n}\n.snippet .tab:hover {\n  background: #a9bbce7d;\n}\n\n.snippet .tab.selected {\n  background: #39516b;\n  color: #fff;\n}\n\n.snippet .content-container {\n  padding: 1em;\n  background: #39516b;\n  color: #fff;\n  border: 1px solid #39516b;\n}\n\n.snippet .description {\n  margin: 0.5em 0 1em 0;\n}\n\n.snippet .section p {\n  text-indent: 1em;\n}\n\n.snippet code {\n  font-size: 1.2em;\n  background: #6c7986;\n  padding: 0 0.25em;\n  border-radius: 0.25em;\n}\n\n.snippet pre {\n  background: #546477;\n  padding: 0 0.5em 0.5em 0.5em;\n  border-radius: 0.25em;\n}\n\n.snippet label {\n  font-style: italic;\n}\n\n.snippet a {\n  color: #9093ff;\n}\n\n.scrambled-text {\n  font-family: monospace;\n  word-break: break-all;\n  line-height: 1.2em;\n}\n", ""]);
 // Exports
 module.exports = exports;
 

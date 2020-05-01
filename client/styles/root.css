@@ -76,3 +76,27 @@ body {
   width: 100vw;
   height: auto;
 }
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.icon-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1em;
+  height: 1em;
+  font-size: 2em;
+  background: #fffdfa;
+  border: 1px solid #39516b;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background ease-in-out 0.2s, color ease-in-out 0.2s;
+}
+.icon-button:hover {
+  color: #fff;
+  background: #39516b;
+}
