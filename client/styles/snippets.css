@@ -3,7 +3,9 @@
 }
 
 .snippet .date-line {
-  opacity: 0.8;
+  opacity: 0.5;
+  font-size: 0.8em;
+  margin-left: 1em;
 }
 
 .snippet .content-header {
@@ -13,15 +15,31 @@
 .snippet .tab {
   padding: 0.5em 1.5em;
   cursor: pointer;
-  border: 1px solid #666;
+  border: 1px solid #506071;
+}
+
+.snippet .tab.selected {
+  background: #506071;
+  color: #fff;
 }
 
 .snippet .content-container {
   padding: 1em;
-  border: 1px solid #666;
+  background: #506071;
+  color: #fff;
+  border: 1px solid #506071;
+}
+
+.snippet .description {
+  margin: 0.5em 0 1em 0;
+}
+
+.snippet .section p {
+  text-indent: 1em;
 }
 
 .scrambled-text {
   font-family: monospace;
   word-break: break-all;
+  line-height: 1.2em;
 }

@@ -275,7 +275,6 @@ const react_1 = __importStar(__webpack_require__(/*! react */ "./node_modules/re
 function ScrambledText() {
     const [openSection, setOpenSection] = react_1.useState('Demo');
     const [numChars, setNumChars] = react_1.useState(6);
-    const [pausing, setPausing] = react_1.useState(true);
     const [characters, setCharacters] = react_1.useState('abcdef');
     const [timeouts, setTimeouts] = react_1.useState([]);
     react_1.useEffect(() => {
@@ -341,9 +340,10 @@ function ScrambledText() {
         react_1.default.createElement("div", { className: "date-line" }, "Tuesday April 28th, 2020"),
         react_1.default.createElement("div", { className: "description" }, "A simple visual effect to scramble individual letters of a certain length."),
         react_1.default.createElement("div", { className: "content-header" },
-            react_1.default.createElement("div", { className: "tab", onClick: () => clickTab('Demo') }, "Demo"),
-            react_1.default.createElement("div", { className: "tab", onClick: () => clickTab('Javascript') }, "Javascript"),
-            react_1.default.createElement("div", { className: "tab", onClick: () => clickTab('HTML') }, "HTML")),
+            react_1.default.createElement("div", { className: (openSection == 'Demo') ? 'tab selected' : 'tab', onClick: () => clickTab('Demo') }, "Demo"),
+            react_1.default.createElement("div", { className: (openSection == 'Javascript') ? 'tab selected' : 'tab', onClick: () => clickTab('Javascript') }, "Javascript"),
+            react_1.default.createElement("div", { className: (openSection == 'HTML') ? 'tab selected' : 'tab', onClick: () => clickTab('HTML') }, "HTML"),
+            react_1.default.createElement("div", { className: (openSection == 'Write up') ? 'tab selected' : 'tab', onClick: () => clickTab('Write up') }, "Write up")),
         react_1.default.createElement("div", { className: "content-container" }, renderSection(openSection))));
     function renderSection(sectionName) {
         switch (sectionName) {
@@ -425,6 +425,56 @@ function changeNumChars(ev: any) {
   <input value={numChars} onChange={changeNumChars} />
 </div>
 <div className="scrambled-text">{characters}</div>`))));
+            case 'Write up':
+                return (react_1.default.createElement("div", { className: "section", id: "write-up" },
+                    react_1.default.createElement("p", null,
+                        "I wrote this snippet primarily as an exercise in React hooks. It's not complicated, really just a combination of ",
+                        react_1.default.createElement("code", null, "randomUnicode()"),
+                        " to generate a character, ",
+                        react_1.default.createElement("code", null, "randomHeavyTailed"),
+                        " to set the delay, and a combination of ",
+                        react_1.default.createElement("code", null, "setTimeout"),
+                        " and React's ",
+                        react_1.default.createElement("code", null, "useEffect"),
+                        " to handle state."),
+                    react_1.default.createElement("p", null, "I did run into a few issues while putting it together; please feel free to learn from my mistakes."),
+                    react_1.default.createElement("p", null,
+                        react_1.default.createElement("code", null, "randomUnicode"),
+                        " originally used ",
+                        react_1.default.createElement("code", null, "String.fromCharCode"),
+                        " to pull a random character from the Basic Latin unicode block 0x0000 - 0x007F (",
+                        react_1.default.createElement("a", { href: "https://en.wikipedia.org/wiki/Plane_(Unicode)" }, "unicode's pretty interesting in its own right"),
+                        "). Running the code like this resulted in a bunch of blank characters being scrambled into the string. Eventually I realized that the first 31 characters are various control codes, null characters, etc. that are displayed as blank characters."),
+                    react_1.default.createElement("p", null,
+                        "I also originally used the garden-variety ",
+                        react_1.default.createElement("code", null, "Math.random()"),
+                        " to determine the individual character scramble delay, but using a heavy-talied random number makes the scramble effect feel more satisfyingly random."),
+                    react_1.default.createElement("p", null,
+                        "This was my first real experience with React hooks, and I've been pleasantly surprised. All in all, I'd say they're worth learning. I did run into one main issue, with the ",
+                        react_1.default.createElement("code", null, "useEffect"),
+                        " function used to intentionally perform side effects when one or more state values change."),
+                    react_1.default.createElement("p", null,
+                        "In this case, I wanted to set up the array of timeouts and create the inital scrambled string both on component load and whenever the string length (",
+                        react_1.default.createElement("code", null, "numChars"),
+                        ") was changed. By design, ",
+                        react_1.default.createElement("code", null, "useEffect"),
+                        " allows an array of variables, and after it detects a change in any the ",
+                        react_1.default.createElement("code", null, "useEffect"),
+                        " function will be performed. However, useEffect will also only have the current state of stateful variables that are included in this array."),
+                    react_1.default.createElement("p", null,
+                        "This creates an awkward situation. I only want this update function to run when ",
+                        react_1.default.createElement("code", null, "numChars"),
+                        " changes, but I also need the current values of the scrambled string and the array of timeouts. The workaround occurs in the state setter functions; rather than passing a simple value, you can pass a function that performs some mutation on the current state. For example, suppose we need a simple counter state variable, but one that could be updated asynchronously and should not increment higher than 10:"),
+                    react_1.default.createElement("code", null,
+                        react_1.default.createElement("pre", null, `const [count, setCount] = useState(0);
+setCount((count) => {
+  if (count < 10) {
+    return count + 1;
+  }
+  else {
+    return count;
+  }
+})`))));
         }
     }
 }
@@ -652,7 +702,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".snippet .title {\n  font-size: 1.4em;\n}\n\n.snippet .date-line {\n  opacity: 0.8;\n}\n\n.snippet .content-header {\n  display: flex;\n}\n\n.snippet .tab {\n  padding: 0.5em 1.5em;\n  cursor: pointer;\n  border: 1px solid #666;\n}\n\n.snippet .content-container {\n  padding: 1em;\n  border: 1px solid #666;\n}\n\n.scrambled-text {\n  font-family: monospace;\n  word-break: break-all;\n}\n", ""]);
+exports.push([module.i, ".snippet .title {\n  font-size: 1.4em;\n}\n\n.snippet .date-line {\n  opacity: 0.5;\n  font-size: 0.8em;\n  margin-left: 1em;\n}\n\n.snippet .content-header {\n  display: flex;\n}\n\n.snippet .tab {\n  padding: 0.5em 1.5em;\n  cursor: pointer;\n  border: 1px solid #506071;\n}\n\n.snippet .tab.selected {\n  background: #506071;\n  color: #fff;\n}\n\n.snippet .content-container {\n  padding: 1em;\n  background: #506071;\n  color: #fff;\n  border: 1px solid #506071;\n}\n\n.snippet .description {\n  margin: 0.5em 0 1em 0;\n}\n\n.snippet .section p {\n  text-indent: 1em;\n}\n\n.scrambled-text {\n  font-family: monospace;\n  word-break: break-all;\n  line-height: 1.2em;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
