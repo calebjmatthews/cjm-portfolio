@@ -104,9 +104,12 @@ export default function ScrambledText() {
       case 'Demo':
       return (
         <div className="section" id="demo">
+          <label>String length:</label>
           <div className="input-group">
             <input value={numChars} onChange={changeNumChars} />
           </div>
+          <br />
+          <label>Scrambled string:</label>
           <div className="scrambled-text">{characters}</div>
         </div>
       );
@@ -114,7 +117,7 @@ export default function ScrambledText() {
       case 'Javascript':
       return (
         <div className="section" id="javascript">
-          <pre><code>{
+          <pre>{
 `const [numChars, setNumChars] = useState(6);
 const [pausing, setPausing] = useState(true);
 const [characters, setCharacters] = useState('abcdef');
@@ -178,19 +181,22 @@ function randomUnicode() {
 function changeNumChars(ev: any) {
   setNumChars(ev.target.value);
 }`
-          }</code></pre>
+          }</pre>
         </div>
       );
 
       case 'HTML':
       return (
         <div className="section" id="html">
-          <pre><code>{
-`<div className="input-group">
+          <pre>{
+`<label>String length:</label>
+<div className="input-group">
   <input value={numChars} onChange={changeNumChars} />
 </div>
+<br />
+<label>Scrambled string:</label>
 <div className="scrambled-text">{characters}</div>`
-          }</code></pre>
+          }</pre>
         </div>
       );
 
@@ -198,28 +204,27 @@ function changeNumChars(ev: any) {
       return (
         <div className="section" id="write-up">
           <p>
-            I wrote this snippet primarily as an exercise in React hooks. It's not complicated, really just a combination of <code>randomUnicode()</code> to generate a character, <code>randomHeavyTailed</code> to set the delay, and a combination of <code>setTimeout</code> and React's <code>useEffect</code> to handle state.
+            I wrote this snippet primarily as an exercise in React hooks. It's not complicated, really just a combination of <code>randomUnicode()</code> to generate a character, <code>randomHeavyTailed()</code> to set the delay, and a combination of <code>setTimeout()</code> and React's <code>useEffect()</code> to handle state.
           </p>
           <p>
             I did run into a few issues while putting it together; please feel free to learn from my mistakes.
           </p>
           <p>
-            <code>randomUnicode</code> originally used <code>String.fromCharCode</code> to pull a random character from the Basic Latin unicode block 0x0000 - 0x007F (<a href="https://en.wikipedia.org/wiki/Plane_(Unicode)">unicode's pretty interesting in its own right</a>). Running the code like this resulted in a bunch of blank characters being scrambled into the string. Eventually I realized that the first 31 characters are various control codes, null characters, etc. that are displayed as blank characters.
+            <code>randomUnicode()</code> originally used <code>String.fromCharCode()</code> to pull a random character from the Basic Latin unicode block 0x0000 - 0x007F (<a href="https://en.wikipedia.org/wiki/Plane_(Unicode)">unicode's pretty interesting in its own right</a>). Running the code like this resulted in a bunch of blank characters being scrambled into the string. Eventually I realized that the first 31 characters are various control codes, null characters, etc. that are displayed as blank characters.
           </p>
           <p>
             I also originally used the garden-variety <code>Math.random()</code> to determine the individual character scramble delay, but using a heavy-talied random number makes the scramble effect feel more satisfyingly random.
           </p>
           <p>
-            This was my first real experience with React hooks, and I've been pleasantly surprised. All in all, I'd say they're worth learning. I did run into one main issue, with the <code>useEffect</code> function used to intentionally perform side effects when one or more state values change.
+            This was my first real experience with React hooks, and I've been pleasantly surprised. All in all, I'd say they're worth learning. I did run into one main issue, with the <code>useEffect()</code> function used to intentionally perform side effects when one or more state values change.
           </p>
           <p>
-            In this case, I wanted to set up the array of timeouts and create the inital scrambled string both on component load and whenever the string length (<code>numChars</code>) was changed. By design, <code>useEffect</code> allows an array of variables, and after it detects a change in any the <code>useEffect</code> function will be performed. However, useEffect will also only have the current state of stateful variables that are included in this array.
+            In this case, I wanted to set up the array of timeouts and create the inital scrambled string both on component load and whenever the string length (<code>numChars</code>) was changed. By design, <code>useEffect()</code> allows an array of variables, and after it detects a change in any the <code>useEffect()</code> function will be performed. However, useEffect will also only have the current state of stateful variables that are included in this array.
           </p>
           <p>
             This creates an awkward situation. I only want this update function to run when <code>numChars</code> changes, but I also need the current values of the scrambled string and the array of timeouts. The workaround occurs in the state setter functions; rather than passing a simple value, you can pass a function that performs some mutation on the current state. For example, suppose we need a simple counter state variable, but one that could be updated asynchronously and should not increment higher than 10:
           </p>
-          <code>
-            <pre>
+          <pre>
               {
 `const [count, setCount] = useState(0);
 setCount((count) => {
@@ -231,8 +236,7 @@ setCount((count) => {
   }
 })`
             }
-            </pre>
-          </code>
+          </pre>
         </div>
       );
     }

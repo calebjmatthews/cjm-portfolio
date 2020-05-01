@@ -18,24 +18,23 @@ body {
 .header {
   display: flex;
   justify-content: space-evenly;
-  background: #fdf8ee;
+  background: #fffdfa;
 }
 
 .header-section {
   font-size: 1.2em;
   letter-spacing: 0.1em;
   padding: 0.5em 1.5em;
-  background: #fdf8ee;
+  background: #fffdfa;
   cursor: pointer;
   transition: background ease-in-out 0.3s;
 }
 .header-section:hover {
-  background: #aec9e4;
+  background: #a9bbce7d;
 }
 .header-section.selected {
-  background: #2c6298;
-  color: #fdf8ee;
-  box-shadow: 0px 1px 4px 0px #00000085;
+  background: #39516b;
+  color: #fffdfa;
 }
 
 .spacer {
@@ -50,23 +49,14 @@ body {
 
 .home .body {
   flex: 1 0;
-  background: #fdf8ee;
-}
-
-.snippets {
-  flex: 1 0;
-  background: #fdf8ee;
-}
-
-.snippets .body {
-  margin: 2em 10%;
+  background: #fffdfa;
 }
 
 .angled-border {
   z-index: -1;
   width: 120%;
   height: 7em;
-  background: #fdf8ee;
+  background: #fffdfa;
 }
 
 

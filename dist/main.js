@@ -349,13 +349,15 @@ function ScrambledText() {
         switch (sectionName) {
             case 'Demo':
                 return (react_1.default.createElement("div", { className: "section", id: "demo" },
+                    react_1.default.createElement("label", null, "String length:"),
                     react_1.default.createElement("div", { className: "input-group" },
                         react_1.default.createElement("input", { value: numChars, onChange: changeNumChars })),
+                    react_1.default.createElement("br", null),
+                    react_1.default.createElement("label", null, "Scrambled string:"),
                     react_1.default.createElement("div", { className: "scrambled-text" }, characters)));
             case 'Javascript':
                 return (react_1.default.createElement("div", { className: "section", id: "javascript" },
-                    react_1.default.createElement("pre", null,
-                        react_1.default.createElement("code", null, `const [numChars, setNumChars] = useState(6);
+                    react_1.default.createElement("pre", null, `const [numChars, setNumChars] = useState(6);
 const [pausing, setPausing] = useState(true);
 const [characters, setCharacters] = useState('abcdef');
 const [timeouts, setTimeouts] = useState([]);
@@ -417,31 +419,33 @@ function randomUnicode() {
 
 function changeNumChars(ev: any) {
   setNumChars(ev.target.value);
-}`))));
+}`)));
             case 'HTML':
                 return (react_1.default.createElement("div", { className: "section", id: "html" },
-                    react_1.default.createElement("pre", null,
-                        react_1.default.createElement("code", null, `<div className="input-group">
+                    react_1.default.createElement("pre", null, `<label>String length:</label>
+<div className="input-group">
   <input value={numChars} onChange={changeNumChars} />
 </div>
-<div className="scrambled-text">{characters}</div>`))));
+<br />
+<label>Scrambled string:</label>
+<div className="scrambled-text">{characters}</div>`)));
             case 'Write up':
                 return (react_1.default.createElement("div", { className: "section", id: "write-up" },
                     react_1.default.createElement("p", null,
                         "I wrote this snippet primarily as an exercise in React hooks. It's not complicated, really just a combination of ",
                         react_1.default.createElement("code", null, "randomUnicode()"),
                         " to generate a character, ",
-                        react_1.default.createElement("code", null, "randomHeavyTailed"),
+                        react_1.default.createElement("code", null, "randomHeavyTailed()"),
                         " to set the delay, and a combination of ",
-                        react_1.default.createElement("code", null, "setTimeout"),
+                        react_1.default.createElement("code", null, "setTimeout()"),
                         " and React's ",
-                        react_1.default.createElement("code", null, "useEffect"),
+                        react_1.default.createElement("code", null, "useEffect()"),
                         " to handle state."),
                     react_1.default.createElement("p", null, "I did run into a few issues while putting it together; please feel free to learn from my mistakes."),
                     react_1.default.createElement("p", null,
-                        react_1.default.createElement("code", null, "randomUnicode"),
+                        react_1.default.createElement("code", null, "randomUnicode()"),
                         " originally used ",
-                        react_1.default.createElement("code", null, "String.fromCharCode"),
+                        react_1.default.createElement("code", null, "String.fromCharCode()"),
                         " to pull a random character from the Basic Latin unicode block 0x0000 - 0x007F (",
                         react_1.default.createElement("a", { href: "https://en.wikipedia.org/wiki/Plane_(Unicode)" }, "unicode's pretty interesting in its own right"),
                         "). Running the code like this resulted in a bunch of blank characters being scrambled into the string. Eventually I realized that the first 31 characters are various control codes, null characters, etc. that are displayed as blank characters."),
@@ -451,22 +455,21 @@ function changeNumChars(ev: any) {
                         " to determine the individual character scramble delay, but using a heavy-talied random number makes the scramble effect feel more satisfyingly random."),
                     react_1.default.createElement("p", null,
                         "This was my first real experience with React hooks, and I've been pleasantly surprised. All in all, I'd say they're worth learning. I did run into one main issue, with the ",
-                        react_1.default.createElement("code", null, "useEffect"),
+                        react_1.default.createElement("code", null, "useEffect()"),
                         " function used to intentionally perform side effects when one or more state values change."),
                     react_1.default.createElement("p", null,
                         "In this case, I wanted to set up the array of timeouts and create the inital scrambled string both on component load and whenever the string length (",
                         react_1.default.createElement("code", null, "numChars"),
                         ") was changed. By design, ",
-                        react_1.default.createElement("code", null, "useEffect"),
+                        react_1.default.createElement("code", null, "useEffect()"),
                         " allows an array of variables, and after it detects a change in any the ",
-                        react_1.default.createElement("code", null, "useEffect"),
+                        react_1.default.createElement("code", null, "useEffect()"),
                         " function will be performed. However, useEffect will also only have the current state of stateful variables that are included in this array."),
                     react_1.default.createElement("p", null,
                         "This creates an awkward situation. I only want this update function to run when ",
                         react_1.default.createElement("code", null, "numChars"),
                         " changes, but I also need the current values of the scrambled string and the array of timeouts. The workaround occurs in the state setter functions; rather than passing a simple value, you can pass a function that performs some mutation on the current state. For example, suppose we need a simple counter state variable, but one that could be updated asynchronously and should not increment higher than 10:"),
-                    react_1.default.createElement("code", null,
-                        react_1.default.createElement("pre", null, `const [count, setCount] = useState(0);
+                    react_1.default.createElement("pre", null, `const [count, setCount] = useState(0);
 setCount((count) => {
   if (count < 10) {
     return count + 1;
@@ -474,7 +477,7 @@ setCount((count) => {
   else {
     return count;
   }
-})`))));
+})`)));
         }
     }
 }
@@ -684,7 +687,7 @@ module.exports = _inheritsLoose;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "body {\n  margin: unset;\n  font-family: 'Manrope', sans-serif;\n}\n\n.app {\n  height: 100vh;\n  width: 100vw;\n}\n\n.main {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  width: 100%;\n}\n\n.header {\n  display: flex;\n  justify-content: space-evenly;\n  background: #fdf8ee;\n}\n\n.header-section {\n  font-size: 1.2em;\n  letter-spacing: 0.1em;\n  padding: 0.5em 1.5em;\n  background: #fdf8ee;\n  cursor: pointer;\n  transition: background ease-in-out 0.3s;\n}\n.header-section:hover {\n  background: #aec9e4;\n}\n.header-section.selected {\n  background: #2c6298;\n  color: #fdf8ee;\n  box-shadow: 0px 1px 4px 0px #00000085;\n}\n\n.spacer {\n  height: 10em;\n}\n\n.home {\n  flex: 1 0;\n  display: flex;\n  flex-direction: column;\n}\n\n.home .body {\n  flex: 1 0;\n  background: #fdf8ee;\n}\n\n.snippets {\n  flex: 1 0;\n  background: #fdf8ee;\n}\n\n.snippets .body {\n  margin: 2em 10%;\n}\n\n.angled-border {\n  z-index: -1;\n  width: 120%;\n  height: 7em;\n  background: #fdf8ee;\n}\n\n\n.angled-border-top {\n  transform: rotate(-5deg) translateY(-5.5vw) translateX(-1vw);\n}\n\n.angled-border-bottom {\n  transform: rotate(-5deg) translateY(4.5vw) translateX(-1vw);\n}\n\n.background-image {\n  z-index: -2;\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100vw;\n  height: auto;\n}\n", ""]);
+exports.push([module.i, "body {\n  margin: unset;\n  font-family: 'Manrope', sans-serif;\n}\n\n.app {\n  height: 100vh;\n  width: 100vw;\n}\n\n.main {\n  display: flex;\n  flex-direction: column;\n  height: 100%;\n  width: 100%;\n}\n\n.header {\n  display: flex;\n  justify-content: space-evenly;\n  background: #fffdfa;\n}\n\n.header-section {\n  font-size: 1.2em;\n  letter-spacing: 0.1em;\n  padding: 0.5em 1.5em;\n  background: #fffdfa;\n  cursor: pointer;\n  transition: background ease-in-out 0.3s;\n}\n.header-section:hover {\n  background: #a9bbce7d;\n}\n.header-section.selected {\n  background: #39516b;\n  color: #fffdfa;\n}\n\n.spacer {\n  height: 10em;\n}\n\n.home {\n  flex: 1 0;\n  display: flex;\n  flex-direction: column;\n}\n\n.home .body {\n  flex: 1 0;\n  background: #fffdfa;\n}\n\n.angled-border {\n  z-index: -1;\n  width: 120%;\n  height: 7em;\n  background: #fffdfa;\n}\n\n\n.angled-border-top {\n  transform: rotate(-5deg) translateY(-5.5vw) translateX(-1vw);\n}\n\n.angled-border-bottom {\n  transform: rotate(-5deg) translateY(4.5vw) translateX(-1vw);\n}\n\n.background-image {\n  z-index: -2;\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100vw;\n  height: auto;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -702,7 +705,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".snippet .title {\n  font-size: 1.4em;\n}\n\n.snippet .date-line {\n  opacity: 0.5;\n  font-size: 0.8em;\n  margin-left: 1em;\n}\n\n.snippet .content-header {\n  display: flex;\n}\n\n.snippet .tab {\n  padding: 0.5em 1.5em;\n  cursor: pointer;\n  border: 1px solid #506071;\n}\n\n.snippet .tab.selected {\n  background: #506071;\n  color: #fff;\n}\n\n.snippet .content-container {\n  padding: 1em;\n  background: #506071;\n  color: #fff;\n  border: 1px solid #506071;\n}\n\n.snippet .description {\n  margin: 0.5em 0 1em 0;\n}\n\n.snippet .section p {\n  text-indent: 1em;\n}\n\n.scrambled-text {\n  font-family: monospace;\n  word-break: break-all;\n  line-height: 1.2em;\n}\n", ""]);
+exports.push([module.i, ".snippets {\n  flex: 1 0;\n  background: #fffdfa;\n}\n\n.snippets .body {\n  margin: 2em 10%;\n}\n\n.snippet .title {\n  font-size: 1.4em;\n}\n\n.snippet .date-line {\n  opacity: 0.5;\n  font-size: 0.8em;\n  margin-left: 1em;\n}\n\n.snippet .content-header {\n  display: flex;\n}\n\n.snippet .tab {\n  padding: 0.5em 1.5em;\n  cursor: pointer;\n  border: 1px solid #39516b;\n  background: #fffdfa;\n  transition: background ease-in-out 0.3s;\n}\n.snippet .tab:hover {\n  background: #a9bbce7d;\n}\n\n.snippet .tab.selected {\n  background: #39516b;\n  color: #fff;\n}\n\n.snippet .content-container {\n  padding: 1em;\n  background: #39516b;\n  color: #fff;\n  border: 1px solid #39516b;\n}\n\n.snippet .description {\n  margin: 0.5em 0 1em 0;\n}\n\n.snippet .section p {\n  text-indent: 1em;\n}\n\n.snippet code {\n  font-size: 1.2em;\n  background: #6c7986;\n  padding: 0 0.25em;\n  border-radius: 0.25em;\n}\n\n.snippet pre {\n  background: #546477;\n  padding: 0 0.5em 0.5em 0.5em;\n  border-radius: 0.25em;\n}\n\n.snippet label {\n  font-style: italic;\n}\n\n.snippet a {\n  color: #9093ff;\n}\n\n.scrambled-text {\n  font-family: monospace;\n  word-break: break-all;\n  line-height: 1.2em;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
